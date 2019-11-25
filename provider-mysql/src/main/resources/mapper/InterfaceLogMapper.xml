@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pingchuan.providermysql.mapper.InterfaceLogMapper">
+    
+    <insert id="insertOne">
+        insert into interface_logs values (null, #{interfaceLog.interfaceId}, #{interfaceLog.parameters}, #{interfaceLog.state}, #{interfaceLog.callerCode}, #{interfaceLog.errorMessage}, #{interfaceLog.requestStartTime}, #{interfaceLog.executeStartTime}, #{interfaceLog.executeEndTime}, #{interfaceLog.requestEndTime}, #{interfaceLog.requestType}, #{interfaceLog.hostAddress}, #{interfaceLog.regionCode}, #{interfaceLog.resultCode})
+    </insert>
+
+</mapper>
