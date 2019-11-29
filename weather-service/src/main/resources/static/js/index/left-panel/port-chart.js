@@ -1,18 +1,21 @@
 var PortChart = function () {
-
+    this.Timer = null;
     this.thisWeek = null;
     this.thisMonth = null;
     this.thisYear = null;
-
+    this.port = $('.port-chart');
     this.TimeUtil = new TimeUtil();
-
-    this.SetChartSize = function () {
-        $('#port-chart').highcharts().reflow();
-    };
 
     this.Startup = function(){
         this.Reload();
         $('.port-select a').on('click', this.OnTimeSelect.bind(this));
+        this.port.on('mouseover', this.RemoveSetInterval.bind(this));
+        this.port.on('mouseout', this.AddSetInterval.bind(this));
+        this.AutoPlay(0);
+    };
+
+    this.SetChartSize = function () {
+        $('#port-chart').highcharts().reflow();
     };
 
     this.OnTimeSelect = function (event) {
@@ -20,6 +23,29 @@ var PortChart = function () {
         $(event.target).addClass("active");
 
         this.getDataByPortClick(event.target.text);
+    };
+
+    this.AutoPlay = function (index) {
+        var rows = $('.port-select a');
+        this.Timer = setInterval(function () {
+            index++;
+            if (index >= rows.length)
+                index = 0;
+
+            $('.port-select a').removeClass("active");
+            $('.port-select a').eq(index).addClass("active");
+            this.getDataByPortClick($('.port-select a.active').text());
+        }.bind(this), 3000);
+    };
+
+    this.RemoveSetInterval = function () {
+        if (this.Timer !== null)
+            clearInterval(this.Timer);
+    };
+
+    this.AddSetInterval = function () {
+        var index = $('.port-select a.active').index();
+        this.AutoPlay(index);
     };
 
     this.getDataByPortClick = function(time){
@@ -56,7 +82,6 @@ var PortChart = function () {
             },
             url: 'stat/findAreaCallByTimeRange',
             success: function (data) {
-               console.log(data);
                this.ReloadChartData(data);
             }.bind(this)
         })
@@ -123,7 +148,8 @@ var PortChart = function () {
                 lineColor: '#115d93',
                 labels: {
                     style:{
-                        color: '#a2d9ff'
+                        color: '#a2d9ff',
+                        fontFamily: '微软雅黑'
                     }
                 }
             },

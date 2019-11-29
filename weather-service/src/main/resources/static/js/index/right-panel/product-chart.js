@@ -1,26 +1,112 @@
 var ProductChart = function () {
-    this.Reload = function () {
-        this.ShowProductChart();
-        $('.number-select a').on('click', this.OnTimeSelect.bind(this));
-    };
+    this.thisWeek = null;
+    this.thisMonth = null;
+    this.thisYear = null;
+    this.TimeUtil = new TimeUtil();
 
-    this.OnTimeSelect = function (event) {
-        $('.number-select a').removeClass("active");
-        $(event.target).addClass("active");
+    this.Startup = function () {
+        this.Reload();
+        $('.number-select a').on('click', this.OnTimeSelect.bind(this));
     };
 
     this.SetChartSize = function () {
         $('#product-chart').highcharts().reflow();
     };
 
-    this.ShowProductChart = function (){
+    this.OnTimeSelect = function (event) {
+        $('.number-select a').removeClass("active");
+        $(event.target).addClass("active");
+
+        this.getDataByPortClick(event.target.text);
+    };
+
+    this.getDataByPortClick = function(time){
+        if (time === '本周'){
+            if (this.thisWeek == null){
+                var startTime = this.TimeUtil.GetWeekStartTime();
+                var endTime = this.TimeUtil.GetWeekEndTime();
+                this.Reload(startTime, endTime);
+                return false;
+            }
+        }else if(time === '本月'){
+            if (this.thisMonth == null){
+                var startMonthTime = this.TimeUtil.GetMonthStartTime();
+                var endMonthTime = this.TimeUtil.GetMonthEndTime();
+                this.Reload(startMonthTime, endMonthTime);
+                return false;
+            }
+        }else {
+            if (this.thisYear === null){
+                var startDate = this.TimeUtil.GetYearStartTime();
+                var endDate = this.TimeUtil.GetYearEndTime();
+                this.Reload(startDate, endDate);
+                return false;
+            }
+        }
+    };
+
+    this.Reload = function(startTime, endTime){
+        if (startTime === undefined || endTime === undefined) {
+            startTime = this.TimeUtil.GetWeekStartTime();
+            endTime = this.TimeUtil.GetWeekEndTime();
+        } else {
+            startTime = startTime;
+            endTime = endTime;
+        }
+        $.ajax({
+            type: 'POST',
+            data: {
+                startTime: startTime,
+                endTime: endTime
+            },
+            url: 'stat/findTypeCallByTimeRange',
+            success: function (data) {
+                this.ReloadChartData(data);
+            }.bind(this)
+        })
+    };
+
+    this.ReloadChartData = function (result) {
+        var elementSeries = {};
+        var value = this.GetElementValues(result);
+        var series = this.GetElementSeries(value);
+        elementSeries = series;
+        this.ShowProductChart(elementSeries);
+    };
+
+    this.GetElementValues = function (result) {
+        var names = [];
+        var count = [];
+        result.forEach(function (item) {
+            names.push(item.name);
+            count.push(item.count);
+        }.bind(this));
+
+        return {
+            name: names,
+            count: count
+        };
+    };
+
+    this.GetElementSeries = function (data) {
+        var values = [];
+        for (var i = 0; i < data.name.length; i++) {
+            values.push({
+                "name": data.name[i],
+                "y": data.count[i]
+            });
+        }
+        return values;
+    };
+
+    this.ShowProductChart = function (series){
         var chart = Highcharts.chart('product-chart', {
             chart: {
                 backgroundColor: null
             },
             title: {
                 floating:true,
-                text: '<span style="font-size: 24px;color: #28edff;">2300<br><span style="font-size: 16px;color: #a2d9ff">总量</span></span>',
+                text: '<span style="font-size: 24px;color: #28edff;">{0}<br><span style="font-size: 16px;color: #a2d9ff">总量</span></span>'.format(series[0].y),
                 //useHTML: true,
                 style: {
                     color: '#00e7ff',
@@ -82,14 +168,7 @@ var ProductChart = function () {
                 type: 'pie',
                 innerSize: '78%',
                 name: '总量',
-                data: [
-                    ['GRAPES-3KM预报产品', 2300],
-                    ['5KM实况预报', 2400],
-                    ['短期预报产品',  3200],
-                    ['中期预报产品', 1500],
-                    ['短临预报产品', 700],
-                    ['本省自动站产品', 600]
-                ],
+                data: series,
                 showInLegend: true
             }]
         }, function(c) {
@@ -99,7 +178,7 @@ var ProductChart = function () {
 
             c.setTitle({
                 y: centerY + titleHeight/2 - 5,
-                x: -centerX
+                x: -centerX + 30
             });
         });
     };

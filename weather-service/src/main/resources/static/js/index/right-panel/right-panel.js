@@ -4,7 +4,7 @@ var RightPanel = function() {
     this.LatestTable = new LatestTable(this);
 
     this.Startup = function(){
-        this.ProductChart.Reload();
+        this.ProductChart.Startup();
         this.ResponseTime.Reload();
         this.LatestTable.Reload();
     }

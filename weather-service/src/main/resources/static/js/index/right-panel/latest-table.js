@@ -4,25 +4,38 @@ var LatestTable = function () {
     this.DataGrid = $('#data-table');
 
     this.Reload = function(){
-        this.ReloadLatestTable();
-        this.SetStateGridScroll();
+        this.InitTable();
+        this.ReloadData();
         this.table.on('mouseover', this.RemoveSetInterval.bind(this));
+        this.table.on('mouseout', this.AutoPlay.bind(this));
     };
 
-    this.ReloadLatestTable = function () {
+    this.InitTable = function () {
         this.DataGrid.datagrid({
+            columns: [[
+                { field: 'name', title: '产品名称', align: 'left', width: 420 },
+                { field: 'time', title: '数据更新时间', align: 'right'}
+            ]],
             striped: true,
             singleSelect: true,
             fitColumns: true,
             fit: true,
-            scrollbarSize: 0
+            scrollbarSize: 0,
+            onLoadSuccess: function () {
+                this.SetStateGridScroll(-1);
+            }.bind(this)
         });
     };
 
-    this.SetStateGridScroll = function () {
-        var rows = this.DataGrid.datagrid("getRows");
-        var index = -1;
+    this.ReloadData = function () {
+        this.DataGrid.datagrid({
+            method: "POST",
+            url: 'other/findNewestTime'
+        });
+    };
 
+    this.SetStateGridScroll = function (index) {
+        var rows = this.DataGrid.datagrid("getRows");
         if (rows.length * 28 > ($('.data-table').height() - 28)){
             this.Timer = setInterval(function () {
                 index++;
@@ -32,10 +45,7 @@ var LatestTable = function () {
                 this.DataGrid.datagrid('scrollTo', index);
                 this.DataGrid.datagrid('selectRow', index);
             }.bind(this), 3000);
-        } else {
-            clearInterval(this.Timer);
         }
-
     };
 
     this.RemoveSetInterval = function (){
@@ -44,6 +54,8 @@ var LatestTable = function () {
     };
 
     this.AutoPlay = function () {
-
+        var selected = this.DataGrid.datagrid('getSelected');
+        var index = this.DataGrid.datagrid('getRowIndex',selected);
+        this.SetStateGridScroll(index);
     };
 };

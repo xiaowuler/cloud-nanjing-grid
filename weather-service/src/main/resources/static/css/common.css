@@ -124,6 +124,10 @@
 
 .total span{
     position: relative;
+    top: 5px;
+}
+
+.total i{
     font-size: 20px;
 }
 
@@ -235,6 +239,12 @@
     display: none;
 }
 
+.table .note {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .data-table .datagrid-header td:last-child span{
     padding-right: 8px;
 }
@@ -289,6 +299,11 @@
 
 .combobox-item-selected{
     color: #28edff;
+}
+
+.combo-p .combobox-item,
+.reset-element  .textbox .textbox-text{
+    font-family: "微软雅黑";
 }
 
 .panel-body{

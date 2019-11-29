@@ -82,6 +82,11 @@ h6 {
     font-size: 14px;
 }
 
+i,
+em{
+    font-style: normal;
+}
+
 .clearfix:after {
     content: ".";
     display: block;

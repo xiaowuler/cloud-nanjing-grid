@@ -1,13 +1,69 @@
 var ResponseTime = function (){
-    this.Reload = function (){
-        this.ShowResponseChart();
-    };
+    this.TimeUtil = new TimeUtil();
 
     this.SetChartSize = function () {
         $('#response-chart').highcharts().reflow();
     };
 
-    this.ShowResponseChart = function (){
+    this.Reload = function(){
+        var startTime = this.TimeUtil.GetWeekStartTime();
+        var endTime = this.TimeUtil.GetWeekEndTime();
+        $.ajax({
+            type: 'POST',
+            data: {
+                startTime: startTime,
+                endTime: endTime
+            },
+            url: 'stat/findTypeCallByTimeRange',
+            success: function (data) {
+                this.ReloadChartData(data);
+            }.bind(this)
+        })
+    };
+
+    this.ReloadChartData = function (result) {
+        var elementSeries = {};
+        var xMarks = this.GetXMarks(result);
+        var value = this.GetElementValues(result);
+        var series = this.GetElementSeries(value);
+        elementSeries = series;
+        this.ShowResponseChart(xMarks, elementSeries);
+    };
+
+    this.GetXMarks = function (result) {
+        var marks = [];
+        result.forEach(function (item, index) {
+            marks.push(item.name);
+        });
+        return marks;
+    };
+
+    this.GetElementValues = function (result) {
+        var names = [];
+        var count = [];
+        result.forEach(function (item) {
+            names.push(item.name);
+            count.push(item.count);
+        }.bind(this));
+
+        return {
+            name: names,
+            count: count
+        };
+    };
+
+    this.GetElementSeries = function (data) {
+        var values = [];
+        for (var i = 0; i < data.name.length; i++) {
+            values.push({
+                "name": data.name[i],
+                "y": data.count[i]
+            });
+        }
+        return values;
+    };
+
+    this.ShowResponseChart = function (xMarks, series){
         Highcharts.chart('response-chart', {
             chart: {
                 type: 'column',
@@ -23,11 +79,12 @@ var ResponseTime = function (){
                 enabled: false
             },
             xAxis: {
-                categories: ['短期站点预报', '中短格点期预报', '中短站点期预报','短期站点预报', '短临格点预报', '短临站点预报','3KM预报', '5KM实况', '自助站实况', 'WARMS预报'],
+                categories: xMarks,
                 lineColor: '#115d93',
                 labels: {
                     style:{
-                        color: '#a2d9ff'
+                        color: '#a2d9ff',
+                        fontFamily: '微软雅黑'
                     }
                 }
             },
@@ -51,7 +108,7 @@ var ResponseTime = function (){
                 enabled: false
             },
             tooltip: {
-                pointFormat: '占比: <b>{point.y:.1f} %</b>'
+                pointFormat: '次数: <b>{point.y}</b>'
             },
             plotOptions: {
                 column: {
@@ -64,18 +121,7 @@ var ResponseTime = function (){
                 }
             },
             series: [{
-                data: [
-                    ['短期站点预报', 210],
-                    ['中短格点期预报', 100],
-                    ['中短站点期预报', 25],
-                    ['短期站点预报', 295],
-                    ['短临格点预报', 160],
-                    ['短临站点预报', 110],
-                    ['3KM实况', 185],
-                    ['5KM实况', 98],
-                    ['自助站实况', 45],
-                    ['WARMS预报', 90]
-                ]
+                data: series
             }]
         });
     };
