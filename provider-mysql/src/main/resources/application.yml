@@ -17,7 +17,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: Abc123
-    #mybatisÅäÖÃmapper.xmlÎÄ¼şÎ»ÖÃÒÔ¼°°üÉ¨Ãè
+    #mybatisé…ç½®mapper.xmlæ–‡ä»¶ä½ç½®ä»¥åŠåŒ…æ‰«æ
 mybatis:
-  mapper-locations: classpath*:mapper/*.xml #mapperÎÄ¼şÉ¨Ãè
-  type-aliases-package: com.pingchuan.domain #±ğÃûÉ¨Ãè
+  mapper-locations: classpath*:mapper/*.xml #mapperæ–‡ä»¶æ‰«æ
+  type-aliases-package: com.pingchuan.domain #åˆ«åæ‰«æ

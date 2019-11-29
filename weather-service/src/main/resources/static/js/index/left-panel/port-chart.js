@@ -4,10 +4,14 @@ var PortChart = function () {
     this.thisMonth = null;
     this.thisYear = null;
 
-    this.timeUtil = new timeUtil()
+    this.TimeUtil = new TimeUtil();
 
-    this.Reload = function(){
-        this.ShowPortChart();
+    this.SetChartSize = function () {
+        $('#port-chart').highcharts().reflow();
+    };
+
+    this.Startup = function(){
+        this.Reload();
         $('.port-select a').on('click', this.OnTimeSelect.bind(this));
     };
 
@@ -21,23 +25,29 @@ var PortChart = function () {
     this.getDataByPortClick = function(time){
         if (time === '本周'){
             if (this.thisWeek == null){
-                var startTime = this.timeUtil.getThisWeekStartTime();
-                var endTime = this.timeUtil.getThisWeekEndTime();
-                this.getDataByTimeRange(startTime, endTime);
+                var startTime = this.TimeUtil.GetWeekStartTime();
+                var endTime = this.TimeUtil.GetWeekEndTime();
+                this.Reload(startTime, endTime);
                 return false;
             }
         }else if(time === '本月'){
             if (this.thisMonth == null){
+                var startMonthTime = this.TimeUtil.GetMonthStartTime();
+                var endMonthTime = this.TimeUtil.GetMonthEndTime();
+                this.Reload(startMonthTime, endMonthTime);
                 return false;
             }
         }else {
-            if (this.thisYear === '本年'){
+            if (this.thisYear === null){
+                var startDate = this.TimeUtil.GetYearStartTime();
+                var endDate = this.TimeUtil.GetYearEndTime();
+                this.Reload(startDate, endDate);
                 return false;
             }
         }
     };
 
-    this.getDataByTimeRange = function(startTime, endTime){
+    this.Reload = function(startTime, endTime){
         $.ajax({
             type: 'POST',
             data: {
@@ -46,16 +56,54 @@ var PortChart = function () {
             },
             url: 'stat/findAreaCallByTimeRange',
             success: function (data) {
-               console.log('ss');
-            }
+               console.log(data);
+               this.ReloadChartData(data);
+            }.bind(this)
         })
-    }
-
-    this.SetChartSize = function () {
-        $('#port-chart').highcharts().reflow();
     };
 
-    this.ShowPortChart = function() {
+    this.ReloadChartData = function (result) {
+        var elementSeries = {};
+        var names = ['次数', '格点'];
+        var xMarks = this.GetXMarks(result);
+        var value = this.GetElementValues(result);
+        var series = this.GetElementSeries(names, value);
+        elementSeries = series;
+        this.ShowPortChart(xMarks, elementSeries);
+    };
+
+    this.GetXMarks = function (result) {
+        var marks = [];
+        result.forEach(function (item, index) {
+            marks.push(item.name);
+        });
+        return marks;
+    };
+
+    this.GetElementValues = function (result) {
+        var count = [];
+        var gridCount = [];
+
+        result.forEach(function (item) {
+            count.push(item.count);
+            gridCount.push(parseInt(item.gridCount));
+        });
+
+        return [count, gridCount]
+    };
+
+    this.GetElementSeries = function (name, data) {
+        var values = [];
+        for (var i = 0; i < data.length; i++) {
+            var obj = {};
+            obj["name"] = name[i];
+            obj["data"] = data[i];
+            values.push(obj);
+        }
+        return values;
+    };
+
+    this.ShowPortChart = function(xMarks, series) {
         var chart = Highcharts.chart('port-chart', {
             chart: {
                 type: 'spline',
@@ -71,7 +119,7 @@ var PortChart = function () {
                 enabled: false
             },
             xAxis: {
-                categories: ['江苏', '南通', '无锡', '扬州', '南京', '苏州', '常州', '镇江', '泰州', '盐城', '淮安', '宿迁', '徐州', '连云港'],
+                categories: xMarks,
                 lineColor: '#115d93',
                 labels: {
                     style:{
@@ -115,13 +163,7 @@ var PortChart = function () {
             tooltip: {
                 shared: true
             },
-            series: [{
-                name: '站点',
-                data: [39, 25, 21, 33, 25, 19, 20, 11, 21, 33, 25, 19, 20, 11]
-            }, {
-                name: '格点',
-                data: [24, 20, 26, 19, 25, 31, 29, 18, 26, 19, 25, 31, 29, 18]
-            }]
+            series: series
         });
     };
 };
