@@ -33,4 +33,7 @@ public class StartTime {
     @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
     private List<Date> updateTimes;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private List<Forecast> forecasts;
+
 }

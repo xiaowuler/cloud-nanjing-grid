@@ -54,16 +54,16 @@ public class OtherSearchDaoImpl implements OtherSearchDao {
         aggregationOperations.add(Aggregation.project(forecastFields).and("forecast").nested(bind("forecast_time", "forecast_time").and("time_effect")));
         aggregationOperations.add(Aggregation.group(forecastFields).push("forecast").as("forecasts"));
 
-        Fields updateTimeFields = Fields.fields("start_time", "element_code", "forecast_model");
-        aggregationOperations.add(Aggregation.project(updateTimeFields).and("update_time").nested(bind("update_time", "update_time").and("forecasts")));
-        aggregationOperations.add(Aggregation.group(updateTimeFields).push("update_time").as("updates"));
+        Fields updateTimeFields = Fields.fields("update_time", "element_code", "forecast_model");
+        aggregationOperations.add(Aggregation.project(updateTimeFields).and("start_time").nested(bind("start_time", "start_time").and("forecasts")));
+        aggregationOperations.add(Aggregation.group(updateTimeFields).push("start_time").as("start_times"));
 
         Fields startTimeFields = Fields.fields("element_code", "forecast_model");
-        aggregationOperations.add(Aggregation.project(startTimeFields).and("start_time").nested(bind("start_time", "start_time").and("updates")));
-        aggregationOperations.add(Aggregation.group(startTimeFields).push("start_time").as("start_times"));
+        aggregationOperations.add(Aggregation.project(startTimeFields).and("update_time").nested(bind("update_time", "update_time").and("start_times")));
+        aggregationOperations.add(Aggregation.group(startTimeFields).push("update_time").as("update_times"));
 
         Fields elementCodeFields = Fields.fields("forecast_model");
-        aggregationOperations.add(Aggregation.project(elementCodeFields).and("element_code").nested(bind("element_code", "element_code").and("start_times")));
+        aggregationOperations.add(Aggregation.project(elementCodeFields).and("element_code").nested(bind("element_code", "element_code").and("update_times")));
         aggregationOperations.add(Aggregation.group(elementCodeFields).push("element_code").as("element_codes"));
 
         Aggregation aggregation = Aggregation.newAggregation(aggregationOperations);

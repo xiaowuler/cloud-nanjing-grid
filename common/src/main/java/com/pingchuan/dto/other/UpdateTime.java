@@ -18,4 +18,8 @@ public class UpdateTime {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<Forecast> forecasts;
+
+    @Field("start_times")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private List<StartTime> startTimes;
 }

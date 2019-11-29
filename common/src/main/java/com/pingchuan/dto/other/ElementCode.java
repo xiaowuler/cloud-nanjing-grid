@@ -31,4 +31,8 @@ public class ElementCode {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<Forecast> forecasts;
 
+    @Field("update_times")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private List<UpdateTime> updateTimes;
+
 }
