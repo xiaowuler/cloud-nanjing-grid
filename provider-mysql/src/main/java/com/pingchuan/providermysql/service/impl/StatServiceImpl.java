@@ -1,7 +1,10 @@
 package com.pingchuan.providermysql.service.impl;
 
+import com.pingchuan.domain.InterfaceType;
 import com.pingchuan.domain.Region;
 import com.pingchuan.dto.stat.RegionStat;
+import com.pingchuan.dto.stat.TypeStat;
+import com.pingchuan.providermysql.mapper.InterfaceTypeMapper;
 import com.pingchuan.providermysql.mapper.RegionMapper;
 import com.pingchuan.providermysql.mapper.StatMapper;
 import com.pingchuan.providermysql.service.StatService;
@@ -20,6 +23,9 @@ public class StatServiceImpl implements StatService {
 
     @Autowired
     private RegionMapper regionMapper;
+
+    @Autowired
+    private InterfaceTypeMapper interfaceTypeMapper;
 
     @Override
     public List<RegionStat> findAreaCallByTimeRange(Date startTime, Date endTime) {
@@ -40,5 +46,11 @@ public class StatServiceImpl implements StatService {
         }
 
         return regionStats;
+    }
+
+    @Override
+    public List<TypeStat> findTypeCallByTimeRange(Date startTime, Date endTime) {
+
+        return statMapper.findTypeCallByTimeRange(startTime, endTime);
     }
 }

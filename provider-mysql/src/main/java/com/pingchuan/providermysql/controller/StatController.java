@@ -1,6 +1,7 @@
 package com.pingchuan.providermysql.controller;
 
 import com.pingchuan.dto.stat.RegionStat;
+import com.pingchuan.dto.stat.TypeStat;
 import com.pingchuan.providermysql.service.StatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,11 @@ public class StatController {
     @PostMapping("/findAreaCallByTimeRange")
     public List<RegionStat> findAreaCallByTimeRange(Date startTime, Date endTime){
         return statService.findAreaCallByTimeRange(startTime, endTime);
+    }
+
+    @PostMapping("/findTypeCallByTimeRange")
+    public List<TypeStat> findTypeCallByTimeRange(Date startTime, Date endTime){
+        return statService.findTypeCallByTimeRange(startTime, endTime);
     }
 
 }

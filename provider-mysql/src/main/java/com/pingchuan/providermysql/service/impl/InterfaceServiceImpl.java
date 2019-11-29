@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @author xiaowuler
  */
@@ -21,5 +23,10 @@ public class InterfaceServiceImpl implements InterfaceService {
     @Override
     public Interface findOneById(int id) {
         return interfaceMapper.findOneById(id);
+    }
+
+    @Override
+    public List<Interface> findAll() {
+        return interfaceMapper.findAll();
     }
 }

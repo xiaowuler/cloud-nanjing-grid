@@ -5,4 +5,7 @@
     <select id="findAreaCallByTimeRange" resultType="com.pingchuan.dto.stat.RegionStat">
         SELECT r.`code` `code`, r.`name` `name`, r.grid_count gridCount, COUNT(request_start_time) count FROM regions r LEFT JOIN interface_logs il ON r.`code` = il.region_code WHERE il.request_start_time >= #{startTime} AND il.request_end_time &lt; #{endTime} GROUP BY `code`
     </select>
+    <select id="findTypeCallByTimeRange" resultType="com.pingchuan.dto.stat.TypeStat">
+        SELECT it.*, SUM(TIMESTAMPDIFF(MICROSECOND, request_start_time, request_end_time)/1000) as totalTime, COUNT(request_end_time) as count FROM interface_types it LEFT JOIN interfaces i ON i.type_id = it.id LEFT JOIN interface_logs il ON i.id = il.interface_id WHERE il.request_start_time >= #{startTime} AND il.request_end_time &lt; #{endTime} GROUP BY id
+    </select>
 </mapper>
