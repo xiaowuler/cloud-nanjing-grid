@@ -12,6 +12,8 @@ public class NewestParameter extends BaseParameter implements Parameter {
 
     private String date;
 
+    private String elementCode;
+
     @JSONField(serialize = false)
     private Date startTime;
 

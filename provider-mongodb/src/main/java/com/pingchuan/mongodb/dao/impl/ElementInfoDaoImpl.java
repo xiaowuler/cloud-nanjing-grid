@@ -34,13 +34,16 @@ public class ElementInfoDaoImpl implements ElementInfoDao {
     }
 
     @Override
-    public List<AggregationOperation> findByForecastModel(String forecastModel) {
+    public List<AggregationOperation> findByForecastModel(String forecastModel, String elementCode) {
         List<AggregationOperation> aggregationOperations = new ArrayList<>();
 
         aggregationOperations.add(Aggregation.lookup("element_infos", "_id", "element_code", "element_info"));
         aggregationOperations.add(Aggregation.unwind("element_info"));
         aggregationOperations.add(Aggregation.match(Criteria.where("element_info.forecast_model").is(forecastModel)));
         aggregationOperations.add(Aggregation.project(ElementField.elementInfoFields).and("element_info._id").as("element_info_id").andExclude("_id"));
+        if (!StringUtils.isEmpty(elementCode)){
+            aggregationOperations.add(Aggregation.match(Criteria.where("element_code").is(elementCode)));
+        }
 
         return aggregationOperations;
     }

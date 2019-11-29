@@ -35,7 +35,8 @@ public class OtherSearchServiceImpl implements OtherSearchSerive {
     @Override
     public List<Element> findNewestTime(NewestParameter newest) {
         List<AggregationOperation> aggregationOperations = new ArrayList<>();
-        List<AggregationOperation> elementInfos = elementInfoDao.findByForecastModel(newest.getForecastModel());
+        List<AggregationOperation> elementInfos = elementInfoDao.findByForecastModel(newest.getForecastModel(), newest.getElementCode());
+
         aggregationOperations.addAll(elementInfos);
         List<AggregationOperation> forecastInfos = forecastInfoDao.findAllByNewest();
         aggregationOperations.addAll(forecastInfos);
@@ -57,7 +58,7 @@ public class OtherSearchServiceImpl implements OtherSearchSerive {
     @Override
     public List<Element> findNewestTimeByForecastTime(ForecastTimeParameter forecastTime) {
         List<AggregationOperation> aggregationOperations = new ArrayList<>();
-        List<AggregationOperation> elementInfos = elementInfoDao.findByForecastModel(forecastTime.getForecastModel());
+        List<AggregationOperation> elementInfos = elementInfoDao.findByForecastModel(forecastTime.getForecastModel(), null);
         aggregationOperations.addAll(elementInfos);
         List<AggregationOperation> forecastInfos = forecastInfoDao.findAllByForecastTime(forecastTime.getForecastDate());
         aggregationOperations.addAll(forecastInfos);
