@@ -1,12 +1,19 @@
 var ProductChart = function () {
+    this.Timer = null;
     this.thisWeek = null;
     this.thisMonth = null;
     this.thisYear = null;
+    this.product = $('.product-chart');
     this.TimeUtil = new TimeUtil();
 
     this.Startup = function () {
         this.Reload();
         $('.number-select a').on('click', this.OnTimeSelect.bind(this));
+        $('.number-select').on('mouseover', this.RemoveSetInterval.bind(this));
+        $('.number-select').on('mouseout', this.AddSetInterval.bind(this));
+        this.product.on('mouseover', this.RemoveSetInterval.bind(this));
+        this.product.on('mouseout', this.AddSetInterval.bind(this));
+        this.AutoPlay(0);
     };
 
     this.SetChartSize = function () {
@@ -18,6 +25,29 @@ var ProductChart = function () {
         $(event.target).addClass("active");
 
         this.getDataByPortClick(event.target.text);
+    };
+
+    this.AutoPlay = function (index) {
+        var rows = $('.port-select a');
+        this.Timer = setInterval(function () {
+            index++;
+            if (index >= rows.length)
+                index = 0;
+
+            $('.number-select a').removeClass("active");
+            $('.number-select a').eq(index).addClass("active");
+            this.getDataByPortClick($('.port-select a.active').text());
+        }.bind(this), 5000);
+    };
+
+    this.RemoveSetInterval = function () {
+        if (this.Timer !== null)
+            clearInterval(this.Timer);
+    };
+
+    this.AddSetInterval = function () {
+        var index = $('.number-select a.active').index();
+        this.AutoPlay(index);
     };
 
     this.getDataByPortClick = function(time){
