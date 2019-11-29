@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="common" />
         <module name="eureka-server" />
-        <module name="grid-api" />
+        <module name="common" />
         <module name="mongodb" />
-        <module name="provider-mongodb" />
         <module name="provider-mysql" />
         <module name="util" />
+        <module name="provider-mongodb" />
+        <module name="grid-api" />
         <module name="weather-service" />
       </profile>
     </annotationProcessing>
@@ -22,6 +22,7 @@
       <module name="common" options="" />
       <module name="eureka-server" options="-parameters" />
       <module name="grid-api" options="-parameters" />
+      <module name="mongodb" options="-parameters" />
       <module name="nanjing-grid" options="-parameters" />
       <module name="provider-mongodb" options="-parameters" />
       <module name="provider-mysql" options="-parameters" />

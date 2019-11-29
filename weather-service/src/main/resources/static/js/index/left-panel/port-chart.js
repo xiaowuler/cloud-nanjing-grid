@@ -35,7 +35,7 @@ var PortChart = function () {
             $('.port-select a').removeClass("active");
             $('.port-select a').eq(index).addClass("active");
             this.getDataByPortClick($('.port-select a.active').text());
-        }.bind(this), 5000);
+        }.bind(this), 20000);
     };
 
     this.RemoveSetInterval = function () {

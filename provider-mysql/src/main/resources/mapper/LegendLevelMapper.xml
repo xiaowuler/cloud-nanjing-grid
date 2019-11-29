@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pingchuan.providermysql.mapper.LegendLevelMapper">
+    <select id="findAllByType" resultType="com.pingchuan.domain.LegendLevel">
+        select level_id levelId, beginvalue beginValue, endvalue endValue, color, `type` from legend_levels where type = #{type}
+    </select>
+</mapper>

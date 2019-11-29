@@ -1,4 +1,6 @@
-var TimeLine = function(parent, line){
+var TimeLine = function(parent, line, text){
+    this.parent = parent;
+    this.text = text;
     this.Line = line;
     this.Timer = null;
     this.ImageWidth = 69;
@@ -13,15 +15,21 @@ var TimeLine = function(parent, line){
         this.Times.find('li').each(function (index, element) {
             $(element).attr('index', index);
         });
-
-        this.PrevButton.on('click', this.ActivePrevMarker.bind(this));
-        this.NextButton.on('click', this.ActiveNextMarker.bind(this));
-        this.PlayButton.on('click', this.OnPlayButtonClick.bind(this));
-        this.PauseButton.on('click', this.OnPauseButtonClick.bind(this));
-
-        this.Times.find('li').on('click', this.OnThumbMarkerClick.bind(this));
         this.SetActiveMarker(0);
     };
+
+    this.bindClickEvent = function () {
+        this.Times.attr("image-count", this.Times.find('li').length);
+        this.Times.find('li').each(function (index, element) {
+            $(element).attr('index', index);
+        });
+
+        this.PrevButton.off('click').on('click', this.ActivePrevMarker.bind(this));
+        this.NextButton.off('click').on('click', this.ActiveNextMarker.bind(this));
+        this.PlayButton.off('click').on('click', this.OnPlayButtonClick.bind(this));
+        this.PauseButton.off('click').on('click', this.OnPauseButtonClick.bind(this));
+        this.Times.find('li').off('click').on('click', this.OnThumbMarkerClick.bind(this));
+    }
 
     this.SetActiveMarker = function (imageIndex) {
         this.Times.find('li.active').removeClass("active");
@@ -50,6 +58,7 @@ var TimeLine = function(parent, line){
         var imageCount = parseInt(this.Times.attr("image-count"));
         var prevIndex =  (imageIndex > 0) ? imageIndex - 1 : imageCount - 1;
         this.SetActiveMarker(prevIndex);
+        this.reLoadData(prevIndex);
     };
 
     this.ActiveNextMarker = function () {
@@ -57,12 +66,24 @@ var TimeLine = function(parent, line){
         var imageCount = parseInt(this.Times.attr("image-count"));
         var nextIndex =  (imageIndex < imageCount - 1) ? imageIndex + 1 : 0;
         this.SetActiveMarker(nextIndex);
+        this.reLoadData(nextIndex);
     };
 
     this.OnThumbMarkerClick = function(e) {
         var index = $(e.target).attr("index");
         this.SetActiveMarker(index);
+        this.reLoadData(index);
     };
+
+    this.reLoadData = function (index) {
+        if (this.text == 'update'){
+            this.parent.setStartTime(this.parent.dateTimes[index].startTimes, 0);
+        }else if(this.text == 'start'){
+            this.parent.setForecastTime(this.parent.dateTimes[$('.update-liner li.active').attr("index")].startTimes[index], 0);
+        }else {
+            this.parent.loadMap();
+        }
+    }
 
     this.OnPlayButtonClick = function (e) {
         $(e.target).addClass('play-disable');
@@ -73,8 +94,6 @@ var TimeLine = function(parent, line){
                 this.ActiveNextMarker();
             }.bind(this), 2000);
         }
-
-
     };
 
     this.OnPauseButtonClick = function (e) {

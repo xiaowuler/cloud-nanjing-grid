@@ -16,4 +16,6 @@ public interface TrapezoidDao {
     List<AggregationOperation> findRealByArea(String areaCode);
 
     List<AggregationOperation> findRealByLocation(List<double[]> locations);
+
+    List<AggregationOperation> findByNonAreaCode();
 }

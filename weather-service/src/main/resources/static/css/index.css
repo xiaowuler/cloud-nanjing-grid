@@ -129,7 +129,7 @@
 }
 
 .time-content ul li{
-    width: 59px;
+    width: 76px;
     height: 26px;
     margin: 0 5px;
     line-height: 26px;
@@ -159,7 +159,16 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: url("../images/map.png") no-repeat center/cover;
+    background: #004270;
+    z-index: 0;
+}
+
+.leaflet-container a {
+    color: #004270;
+}
+
+.leaflet-container .leaflet-control-attribution {
+    background: rgb(0, 66, 112);
 }
 
 .player{
@@ -226,4 +235,11 @@
 }
 .highcharts-tooltip {
     z-index: 9998;
+}
+
+.box-label {
+    color: #222222;
+    width: 80px !important;
+    margin-left: -40px !important;
+    text-align: center;
 }

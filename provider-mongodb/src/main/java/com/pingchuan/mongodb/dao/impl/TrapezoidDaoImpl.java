@@ -67,6 +67,16 @@ public class TrapezoidDaoImpl implements TrapezoidDao {
     }
 
     @Override
+    public List<AggregationOperation> findByNonAreaCode() {
+        List<AggregationOperation> aggregationOperations = new ArrayList<>();
+        aggregationOperations.add(Aggregation.lookup("trapezoids", "trapezoid_info_id", "trapezoid_info_id", "trapezoid"));
+        aggregationOperations.add(Aggregation.unwind("trapezoid"));
+        aggregationOperations.add(Aggregation.match(Criteria.where("trapezoid.area_code").ne(null)));
+        aggregationOperations.add(Aggregation.project(ElementField.trapezoidFields));
+        return aggregationOperations;
+    }
+
+    @Override
     public List<AggregationOperation> findRealByLocation(List<double[]> locations) {
         List<AggregationOperation> aggregationOperations = new ArrayList<>();
         aggregationOperations.add(Aggregation.lookup("trapezoids", "trapezoid_info_id", "trapezoid_info_id", "trapezoid"));

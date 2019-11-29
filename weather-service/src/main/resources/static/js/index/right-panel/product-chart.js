@@ -37,7 +37,7 @@ var ProductChart = function () {
             $('.number-select a').removeClass("active");
             $('.number-select a').eq(index).addClass("active");
             this.getDataByPortClick($('.port-select a.active').text());
-        }.bind(this), 5000);
+        }.bind(this), 20000);
     };
 
     this.RemoveSetInterval = function () {

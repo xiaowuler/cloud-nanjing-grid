@@ -18,20 +18,20 @@
     <div class="menu">
         <ul class="clearfix">
             <li class="active"><a class="menu-index" href="index">首页</a></li>
-            <li><a class="menu-port" href="port.html">开发接口</a></li>
-            <li><a class="menu-word" href="word.html">开发文档</a></li>
+            <!--<li><a class="menu-port" href="port.html">开发接口</a></li>-->
+            <!--<li><a class="menu-word" href="word.html">开发文档</a></li>-->
         </ul>
     </div>
     <div class="admin clearfix">
         <div class="user fl">欢迎系统管理员登录!</div>
         <button class="quit-button fl">退出</button>
     </div>
-    <div class="total"><span>当前数据总量： </span><i id="total">776,736,562</i></div>
+    <div class="total"><span>当前数据总量： </span><i id="total">1,356,441,600</i></div>
     <div class="current-date" id="current-date"></div>
     <div class="content clearfix">
         <div class="left-panel fl">
             <div class="port-number border">
-                <h2 class="title">各地区调用接口次数（万次）</h2>
+                <h2 class="title">各地区调用接口次数（次）</h2>
                 <div class="btn-group border port-select clearfix">
                     <a href="javascript:;" class="active">本周</a>
                     <a href="javascript:;">本月</a>
@@ -55,8 +55,8 @@
                     <span class="toolbar-title fl">模式</span>
                     <div class="reset-text-box mr fl">
                         <select class="easyui-combobox" id="model" name="model" labelPosition="top" editable="false">
-                            <option value="NJGRID-REALTIME">NJGRID-STANDARD</option>
-                            <option value="NJGRID-STANDARD">NJGRID-REALTIME</option>
+                            <option value="NJGRID-REALTIME">NJGRID-REALTIME</option>
+                            <option value="NJGRID-STANDARD">NJGRID-STANDARD</option>
                         </select>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                             <option value="TCC">云量</option>
                             <option value="VIS">能见度</option>
                             <option value="T2M">2米气温</option>
-                            <option value="U10">10米经向风</option>
+                            <option value="U10M">10米经向风</option>
                             <option value="V10M">10米纬向风</option>
                             <option value="R2M">2米相对湿度</option>
                             <option value="WTYPE">天气现象</option>
@@ -83,7 +83,7 @@
                     <div class="time-line update-liner clearfix">
                         <span class="arrow arrow-prev fl"></span>
                         <div class="time-content fl">
-                            <ul class="times clearfix">
+                            <ul class="times clearfix update-time">
                                 <li class="active">290800</li>
                                 <li>290800</li>
                                 <li>290800</li>
@@ -107,7 +107,7 @@
                     <div class="time-line newspaper-liner clearfix">
                         <span class="arrow arrow-prev fl"></span>
                         <div class="time-content fl">
-                            <ul class="times clearfix">
+                            <ul class="times clearfix start-time">
                                 <li class="active">290800</li>
                                 <li>290800</li>
                                 <li>290800</li>
@@ -131,7 +131,7 @@
                     <div class="time-line forecast-liner clearfix" id="forecast">
                         <span class="arrow arrow-prev fl"></span>
                         <div class="time-content fl">
-                            <ul class="times clearfix">
+                            <ul class="times clearfix forecast-time">
                                 <li class="active">290800</li>
                                 <li>290800</li>
                                 <li>290800</li>
@@ -193,6 +193,7 @@
 <script type="text/javascript" src="js/index/left-panel/left-panel.js"></script>
 <script type="text/javascript" src="js/index/center-panel/time-line.js"></script>
 <script type="text/javascript" src="js/index/center-panel/center-panel.js"></script>
+<script type="text/javascript" src="js/index/center-panel/map.js"></script>
 <script type="text/javascript" src="js/index/right-panel/product-chart.js"></script>
 <script type="text/javascript" src="js/index/right-panel/response-time.js"></script>
 <script type="text/javascript" src="js/index/right-panel/latest-table.js"></script>

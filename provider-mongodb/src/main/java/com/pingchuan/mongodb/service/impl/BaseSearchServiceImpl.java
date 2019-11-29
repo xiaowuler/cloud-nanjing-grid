@@ -149,4 +149,19 @@ public class BaseSearchServiceImpl implements BaseSearchService {
         return getThreshold(thresholdLocationParameter.getThresholdValues(), aggregationOperations, TimeUtil.CovertDateToString(TimeFormat.ELEMENT_VALUES_NAME, thresholdLocationParameter.getStartDate()), false);
 
     }
+
+    @Override
+    public List<AreaElement> findNJGridsByNonArea(AreaParameter areaParameter) {
+        List<AggregationOperation> aggregationOperations = new ArrayList<>();
+        List<AggregationOperation> elementInfos = elementInfoDao.findByUpdateTimeAndStartTimeAndElementCodeAndForecastModel(areaParameter.getUpdateDate(), areaParameter.getStartDate(), areaParameter.getElementCode(), areaParameter.getForecastModel());
+        aggregationOperations.addAll(elementInfos);
+        List<AggregationOperation> trapezoids = trapezoidDao.findByNonAreaCode();
+        aggregationOperations.addAll(trapezoids);
+        List<AggregationOperation> forecastInfos = forecastInfoDao.findByForecastTime(areaParameter.getForecastDate());
+        aggregationOperations.addAll(forecastInfos);
+        List<AggregationOperation> elementValues = elementValueDao.findById(TimeUtil.CovertDateToString(TimeFormat.ELEMENT_VALUES_NAME, areaParameter.getStartDate()));
+        aggregationOperations.addAll(elementValues);
+
+        return baseSearchDao.findNJGridsByArea(aggregationOperations);
+    }
 }

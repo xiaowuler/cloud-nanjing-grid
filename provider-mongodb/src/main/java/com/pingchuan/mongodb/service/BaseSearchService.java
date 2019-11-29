@@ -17,4 +17,6 @@ public interface BaseSearchService {
     List<AreaElement> findNJGridsByElementThresholdArea(ThresholdAreaParameter thresholdAreaParameter);
 
     List<AreaElement> findNJGridsByElementThresholdLocation(ThresholdLocationParameter thresholdLocationParameter);
+
+    List<AreaElement> findNJGridsByNonArea(AreaParameter areaParameter);
 }

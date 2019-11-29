@@ -24,6 +24,7 @@ public class OtherSearchDaoImpl implements OtherSearchDao {
 
     @Override
     public List<Element> findNewestTime(List<AggregationOperation> aggregationOperations) {
+
         Fields forecastFields = Fields.fields("start_time", "update_time", "element_code", "forecast_model");
         aggregationOperations.add(Aggregation.project(forecastFields).and("forecast").nested(bind("forecast_time", "forecast_time").and("time_effect")));
         aggregationOperations.add(Aggregation.group(forecastFields).push("forecast").as("forecasts"));

@@ -1,5 +1,9 @@
 var TimeUtil = function () {
 
+    this.parseStr = function(timeStr, format){
+        return moment(timeStr, format);
+    }
+
     this.GetWeekStartTime = function () {
         return moment().weekday(1).format('YYYY/MM/DD');
     };

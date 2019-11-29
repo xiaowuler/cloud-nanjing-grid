@@ -48,4 +48,9 @@ public class BaseSearchController {
     public List<AreaElement> findNJGridsByElementThresholdLocation(@RequestBody ThresholdLocationParameter thresholdLocationParameter){
         return baseSearchService.findNJGridsByElementThresholdLocation(thresholdLocationParameter);
     }
+
+    @PostMapping("/findNJGridsByNonArea")
+    public List<AreaElement> findNJGridsByNonArea(@RequestBody AreaParameter areaParameter){
+        return baseSearchService.findNJGridsByNonArea(areaParameter);
+    }
 }

@@ -44,7 +44,7 @@ var LatestTable = function () {
 
                 this.DataGrid.datagrid('scrollTo', index);
                 this.DataGrid.datagrid('selectRow', index);
-            }.bind(this), 3000);
+            }.bind(this), 10000);
         }
     };
 

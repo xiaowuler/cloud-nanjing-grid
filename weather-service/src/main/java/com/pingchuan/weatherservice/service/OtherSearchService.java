@@ -16,4 +16,7 @@ public interface OtherSearchService {
 
     @RequestMapping(value = "/otherSearch/findNewestTime", method = RequestMethod.POST)
     List<Element> findNewestTime(NewestParameter newest);
+
+    @RequestMapping(value = "/otherSearch/findUpdateAndStartByDate", method = RequestMethod.POST)
+    List<Element> findUpdateAndStartByDate(NewestParameter newest);
 }
