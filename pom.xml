@@ -81,6 +81,7 @@
         <module>eureka-server</module>
         <module>provider-mongodb</module>
         <module>grid-api</module>
+        <module>weather-service</module>
         <module>common</module>
         <module>util</module>
     </modules>
