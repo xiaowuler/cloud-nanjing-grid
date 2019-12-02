@@ -115,8 +115,26 @@
     background: url("../images/next-hover.png") no-repeat center/cover;
 }
 
+.arrow-first{
+    margin-right: 5px;
+    background: url("../images/first.png") no-repeat center/cover;
+}
+
+.arrow-first:hover{
+    background: url("../images/first-hover.png") no-repeat center/cover;
+}
+
+.arrow-last{
+    margin-left: 5px;
+    background: url("../images/last.png") no-repeat center/cover;
+}
+
+.arrow-last:hover{
+    background: url("../images/last-hover.png") no-repeat center/cover;
+}
+
 .time-content {
-    width: 490px;
+    width: 466px;
     height: 28px;
     position: relative;
     overflow: hidden;

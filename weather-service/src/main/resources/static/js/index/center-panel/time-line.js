@@ -7,6 +7,8 @@ var TimeLine = function(parent, line, text){
     this.Times = this.Line.find('.time-content');
     this.PrevButton = this.Line.find('.arrow-prev');
     this.NextButton = this.Line.find('.arrow-next');
+    this.FirstButton = this.Line.find('.arrow-first');
+    this.LastButton = this.Line.find('.arrow-last');
     this.PlayButton = $('#play');
     this.PauseButton = $('#pause');
 
@@ -26,10 +28,12 @@ var TimeLine = function(parent, line, text){
 
         this.PrevButton.off('click').on('click', this.ActivePrevMarker.bind(this));
         this.NextButton.off('click').on('click', this.ActiveNextMarker.bind(this));
+        this.FirstButton.off('click').on('click', this.ActiveFirstMarker.bind(this));
+        this.LastButton.off('click').on('click', this.ActiveLastMarker.bind(this));
         this.PlayButton.off('click').on('click', this.OnPlayButtonClick.bind(this));
         this.PauseButton.off('click').on('click', this.OnPauseButtonClick.bind(this));
         this.Times.find('li').off('click').on('click', this.OnThumbMarkerClick.bind(this));
-    }
+    };
 
     this.SetActiveMarker = function (imageIndex) {
         this.Times.find('li.active').removeClass("active");
@@ -67,6 +71,17 @@ var TimeLine = function(parent, line, text){
         var nextIndex =  (imageIndex < imageCount - 1) ? imageIndex + 1 : 0;
         this.SetActiveMarker(nextIndex);
         this.reLoadData(nextIndex);
+    };
+
+    this.ActiveFirstMarker = function () {
+        this.SetActiveMarker(0);
+        this.reLoadData(0);
+    };
+
+    this.ActiveLastMarker = function () {
+        var imageCount = parseInt(this.Times.attr("image-count"));
+        this.SetActiveMarker(imageCount - 1);
+        this.reLoadData(imageCount - 1);
     };
 
     this.OnThumbMarkerClick = function(e) {
