@@ -15,7 +15,9 @@ public class Box {
 
     private double endLat;
 
-    private double total;
+    private double value;
+
+    private String flag;
 
     private List<LegendLevel> legendLevels;
 }

@@ -7,7 +7,7 @@ var ProductChart = function () {
     this.TimeUtil = new TimeUtil();
 
     this.Startup = function () {
-        this.Reload();
+        this.getDataByPortClick();
         $('.number-select a').on('click', this.OnTimeSelect.bind(this));
         $('.number-select').on('mouseover', this.RemoveSetInterval.bind(this));
         $('.number-select').on('mouseout', this.AddSetInterval.bind(this));

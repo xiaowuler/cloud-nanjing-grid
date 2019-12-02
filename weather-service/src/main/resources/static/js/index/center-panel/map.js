@@ -6,6 +6,7 @@ var Map = function(){
     this.Startup = function(){
         this.createEasyMap();
         this.setProBorder();
+        this.setRegionName();
     };
 
     this.createEasyMap = function () {
@@ -32,13 +33,14 @@ var Map = function(){
                 latlngs,
                 {
                     weight: 0.5,
+                    opacity: 0.5,
                     color: 'yellow',
-                    fillColor: this.getColorByValue(item.total, data.legendLevels),
-                    fillOpacity: 0.9
+                    fillColor: this.getColorByValue(item.value, data.legendLevels),
+                    fillOpacity: 0.5
                 }
             ).addTo(this.map);
             this.polygons.push(polygon);
-            this.createLabelsLayer(polygon, item.total.toFixed(2), null)
+            this.createLabelsLayer(polygon, item.flag == null ? item.value.toFixed(1) : item.flag, null)
         }.bind(this));
     };
 
@@ -88,16 +90,16 @@ var Map = function(){
 
     this.setRegionName = function () {
         $.getJSON("json/nanjingprovice.json", function (labels) {
-            this.features = new L.FeatureGroup();
+            var feature = new L.FeatureGroup();
             $(labels).each(function (index, label) {
-                this.features.addLayer(L.marker([label.Latitude, label.Longitude], {
+                feature.addLayer(L.marker([label.Latitude, label.Longitude], {
                     icon: L.divIcon({
                         className: 'district-name-label',
                         html: label.Name
                     })
                 }));
             }.bind(this));
-            this.map.addLayer(this.features);
+            this.map.addLayer(feature);
         }.bind(this));
     }
 };

@@ -37,7 +37,7 @@ public class BaseSearchController {
 
         List<AreaElement> areaElements = baseSearchService.findNJGridsByNonArea(createAreaParameter(updateDate, startDate, forecastDate, elementCode, forecastModel));
         List<Location> locations = mergeLocation(areaElements);
-        List<Box> boxes = getBox(locations);
+        List<Box> boxes = getBox(locations, elementCode);
         List<LegendLevel> legendLevels = legendLevelService.findAllByType(getTypeByForecastModel(forecastModel));
         DrawResult drawResult = new DrawResult();
         drawResult.setBox(boxes);
@@ -77,8 +77,10 @@ public class BaseSearchController {
         return areaParameter;
     }
 
-    private List<Box> getBox(List<Location> locations){
+    private List<Box> getBox(List<Location> locations, String elementCode){
+
         List<Box> boxes = new ArrayList<>();
+
         double lonLength = 119.14 - 118.22;
         double boxLength = lonLength / 8;
         for(double x = 118.2; x <= 119.14; x += boxLength){
@@ -88,17 +90,83 @@ public class BaseSearchController {
                 box.setEndLon(x + boxLength);
                 box.setStartLat(y);
                 box.setEndLat(y + boxLength);
-                double total = locations.stream().filter(l -> l.getLoc()[0] >= box.getStartLon() && l.getLoc()[1] >= box.getStartLat() && l.getLoc()[0] < box.getEndLon() && l.getLoc()[1] < box.getEndLat()).collect(Collectors.summingDouble(Location::getValue));
-                if (total == 0){
+                List<Location> location = locations.stream().filter(l -> l.getLoc()[0] >= box.getStartLon() && l.getLoc()[1] >= box.getStartLat() && l.getLoc()[0] < box.getEndLon() && l.getLoc()[1] < box.getEndLat()).collect(Collectors.toList());
+                if (location.size() == 0){
                     continue;
                 }
-
-                box.setTotal(total);
+                box.setValue(location.get(0).getValue());
+                if ("WTYPE".equals(elementCode)){
+                    box.setFlag(getWeatherPhenomena((int) box.getValue()));
+                }
                 boxes.add(box);
             }
         }
-
         return boxes;
+    }
+
+    private String getWeatherPhenomena(int value){
+        if (value == 0){
+            return "晴";
+        }else if (value == 1){
+            return "多云";
+        }else if (value == 2){
+            return "阴";
+        }else if (value == 3){
+            return "阵雨";
+        }else if (value == 4){
+            return "雷阵雨";
+        }else if (value == 5){
+            return "雷阵雨并伴有冰雹";
+        }else if (value == 6){
+            return "雨夹雪";
+        }else if (value == 7){
+            return "小雨";
+        }else if (value == 8){
+            return "中雨";
+        }else if (value == 9){
+            return "大雨";
+        }else if (value == 10){
+            return "暴雨";
+        }else if (value == 11){
+            return "大暴雨";
+        }else if (value == 12){
+            return "特大暴雨";
+        }else if (value == 13){
+            return "阵雪";
+        }else if (value == 14){
+            return "小雪";
+        }else if (value == 15){
+            return "中雪";
+        }else if (value == 16){
+            return "大雪";
+        }else if (value == 17){
+            return "暴雪";
+        }else if (value == 18){
+            return "雾";
+        }else if (value == 19){
+            return "冻雨";
+        }else if (value == 20){
+            return "沙尘暴";
+        }else if (value == 21){
+            return "小到中雨";
+        }else if (value == 22){
+            return "中到大雨";
+        }else if (value == 23){
+            return "大到暴雨";
+        }else if (value == 24){
+            return "暴雨到大暴雨";
+        }else if (value == 25){
+            return "大暴雨到特大暴雨";
+        }else if (value == 26){
+            return "小到中雪";
+        }else if (value == 27){
+            return "中到大雪";
+        }else if (value == 28){
+            return "大到暴雪";
+        }else if (value == 53){
+            return "霾";
+        }
+        return "";
     }
 
     private List<Location> mergeLocation(List<AreaElement> areaElements){
