@@ -3,6 +3,7 @@ var InitAside = function (){
 
     this.Startup = function(){
         this.Reload();
+        this.aa();
         $('.first-menu h1').on('click', this.ShowSecondMenu.bind(this));
         $('.second-content li').on('click', this.OnSecondMenuClick.bind(this));
         $('.first-menu').eq(0).find('ul').slideDown();
@@ -22,8 +23,23 @@ var InitAside = function (){
         })
     };
 
+    this.aa = function () {
+        $.ajax({
+            type: "POST",
+            dataType: 'json',
+            async: false,
+            data:{
+                id: 1
+            },
+            url: 'interface/findInterfaceParameter',
+            success: function (data) {
+                console.log(data);
+            }.bind(this)
+        })
+    };
+
     this.InitMenu = function (data) {
-        //this.CreateMenu();
+        this.CreateMenu();
     };
 
     this.GetMenuValue = function () {
@@ -40,24 +56,24 @@ var InitAside = function (){
         var value = this.GetMenuValue();
         console.log(value);
         var firstText = value[0];
-        var secondText = value[0];
+        var secondText = value[1];
         for (var i = 0; i < firstText.length; i++) {
-            var firstLevel = $("<li></li>");
+            var firstLevel = $("<li class='first-menu'></li>");
             firstLevel.appendTo($(".aside>ul"));
             $("<h1></h1>")
                 .html(firstText[i])
                 .appendTo(firstLevel);
             if(firstText.length > 1){
-                var firstUl = $("<ul></ul>");
-                for(var j = 1; j < menuText[i].length; j++){
+                var firstUl = $("<ul class='second-content'></ul>");
+                for(var j = 0; j < secondText[i].length; j++){
                     firstUl.appendTo(firstLevel);
-                    $("<li></li>")
+                    $("<li class='second-menu'></li>")
                         .appendTo(firstUl)
-                        .append(
-                            $("<a href='###'></a>")
-                                .html(menuText[i][j])
+                        .append($("<a href='javascript:;' index='{0}'></a>".format(secondText[i][j].id)).html(secondText[i][j].explain)
                         );
                 }
+
+                $('.aside-content .first-menu').eq(0).find('.second-menu').eq(0).addClass('active');
             }
         }
     };
@@ -69,6 +85,7 @@ var InitAside = function (){
     };
 
     this.OnSecondMenuClick = function (event) {
+
         $(event.target).parent('li').addClass('active');
         $(event.target).parent('li').siblings().removeClass('active');
         $(event.target).parents('.first-menu').siblings().find('li').removeClass('active');

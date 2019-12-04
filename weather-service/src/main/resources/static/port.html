@@ -29,60 +29,7 @@
     <div class="content clearfix">
         <div class="aside border">
             <h2 class="title">接口列表</h2>
-            <ul class="aside-content">
-                <li class="first-menu">
-                    <h1>登录/注销接口</h1>
-                    <ul class="second-content">
-                        <li class="second-menu active"><a href="javascript:;">用户登录接口</a></li>
-                        <li class="second-menu"><a href="javascript:;">注销登录接口</a></li>
-                    </ul>
-                </li>
-                <li class="first-menu">
-                    <h1>查询基础预报数据</h1>
-                    <ul class="second-content">
-                        <li class="second-menu"><a href="javascript:;">根据更新时间、起报时间及预报时间查询指定地区
-                            指定要素的预报数据</a></li>
-                        <li class="second-menu"><a href="javascript:;">根据更新时间、起报时间及预报时间查询指定地区
-                            指定要素的预报数据</a></li>
-                        <li class="second-menu"><a href="javascript:;">根据更新时间、起报时间及预报时间查询指定地区
-                            指定要素的预报数据</a></li>
-                        <li class="second-menu"><a href="javascript:;">根据更新时间、起报时间及预报时间查询指定地区
-                            指定要素的预报数据</a></li>
-                        <li class="second-menu"><a href="javascript:;">根据更新时间、起报时间及预报时间查询指定地区
-                            指定要素的预报数据</a></li>
-                        <li class="second-menu"><a href="javascript:;">根据更新时间、起报时间及预报时间查询指定地区
-                            指定要素的预报数据</a></li>
-                        <li class="second-menu"><a href="javascript:;">根据更新时间、起报时间及预报时间查询指定地区
-                            指定要素的预报数据</a></li>
-                        <li class="second-menu"><a href="javascript:;">根据更新时间、起报时间及预报时间查询指定地区
-                            指定要素的预报数据</a></li>
-                    </ul>
-                </li>
-                <li class="first-menu">
-                    <h1>查询预报统计数据</h1>
-                    <ul class="second-content">
-                        <li class="second-menu"><a href="javascript:;">根据更新时间、预报时间查询指定区域内的要素最大值</a></li>
-                        <li class="second-menu"><a href="javascript:;">根据更新时间、预报时间查询指定区域内的要素最小值</a></li>
-                    </ul>
-                </li>
-                <li class="first-menu">
-                    <h1>最新预报时间查询</h1>
-                    <ul class="second-content">
-                        <li class="second-menu"><a href="javascript:;">获取格点预报最新更新时间及起报时间</a></li>
-                    </ul>
-                </li>
-                <li class="first-menu">
-                    <h1>有无预报数据查询</h1>
-                    <ul class="second-content">
-                        <li class="second-menu"><a href="javascript:;">检查格点指定的起报时间是否有预报数据</a></li>
-                    </ul>
-                </li>
-                <li class="first-menu">
-                    <ul class="second-content">
-                        <li class="second-menu"><a href="javascript:;">查询格点信息</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <ul class="aside-content"></ul>
         </div>
         <div class="container border">
             <h2 class="title">接口测试</h2>
@@ -90,13 +37,17 @@
                 <div class="position">当前测试接口>>用户登录接口</div>
                 <div class="port-block border">
                     <h2 class="port-title port-txt">请输入请求参数</h2>
-                    <div class="port-input">
-                        <label>用户名：</label>
-                        <input type="text" placeholder="请输入用户名">
-                    </div>
-                    <div class="port-input">
-                        <label>密码密文：</label>
-                        <input type="password" placeholder="请输入密码">
+                    <div class="param-list">
+                        <div class="param-block">
+                            <div class="port-input">
+                                <label>用户名：</label>
+                                <input type="text" placeholder="请输入用户名">
+                            </div>
+                            <div class="port-input">
+                                <label>密码密文：</label>
+                                <input type="password" placeholder="请输入密码">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="port-btn clearfix">
@@ -141,6 +92,7 @@
 </div>
 </body>
 <script type="text/javascript" src="3rds/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="3rds/helper.js"></script>
 <script type="text/javascript" src="js/util/current-time.js"></script>
 <script type="text/javascript" src="js/port/init-aside.js"></script>
 <script type="text/javascript" src="js/port/port.js"></script>
