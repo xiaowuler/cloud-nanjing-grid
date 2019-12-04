@@ -87,6 +87,10 @@
     margin-bottom: 10px;
 }
 
+.time-liner .toolbar-title{
+    margin-right: 10px;
+}
+
 .time-line{
     float: left;
 }
@@ -100,6 +104,7 @@
 }
 
 .arrow-prev{
+    margin-right: 10px;
     background: url("../images/prev.png") no-repeat center/cover;
 }
 
@@ -108,6 +113,7 @@
 }
 
 .arrow-next{
+    margin-left: 10px;
     background: url("../images/next.png") no-repeat center/cover;
 }
 
@@ -116,7 +122,7 @@
 }
 
 .arrow-first{
-    margin-right: 5px;
+    margin-right: 10px;
     background: url("../images/first.png") no-repeat center/cover;
 }
 
@@ -125,7 +131,7 @@
 }
 
 .arrow-last{
-    margin-left: 5px;
+    margin-left: 10px;
     background: url("../images/last.png") no-repeat center/cover;
 }
 
@@ -134,7 +140,7 @@
 }
 
 .time-content {
-    width: 390px;
+    width: 430px;
     height: 28px;
     position: relative;
     overflow: hidden;
@@ -147,14 +153,21 @@
 }
 
 .time-content ul li{
-    width: 76px;
+    width: 86px;
     height: 26px;
     /*margin: 0 5px;*/
     line-height: 26px;
     float: left;
-    cursor: pointer;
     text-align: center;
     position: relative;
+
+}
+
+.time-content ul li span{
+    width: 76px;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
     border: 1px solid #125f95;
     background: #004270;
     -webkit-border-radius: 3px;
@@ -162,8 +175,8 @@
     border-radius: 3px;
 }
 
-.time-content ul li.active,
-.time-content ul li:hover{
+.time-content ul li.active span,
+.time-content ul li:hover span{
     border: 0;
     line-height: 28px;
     background: -webkit-linear-gradient(#0072c0, #005088);

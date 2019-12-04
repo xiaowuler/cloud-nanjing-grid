@@ -3,7 +3,7 @@ var TimeLine = function(parent, line, text){
     this.text = text;
     this.Line = line;
     this.Timer = null;
-    this.ImageWidth = 78;
+    this.ImageWidth = 86;
     this.Times = this.Line.find('.time-content');
     this.PrevButton = this.Line.find('.arrow-prev');
     this.NextButton = this.Line.find('.arrow-next');
@@ -32,7 +32,7 @@ var TimeLine = function(parent, line, text){
         this.LastButton.off('click').on('click', this.ActiveLastMarker.bind(this));
         this.PlayButton.off('click').on('click', this.OnPlayButtonClick.bind(this));
         this.PauseButton.off('click').on('click', this.OnPauseButtonClick.bind(this));
-        this.Times.find('li').off('click').on('click', this.OnThumbMarkerClick.bind(this));
+        this.Times.find('li span').off('click').on('click', this.OnThumbMarkerClick.bind(this));
 
         this.SetActiveMarker(this.Times.find('li').length - 1);
     };
@@ -87,7 +87,7 @@ var TimeLine = function(parent, line, text){
     };
 
     this.OnThumbMarkerClick = function(e) {
-        var index = $(e.target).attr("index");
+        var index = $(e.target).parent().attr("index");
         this.SetActiveMarker(index);
         this.reLoadData(index);
     };
@@ -100,7 +100,7 @@ var TimeLine = function(parent, line, text){
         }else {
             this.parent.loadMap();
         }
-    }
+    };
 
     this.OnPlayButtonClick = function (e) {
         $(e.target).addClass('play-disable');

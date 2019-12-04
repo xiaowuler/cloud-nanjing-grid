@@ -60,9 +60,9 @@ var CenterPanel = function () {
             var moment = this.timeUtils.parseStr(item.updateTime, 'YYYY-MM-DD HH:mm:ss');
             var updateTime = moment.format('YYMMDDHH');
             if (index == i){
-                updateDateStr += '<li class="active">'+ updateTime +'</li>';
+                updateDateStr += '<li class="active"><span>'+ updateTime +'</span></li>';
             }else {
-                updateDateStr += '<li>'+ updateTime +'</li>';
+                updateDateStr += '<li><span>'+ updateTime +'</span></li>';
             }
         }.bind(this));
         $('.update-time').html(updateDateStr);
@@ -76,9 +76,9 @@ var CenterPanel = function () {
         $(startDates).each(function(index, item){
             var startTime = moment(item.startTime).format('YYMMDDHH');
             if (index == i){
-                startDateStr += '<li class="active">'+ startTime +'</li>';
+                startDateStr += '<li class="active"><span>'+ startTime +'</span></li>';
             }else {
-                startDateStr += '<li>'+ startTime +'</li>';
+                startDateStr += '<li><span>'+ startTime +'</span></li>';
             }
         }.bind(this));
         $('.start-time').html(startDateStr);
@@ -91,9 +91,9 @@ var CenterPanel = function () {
         $(forecastTimes).each(function(index, item){
             var forecastTime = moment(item.forecastTime).format('YYMMDDHH');
             if (index == i){
-                forecastDateStr += '<li class="active">'+ forecastTime +'</li>';
+                forecastDateStr += '<li class="active"><span>'+ forecastTime +'</span></li>';
             }else {
-                forecastDateStr += '<li>'+ forecastTime +'</li>';
+                forecastDateStr += '<li><span>'+ forecastTime +'</span></li>';
             }
         }.bind(this));
         $('.forecast-time').html(forecastDateStr);
@@ -108,9 +108,9 @@ var CenterPanel = function () {
         $.ajax({
             type: 'POST',
             data: {
-                startDate: moment($('.start-time li.active').text(), 'YYMMDDHH').toDate(),
-                forecastDate: moment($('.forecast-time li.active').text(), 'YYMMDDHH').toDate(),
-                updateDate: moment($('.update-time li.active').text(), 'YYMMDDHH').toDate(),
+                startDate: moment($('.start-time li.active span').text(), 'YYMMDDHH').toDate(),
+                forecastDate: moment($('.forecast-time li.active span').text(), 'YYMMDDHH').toDate(),
+                updateDate: moment($('.update-time li.active span').text(), 'YYMMDDHH').toDate(),
                 forecastModel: $('#model').combobox('getValue'),
                 elementCode: $('#element').combobox('getValue')
             },
