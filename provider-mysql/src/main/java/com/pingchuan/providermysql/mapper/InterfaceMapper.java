@@ -2,6 +2,7 @@ package com.pingchuan.providermysql.mapper;
 
 import com.pingchuan.domain.Interface;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,4 +12,5 @@ public interface InterfaceMapper {
 
     List<Interface> findAll();
 
+    List<Interface> findAllByTypeId(@Param("typeId") int typeId);
 }

@@ -1,6 +1,7 @@
 package com.pingchuan.providermysql.controller;
 
 import com.pingchuan.domain.Interface;
+import com.pingchuan.domain.InterfaceType;
 import com.pingchuan.providermysql.service.InterfaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,11 @@ public class InterfaceController {
     @PostMapping("findAll")
     public List<Interface> findAll(){
         return interfaceService.findAll();
+    }
+
+    @PostMapping("findInterfaceDetail")
+    public List<InterfaceType> findInterfaceDetail(){
+        return interfaceService.findInterfaceDetail();
     }
 
 }

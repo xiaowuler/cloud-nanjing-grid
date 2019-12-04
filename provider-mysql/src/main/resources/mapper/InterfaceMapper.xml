@@ -8,4 +8,7 @@
     <select id="findAll" resultType="com.pingchuan.domain.Interface">
         SELECT id, `name`, type_id typeId, `explain`,enabled FROM interfaces
     </select>
+    <select id="findAllByTypeId" resultType="com.pingchuan.domain.Interface">
+        SELECT id, `name`, type_id typeId, `explain`,enabled FROM interfaces where type_id = #{typeId}
+    </select>
 </mapper>

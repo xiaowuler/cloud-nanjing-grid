@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pingchuan.providermysql.mapper.InterfaceParameterMapper">
+    <select id="findInterfaceParameter" resultType="com.pingchuan.domain.InterfaceParameter">
+        SELECT ip.`name`, type, description, chinese_name chineseName, is_required isRequired FROM interface_parameters ip LEFT JOIN parameters p ON ip.`name` = p.`name` WHERE ip.interface_id = #{id}
+    </select>
+</mapper>
