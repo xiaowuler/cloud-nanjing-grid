@@ -49,7 +49,7 @@ var CenterPanel = function () {
                     return;
                 }
                 this.dateTimes = data;
-                this.setUpdateTimes(data, 0)
+                this.setUpdateTimes(data, data.length - 1)
             }.bind(this)
         })
     }
@@ -67,7 +67,7 @@ var CenterPanel = function () {
         }.bind(this));
         $('.update-time').html(updateDateStr);
 
-        this.setStartTime(data[i].startTimes, 0);
+        this.setStartTime(data[i].startTimes, data[i].startTimes.length - 1);
     }
 
     this.setStartTime = function(startTimes, i){
@@ -82,7 +82,7 @@ var CenterPanel = function () {
             }
         }.bind(this));
         $('.start-time').html(startDateStr);
-        this.setForecastTime(startDates[i].forecasts, 0)
+        this.setForecastTime(startDates[i].forecasts, startDates[i].forecasts.length - 1)
     }
 
     this.setForecastTime = function(forecastTimes, i){

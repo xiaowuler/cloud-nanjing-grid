@@ -3,7 +3,7 @@ var TimeLine = function(parent, line, text){
     this.text = text;
     this.Line = line;
     this.Timer = null;
-    this.ImageWidth = 69;
+    this.ImageWidth = 78;
     this.Times = this.Line.find('.time-content');
     this.PrevButton = this.Line.find('.arrow-prev');
     this.NextButton = this.Line.find('.arrow-next');
@@ -17,7 +17,7 @@ var TimeLine = function(parent, line, text){
         this.Times.find('li').each(function (index, element) {
             $(element).attr('index', index);
         });
-        this.SetActiveMarker(0);
+        this.SetActiveMarker(this.Times.find('li').length - 1);
     };
 
     this.bindClickEvent = function () {
@@ -33,6 +33,8 @@ var TimeLine = function(parent, line, text){
         this.PlayButton.off('click').on('click', this.OnPlayButtonClick.bind(this));
         this.PauseButton.off('click').on('click', this.OnPauseButtonClick.bind(this));
         this.Times.find('li').off('click').on('click', this.OnThumbMarkerClick.bind(this));
+
+        this.SetActiveMarker(this.Times.find('li').length - 1);
     };
 
     this.SetActiveMarker = function (imageIndex) {

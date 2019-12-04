@@ -35,7 +35,7 @@ var Map = function(){
                     weight: 0.5,
                     opacity: 0.5,
                     color: 'yellow',
-                    fillColor: this.getColorByValue(item.value, data.legendLevels),
+                    fillColor: this.getColorByValue(parseFloat(item.value.toFixed(1)), data.legendLevels),
                     fillOpacity: 0.5
                 }
             ).addTo(this.map);
