@@ -26,6 +26,7 @@ var TimeLine = function(parent, line, text){
             $(element).attr('index', index);
         });
 
+        this.Play();
         this.PrevButton.off('click').on('click', this.ActivePrevMarker.bind(this));
         this.NextButton.off('click').on('click', this.ActiveNextMarker.bind(this));
         this.FirstButton.off('click').on('click', this.ActiveFirstMarker.bind(this));
@@ -105,7 +106,15 @@ var TimeLine = function(parent, line, text){
     this.OnPlayButtonClick = function (e) {
         $(e.target).addClass('play-disable');
         $(e.target).next().removeClass('pause-disable');
+        this.Play();
+        // if (this.Line.attr('id') === 'forecast'){
+        //     this.Timer = setInterval(function () {
+        //         this.ActiveNextMarker();
+        //     }.bind(this), 2000);
+        // }
+    };
 
+    this.Play = function () {
         if (this.Line.attr('id') === 'forecast'){
             this.Timer = setInterval(function () {
                 this.ActiveNextMarker();
