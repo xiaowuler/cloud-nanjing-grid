@@ -15,7 +15,7 @@ var App = function () {
         var content = $('.content');
         content.width((width - 20)).height(height - 94);
         $('.aside-content').height(content.height() - 37);
-        $('.port-result').height(content.height() - 458);
+        $('.port-result').height(content.height() - 568);
     };
 };
 

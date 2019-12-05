@@ -105,23 +105,8 @@
     background: #0061a5;
 }
 
-.aside .first-menu:last-child .second-content{
-    display: block!important;
-}
-
-.aside .first-menu:last-child .second-menu{
-    padding-left: 48px;
-    background: none;
-}
-
-.aside .first-menu:last-child .second-menu:before,
-.aside .first-menu:last-child .second-menu:hover:before{
-    left: 22px;
-}
-
 .aside-content{
-    padding-top: 5px;
-    margin-top: -3px;
+    height: calc(100% - 37px);
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -153,20 +138,16 @@
     background: linear-gradient(#004b7f, #004372);
 }
 
-.port-input{
-    margin-bottom: 10px;
-}
-
 .port-input label{
-    width: 75px;
-    margin-left: 8px;
+    width: 120px;
+    margin: 0 8px;
     line-height: 26px;
     text-align: right;
     display: inline-block;
 }
 
 .port-input input{
-    width: 260px;
+    width: 190px;
     padding: 0 10px;
     line-height: 26px;
     background: transparent;
@@ -240,14 +221,36 @@
 }
 
 .port-result{
+    height: calc(100vh - 662px);
     padding: 0 10px;
     overflow-y: auto;
 }
 
 .port-result pre{
+    height: 100%;
     padding: 10px;
 }
 
-.port-txt{
+.param-list{
+    height: 186px;
+    padding-top: 10px;
+    overflow-y: auto;
+}
+
+.param-block{
     margin-bottom: 10px;
+}
+
+.param-block span{
+    margin-left: 20px;
+    line-height: 28px;
+    display: inline-block;
+}
+
+.param-block span.param-type{
+    width: 120px;
+}
+
+.param-block span.param-describe{
+    width: 85px;
 }

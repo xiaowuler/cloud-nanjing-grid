@@ -139,6 +139,8 @@
 }
 
 .content{
+    width: calc(100% - 20px);
+    height: calc(100% - 27px);
     margin: 10px;
     position: relative;
 }
@@ -312,34 +314,24 @@
     border-radius: 0 0 3px 3px;
 }
 
-.aside-content::-webkit-scrollbar,
-.word-width::-webkit-scrollbar,
-.port-result::-webkit-scrollbar{
+::-webkit-scrollbar{
     width:16px;
     height:16px;
 }
 
-.aside-content::-webkit-scrollbar-track,
-.word-width::-webkit-scrollbar-track,
-.port-result::-webkit-scrollbar-track{
+::-webkit-scrollbar-track{
     width: 16px;
     background-color:#00497c;
 }
 
-.aside-content::-webkit-scrollbar-thumb,
-.word-width::-webkit-scrollbar-thumb,
-.port-result::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb{
     background-color:#00538d;
 }
 
-.aside-content::-webkit-scrollbar-button:decrement,
-.word-width::-webkit-scrollbar-button:decrement,
-.port-result::-webkit-scrollbar-button:decrement{
-    background: url("../images/up.png") no-repeat 0 3px;
+::-webkit-scrollbar-button:decrement{
+    background: url("../images/up.png") no-repeat top;
 }
 
-.aside-content::-webkit-scrollbar-button:increment,
-.word-width::-webkit-scrollbar-button:increment,
-.port-result::-webkit-scrollbar-button:increment{
-    background: url("../images/down.png") no-repeat;
+::-webkit-scrollbar-button:increment{
+    background: url("../images/down.png") no-repeat top;
 }

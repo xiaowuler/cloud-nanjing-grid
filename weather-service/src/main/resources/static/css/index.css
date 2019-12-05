@@ -40,8 +40,9 @@
     color: #28edff;
 }
 
-.left-panel{
-    width: 540px;
+.left-panel,
+.right-panel{
+    width: calc((100% - 820px) / 2);
 }
 
 .port-number{
