@@ -4,9 +4,9 @@ var CenterPanel = function () {
 
     this.map = new Map();
     this.timeUtils = new TimeUtil();
-    this.UpdateTimeLine = new TimeLine(this, $('.update-liner'), 'update');
-    this.NewspaperTimeLine = new TimeLine(this, $('.newspaper-liner'), 'start');
-    this.ForecastTimeLine = new TimeLine(this, $('.forecast-liner'), 'forecast');
+    this.UpdateTimeLine = new TimeLine(this, $('#update'), 'update', '#update');
+    this.NewspaperTimeLine = new TimeLine(this, $('#start'), 'start', '#start');
+    this.ForecastTimeLine = new TimeLine(this, $('#forecast'), 'forecast', '#forecast');
 
     this.Startup = function(){
         this.UpdateTimeLine.Startup();
@@ -67,10 +67,10 @@ var CenterPanel = function () {
         }.bind(this));
         $('.update-time').html(updateDateStr);
 
-        this.setStartTime(data[i].startTimes, data[i].startTimes.length - 1);
+        this.setStartTime(data[i].startTimes, data[i].startTimes.length - 1, i);
     }
 
-    this.setStartTime = function(startTimes, i){
+    this.setStartTime = function(startTimes, i, updateIndex){
         var startDates = this.getStartDate(startTimes);
         var startDateStr = "";
         $(startDates).each(function(index, item){
@@ -82,10 +82,10 @@ var CenterPanel = function () {
             }
         }.bind(this));
         $('.start-time').html(startDateStr);
-        this.setForecastTime(startDates[i].forecasts, startDates[i].forecasts.length - 1)
+        this.setForecastTime(startDates[i].forecasts, 0, updateIndex, i)
     }
 
-    this.setForecastTime = function(forecastTimes, i){
+    this.setForecastTime = function(forecastTimes, i, updateIndex, startIndex){
         forecastTimes.sort(this.sortForecastDate);
         var forecastDateStr = "";
         $(forecastTimes).each(function(index, item){
@@ -98,9 +98,9 @@ var CenterPanel = function () {
         }.bind(this));
         $('.forecast-time').html(forecastDateStr);
 
-        this.UpdateTimeLine.bindClickEvent();
-        this.NewspaperTimeLine.bindClickEvent();
-        this.ForecastTimeLine.bindClickEvent();
+        this.NewspaperTimeLine.bindClickEvent(startIndex, updateIndex, i);
+        this.UpdateTimeLine.bindClickEvent(startIndex, updateIndex, i);
+        this.ForecastTimeLine.bindClickEvent(startIndex, updateIndex, i);
         this.loadMap();
     }
 
@@ -117,7 +117,7 @@ var CenterPanel = function () {
             url: 'baseSearch/findNJGridsByNonArea',
             success: function (data) {
                 this.map.clearLayers();
-                this.map.drawPolygon(data);
+                this.map.draw(data, $('#element').combobox('getValue'));
             }.bind(this)
         })
     }

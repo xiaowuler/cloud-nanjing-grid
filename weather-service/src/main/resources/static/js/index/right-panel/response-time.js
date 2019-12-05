@@ -108,7 +108,7 @@ var ResponseTime = function (){
                 enabled: false
             },
             tooltip: {
-                pointFormat: '次数: <b>{point.y}</b>'
+                pointFormat: '时间: <b>{point.y}</b>'
             },
             plotOptions: {
                 column: {

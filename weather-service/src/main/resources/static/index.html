@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>首页</title>
     <meta http-equiv="x-ua-compatible" content="IE=edge" >
     <link rel="stylesheet" href="3rds/easyui.css">
     <link rel="stylesheet" href="3rds/leaflet.css">
@@ -71,8 +71,7 @@
                             <option value="TCC">云量</option>
                             <option value="VIS">能见度</option>
                             <option value="T2M">2米气温</option>
-                            <option value="U10M">10米经向风</option>
-                            <option value="V10M">10米纬向风</option>
+                            <option value="Wind">10米风</option>
                             <option value="R2M">2米相对湿度</option>
                             <option value="WTYPE">天气现象</option>
                         </select>
@@ -82,7 +81,7 @@
             <div class="slider fl">
                 <div class="time-liner clearfix">
                     <span class="toolbar-title fl">更新时间</span>
-                    <div class="time-line update-liner clearfix">
+                    <div class="time-line update-liner clearfix" id = "update">
                         <span class="arrow arrow-first fl"></span>
                         <span class="arrow arrow-prev fl"></span>
                         <div class="time-content fl">
@@ -108,7 +107,7 @@
                 </div>
                 <div class="time-liner clearfix">
                     <span class="toolbar-title fl">起报时间</span>
-                    <div class="time-line newspaper-liner clearfix">
+                    <div class="time-line newspaper-liner clearfix " id="start">
                         <span class="arrow arrow-first fl"></span>
                         <span class="arrow arrow-prev fl"></span>
                         <div class="time-content fl">

@@ -1,4 +1,5 @@
-var TimeLine = function(parent, line, text){
+var TimeLine = function(parent, line, text, id){
+    this.id = id;
     this.parent = parent;
     this.text = text;
     this.Line = line;
@@ -20,7 +21,8 @@ var TimeLine = function(parent, line, text){
         this.SetActiveMarker(this.Times.find('li').length - 1);
     };
 
-    this.bindClickEvent = function () {
+    this.bindClickEvent = function (startTimeIndex, updateTimeIndex, forecastTimeIndex) {
+        //this.Times = this.Line.find('.time-content');
         this.Times.attr("image-count", this.Times.find('li').length);
         this.Times.find('li').each(function (index, element) {
             $(element).attr('index', index);
@@ -35,7 +37,13 @@ var TimeLine = function(parent, line, text){
         this.PauseButton.off('click').on('click', this.OnPauseButtonClick.bind(this));
         this.Times.find('li span').off('click').on('click', this.OnThumbMarkerClick.bind(this));
 
-        this.SetActiveMarker(this.Times.find('li').length - 1);
+        //this.SetActiveMarker(0);
+        if ((startTimeIndex != null || startTimeIndex != undefined) && this.Line.attr('id') === 'start')
+            this.SetActiveMarker(startTimeIndex);
+        else if ((updateTimeIndex != null || updateTimeIndex != undefined) && this.Line.attr('id') === 'update')
+            this.SetActiveMarker(updateTimeIndex);
+        else if ((forecastTimeIndex != null || forecastTimeIndex != undefined) && this.Line.attr('id') === 'forecast')
+            this.SetActiveMarker(forecastTimeIndex);
     };
 
     this.SetActiveMarker = function (imageIndex) {
@@ -56,7 +64,8 @@ var TimeLine = function(parent, line, text){
         var left = parseInt(this.Times.find('ul').css("left").replace("px", ""));
         if (imageOffset.left < listOffset.left)
             this.Times.find('ul').stop().animate({'left': left + (listOffset.left - imageOffset.left)}, 600);
-        else if (imageOffset.right > listOffset.right)
+
+        if (imageOffset.right > listOffset.right)
             this.Times.find('ul').stop().animate({'left': left + (listOffset.right - imageOffset.right)}, 600);
     };
 
@@ -115,10 +124,13 @@ var TimeLine = function(parent, line, text){
     };
 
     this.Play = function () {
+        if (this.Timer !== null)
+            clearInterval(this.Timer);
+
         if (this.Line.attr('id') === 'forecast'){
             this.Timer = setInterval(function () {
                 this.ActiveNextMarker();
-            }.bind(this), 2000);
+            }.bind(this), 5000);
         }
     };
 

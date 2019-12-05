@@ -17,6 +17,10 @@ public class Box {
 
     private double value;
 
+    private String windDirection;
+
+    private double windSpeedLevel;
+
     private String flag;
 
     private List<LegendLevel> legendLevels;

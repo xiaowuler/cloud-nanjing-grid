@@ -11,6 +11,7 @@ import com.pingchuan.dto.web.DrawResult;
 import com.pingchuan.parameter.base.AreaParameter;
 import com.pingchuan.weatherservice.service.BaseSearchService;
 import com.pingchuan.weatherservice.service.LegendLevelService;
+import com.pingchun.utils.CalcUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,15 +35,52 @@ public class BaseSearchController {
 
     @RequestMapping("/findNJGridsByNonArea")
     public DrawResult findNJGridsByNonArea(Date updateDate, Date startDate, Date forecastDate, String elementCode, String forecastModel){
+        List<Box> boxes = new ArrayList<>();
+        if ("Wind".equals(elementCode)){
+            List<AreaElement> uAreaElements = baseSearchService.findNJGridsByNonArea(createAreaParameter(updateDate, startDate, forecastDate, "U10M", forecastModel));
+            List<Location> uLocations = mergeLocation(uAreaElements);
+            List<AreaElement> vAreaElements = baseSearchService.findNJGridsByNonArea(createAreaParameter(updateDate, startDate, forecastDate, "V10M", forecastModel));
+            List<Location> vLocations = mergeLocation(vAreaElements);
+            boxes = calcWind(uLocations, vLocations);
+        }else {
+            List<AreaElement> areaElements = baseSearchService.findNJGridsByNonArea(createAreaParameter(updateDate, startDate, forecastDate, elementCode, forecastModel));
+            List<Location> locations = mergeLocation(areaElements);
+            boxes = getBox(locations, elementCode);
+        }
 
-        List<AreaElement> areaElements = baseSearchService.findNJGridsByNonArea(createAreaParameter(updateDate, startDate, forecastDate, elementCode, forecastModel));
-        List<Location> locations = mergeLocation(areaElements);
-        List<Box> boxes = getBox(locations, elementCode);
         List<LegendLevel> legendLevels = legendLevelService.findAllByType(getTypeByForecastModel(forecastModel));
         DrawResult drawResult = new DrawResult();
         drawResult.setBox(boxes);
         drawResult.setLegendLevels(legendLevels);
         return drawResult;
+    }
+
+    private List<Box> calcWind(List<Location> us, List<Location> vs){
+        List<Box> boxes = new ArrayList<>();
+
+        double lonLength = 119.14 - 118.22;
+        double boxLength = lonLength / 8;
+        for(double x = 118.2; x <= 119.14; x += boxLength){
+            for(double y = 31.14; y <= 32.6; y += boxLength){
+                Box box = new Box();
+                box.setStartLon(x);
+                box.setEndLon(x + boxLength);
+                box.setStartLat(y);
+                box.setEndLat(y + boxLength);
+                List<Location> ulocation = us.stream().filter(l -> l.getLoc()[0] >= box.getStartLon() && l.getLoc()[1] >= box.getStartLat() && l.getLoc()[0] < box.getEndLon() && l.getLoc()[1] < box.getEndLat()).collect(Collectors.toList());
+                List<Location> vlocation = vs.stream().filter(l -> l.getLoc()[0] >= box.getStartLon() && l.getLoc()[1] >= box.getStartLat() && l.getLoc()[0] < box.getEndLon() && l.getLoc()[1] < box.getEndLat()).collect(Collectors.toList());
+                if (ulocation.size() == 0 || vlocation.size() == 0){
+                    continue;
+                }
+
+                double u = ulocation.get(0).getValue();
+                double v = vlocation.get(0).getValue();
+                box.setWindSpeedLevel(CalcUtil.getWindSpeedLevel(CalcUtil.windSpeed(u, v)));
+                box.setWindDirection(CalcUtil.getWindDirectionStr(CalcUtil.windDirection(u, v)));
+                boxes.add(box);
+            }
+        }
+        return boxes;
     }
 
     private String getTypeByForecastModel(String forecastModel){
@@ -97,11 +135,25 @@ public class BaseSearchController {
                 box.setValue(location.get(0).getValue());
                 if ("WTYPE".equals(elementCode)){
                     box.setFlag(getWeatherPhenomena((int) box.getValue()));
+                } else if ("PTYPE".equals(elementCode)) {
+                    box.setFlag(getPhaseState((int) box.getValue()));
                 }
                 boxes.add(box);
             }
         }
         return boxes;
+    }
+
+    private String getPhaseState(int value){
+        if (value ==  3){
+            return "雨";
+        }else  if (value == 4){
+            return "雪";
+        }else if (value == 5){
+            return "雨夹雪";
+        }else {
+            return "";
+        }
     }
 
     private String getWeatherPhenomena(int value){

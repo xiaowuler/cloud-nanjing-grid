@@ -2,6 +2,8 @@ var Map = function(){
 
     this.features = [];
     this.polygons = [];
+    this.images = [];
+    this.feature = null;
 
     this.Startup = function(){
         this.createEasyMap();
@@ -24,6 +26,83 @@ var Map = function(){
         $(this.polygons).each(function (index, polygon) {
             this.map.removeLayer(polygon);
         }.bind(this))
+        $(this.images).each(function (index, image) {
+            this.map.removeLayer(image);
+        }.bind(this))
+
+        if (this.feature != null){
+            this.map.removeLayer(this.feature);
+        }
+    };
+
+    this.draw = function (data, elementCode) {
+        if (elementCode === "Wind"){
+            this.drawWind(data);
+        }else {
+            this.drawPolygon(data)
+        }
+    };
+
+    this.drawWind = function (data) {
+        this.feature = new L.FeatureGroup();
+        $(data.box).each(function (index, item) {
+            var imageInfo = this.calcCenterPoint(item.startLat, item.endLat, item.startLon, item.endLon);
+            this.feature.addLayer(L.marker(imageInfo.center, {
+                icon: L.divIcon({
+                    className: 'wind-box-label',
+                    html: "{0}级".format(item.windSpeedLevel)
+                })
+            }));
+
+            this.feature.addLayer(L.marker(imageInfo.center, {
+                icon: L.icon({
+                    iconUrl: this.getWindDirectionImageUrl(item.windDirection),
+                    iconSize: [16, 16],
+                    iconAnchor:[8, 20]
+
+                }),
+                title: item.windDirection
+            }));
+
+        }.bind(this));
+        this.map.addLayer(this.feature);
+    };
+
+    this.getWindDirectionImageUrl = function (windDirection) {
+        switch (windDirection) {
+            case '东北风':
+                return 'images/wind-direction/northeaster.png';
+                break;
+            case '东风':
+                return 'images/wind-direction/east.png';
+                break;
+            case '东南风':
+                return 'images/wind-direction/southeaster.png';
+                break;
+            case '南风':
+                return 'images/wind-direction/south.png';
+                break;
+            case '西南风':
+                return 'images/wind-direction/southwester.png';
+                break;
+            case '西风':
+                return 'images/wind-direction/west.png';
+                break;
+            case '西北风':
+                return 'images/wind-direction/northwest.png';
+                break;
+            default:
+                return 'images/wind-direction/north.png';
+        }
+    }
+
+    this.calcCenterPoint = function (startLat, endLat, startLon, endLon) {
+        var lonHalf = (endLon - startLon) / 2;
+        var latHalf = (endLat - startLat) / 2;
+
+        return {
+            center: L.latLng(startLat + latHalf, startLon + lonHalf)
+        }
     }
 
     this.drawPolygon = function(data) {
@@ -43,6 +122,8 @@ var Map = function(){
             this.createLabelsLayer(polygon, item.flag == null ? item.value.toFixed(1) : item.flag, null)
         }.bind(this));
     };
+
+
 
     this.createLabelsLayer = function (polygon, label) {
         var feature = new L.FeatureGroup();

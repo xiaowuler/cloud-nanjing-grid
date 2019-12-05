@@ -37,6 +37,11 @@ public class OtherController {
 
     @RequestMapping("/findNewestTimeByModeCode")
     public List<UpdateTime> findNewestTimeByModeCode(String modeCode, String elementCode){
+
+        if ("Wind".equals(elementCode)) {
+            elementCode = "U10M";
+        }
+
         NewestParameter newestParameter = new NewestParameter();
         newestParameter.setForecastModel(modeCode);
         newestParameter.setElementCode(elementCode);

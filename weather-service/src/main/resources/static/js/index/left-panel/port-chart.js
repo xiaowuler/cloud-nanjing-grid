@@ -89,10 +89,10 @@ var PortChart = function () {
 
     this.ReloadChartData = function (result) {
         var elementSeries = {};
-        var names = ['次数', '格点'];
+        var names = ['次数'];
         var xMarks = this.GetXMarks(result);
         var value = this.GetElementValues(result);
-        console.log(value);
+        //console.log(value);
         var series = this.GetElementSeries(names, value);
         elementSeries = series;
         this.ShowPortChart(xMarks, elementSeries);
@@ -108,14 +108,14 @@ var PortChart = function () {
 
     this.GetElementValues = function (result) {
         var count = [];
-        var gridCount = [];
-        console.log(result);
+        //var gridCount = [];
+        //console.log(result);
         result.forEach(function (item) {
             count.push(item.count);
-            gridCount.push(parseInt(item.gridCount));
+            //gridCount.push(parseInt(item.gridCount));
         });
 
-        return [count, gridCount]
+        return [count]
     };
 
     this.GetElementSeries = function (name, data) {
