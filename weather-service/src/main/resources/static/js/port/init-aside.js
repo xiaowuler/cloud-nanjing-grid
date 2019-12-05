@@ -4,11 +4,13 @@ var InitAside = function (){
 
     this.Startup = function(){
         this.Reload();
-        this.RightPanel.Reload(1);
+
         $('.first-menu h1').on('click', this.ShowSecondMenu.bind(this));
         $('.second-content li').on('click', this.OnSecondMenuClick.bind(this));
         $('.first-menu').eq(0).find('ul').slideDown();
         $('.second-content li').eq(0).trigger('click');
+        this.RightPanel.Reload(1);
+        this.RightPanel.ReloadInterfaceUrl('baseSearch/findNJGridsByArea');
     };
 
     this.Reload = function () {
@@ -49,7 +51,7 @@ var InitAside = function (){
                 var firstUl = $("<ul class='second-content'></ul>");
                 for(var j = 0; j < secondText[i].length; j++){
                     firstUl.appendTo(firstLevel);
-                    $("<li class='second-menu' index='{0}'></li>".format(secondText[i][j].id))
+                    $("<li class='second-menu' index='{0}' name='{1}'></li>".format(secondText[i][j].id, secondText[i][j].name))
                         .appendTo(firstUl)
                         .append($("<a href='javascript:;'></a>").html(secondText[i][j].explain)
                         );
@@ -79,6 +81,7 @@ var InitAside = function (){
             text = text;
         $('.position').text('{0}>>{1}'.format(text, $(event.target).text()));
 
-        this.RightPanel.Reload(parseInt($(event.target).parent('li').attr('index')));
+        this.RightPanel.Reload(parseInt($(event.target).attr('index')));
+        this.RightPanel.ReloadInterfaceUrl($(event.target).attr('name'));
     };
 };
