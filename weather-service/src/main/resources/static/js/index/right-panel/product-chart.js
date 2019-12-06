@@ -7,7 +7,7 @@ var ProductChart = function () {
     this.TimeUtil = new TimeUtil();
 
     this.Startup = function () {
-        this.getDataByPortClick();
+        this.getDataByPortClick('本周');
         $('.number-select a').on('click', this.OnTimeSelect.bind(this));
         $('.number-select').on('mouseover', this.RemoveSetInterval.bind(this));
         $('.number-select').on('mouseout', this.AddSetInterval.bind(this));
@@ -52,30 +52,36 @@ var ProductChart = function () {
 
     this.getDataByPortClick = function(time){
         if (time === '本周'){
-            if (this.thisWeek == null){
+            if (this.thisWeek == null || this.thisWeek === undefined){
                 var startTime = this.TimeUtil.GetWeekStartTime();
                 var endTime = this.TimeUtil.GetWeekEndTime();
-                this.Reload(startTime, endTime);
+                this.Reload(startTime, endTime, "thisWeek");
                 return false;
+            }else {
+                this.ReloadChartData(this.thisWeek);
             }
         }else if(time === '本月'){
-            if (this.thisMonth == null){
+            if (this.thisMonth == null || this.thisMonth === undefined){
                 var startMonthTime = this.TimeUtil.GetMonthStartTime();
                 var endMonthTime = this.TimeUtil.GetMonthEndTime();
-                this.Reload(startMonthTime, endMonthTime);
+                this.Reload(startMonthTime, endMonthTime, 'thisMonth');
                 return false;
+            }else {
+                this.ReloadChartData(this.thisMonth);
             }
         }else {
-            if (this.thisYear === null){
+            if (this.thisYear === null || this.thisYear === undefined){
                 var startDate = this.TimeUtil.GetYearStartTime();
                 var endDate = this.TimeUtil.GetYearEndTime();
-                this.Reload(startDate, endDate);
+                this.Reload(startDate, endDate, 'thisYear');
                 return false;
+            }else {
+                this.ReloadChartData(this.thisYear);
             }
         }
     };
 
-    this.Reload = function(startTime, endTime){
+    this.Reload = function(startTime, endTime, flag){
         if (startTime === undefined || endTime === undefined) {
             startTime = this.TimeUtil.GetWeekStartTime();
             endTime = this.TimeUtil.GetWeekEndTime();
@@ -91,10 +97,21 @@ var ProductChart = function () {
             },
             url: 'stat/findTypeCallByTimeRange',
             success: function (data) {
+                this.saveData(flag, data);
                 this.ReloadChartData(data);
             }.bind(this)
         })
     };
+
+    this.saveData = function(flag, data){
+        if (flag === 'thisWeek'){
+            this.thisWeek = data;
+        }else if (flag === 'thisMonth'){
+            this.thisMonth = data;
+        }else {
+            this.thisYear = data;
+        }
+    }
 
     this.ReloadChartData = function (result) {
         var elementSeries = {};
