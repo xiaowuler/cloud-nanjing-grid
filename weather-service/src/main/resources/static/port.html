@@ -41,38 +41,20 @@
                 </div>
                 <div class="port-btn clearfix">
                     <button class="btn-address"><i></i>生成接口请求地址URL</button>
-                    <button class="btn-delete"><i></i>清除URL</button>
+                    <button class="btn-delete" id="delete"><i></i>清除URL</button>
                 </div>
                 <div class="port-block border">
                     <h2 class="port-title">接口请求地址参数</h2>
-                    <div class="port-param">getShortTermStation?<br>
-                        token=ss&startTime=20191007160437&forecastTime=&areaCode=320000&element=temperature&stationNo=ss&forecastModel=ss</div>
+                    <div class="port-param"></div>
                 </div>
                 <div class="port-btn clearfix">
-                    <button class="btn-submit"><i></i>提交结果</button>
-                    <button class="btn-delete"><i></i>清除结果</button>
+                    <button class="btn-submit" id="submit-result"><i></i>提交结果</button>
+                    <button class="btn-delete" id="delete-result"><i></i>清除结果</button>
                 </div>
                 <div class="port-block border">
                     <h2 class="port-title">请求结果</h2>
                     <div class="port-result">
-                        <pre>
-{
-    "error": 0,
-    "message": "",
-    "data": {
-        "elementInfo": {
-            "initialTime": "2019-10-17 20:00:00",
-            "modeCode": "SPCC",
-            "elementCode": "VIS",
-            "orgCode": "BEHF",
-            "resolution": {
-                "row": 221,
-                "column": 243
-            }
-        }
-    }
-},
-                        </pre>
+                        <pre id="result"></pre>
                     </div>
                 </div>
             </div>

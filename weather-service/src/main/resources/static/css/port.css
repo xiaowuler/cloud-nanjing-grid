@@ -215,13 +215,13 @@
 }
 
 .port-param{
-    height: 86px;
+    height: 56px;
     padding: 0 10px;
     line-height: 25px;
 }
 
 .port-result{
-    height: calc(100vh - 662px);
+    height: calc(100vh - 632px);
     padding: 0 10px;
     overflow-y: auto;
 }
@@ -229,6 +229,11 @@
 .port-result pre{
     height: 100%;
     padding: 10px;
+    white-space:pre-wrap;
+    white-space:-moz-pre-wrap;
+    white-space:-pre-wrap;
+    white-space:-o-pre-wrap;
+    word-wrap:break-word
 }
 
 .param-list{

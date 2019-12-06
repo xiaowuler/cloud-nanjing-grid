@@ -1,5 +1,7 @@
 var InitAside = function (){
     this.menuValue = null;
+
+
     this.RightPanel = new RightPanel(this);
 
     this.Startup = function(){
@@ -7,10 +9,8 @@ var InitAside = function (){
 
         $('.first-menu h1').on('click', this.ShowSecondMenu.bind(this));
         $('.second-content li').on('click', this.OnSecondMenuClick.bind(this));
-        $('.first-menu').eq(0).find('ul').slideDown();
         $('.second-content li').eq(0).trigger('click');
-        this.RightPanel.Reload(1);
-        this.RightPanel.ReloadInterfaceUrl('baseSearch/findNJGridsByArea');
+        $('.first-menu').eq(0).find('ul').slideDown();
     };
 
     this.Reload = function () {
@@ -81,7 +81,18 @@ var InitAside = function (){
             text = text;
         $('.position').text('{0}>>{1}'.format(text, $(event.target).text()));
 
-        this.RightPanel.Reload(parseInt($(event.target).attr('index')));
-        this.RightPanel.ReloadInterfaceUrl($(event.target).attr('name'));
+        var index = null;
+        var name = null;
+        if ($(event.target).is('li')){
+            index = $(event.target).attr('index');
+            name = $(event.target).attr('name');
+        } else {
+            index = $(event.target).parent('li').attr('index');
+            name = $(event.target).parent('li').attr('name');
+        }
+        this.RightPanel.Reload(parseInt(index), name);
+        this.RightPanel.Startup(name);
+        $('#result').empty();
+        $('.port-param').empty();
     };
 };
