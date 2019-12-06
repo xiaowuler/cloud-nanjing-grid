@@ -1,0 +1,248 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta name="generator" content="Aspose.Words for .NET 15.1.0.0"/>
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/iframe.css">
+</head>
+<body>
+<div class="iframe-content">
+    <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0">
+        <tr>
+            <td style="vertical-align:top; width:404pt">
+                <p style="line-height: 25px;text-align:justify; text-indent:32px;font-size: 14px">
+                    用户在调用本系统提供的所有查询服务和数据上报服务前，需要先访问登录接口，登录本系统，以便获取访问本系统的接口服务的唯一凭证(token)。
+                            token的有效期为半小时，即用户在连续半个小时内，未访问本系统的任何需要登录才能访问的接口服务，则用户本次登录获取的token失效，需要重新登录才能访问接口服务。（
+                    <span style="color:#ff0000;">提示：有些接口查询出的数据量太大，耗时太长，请把请求条件填写具体之后进行查询</span>）。
+                </p>
+            </td>
+        </tr>
+    </table>
+    <p style="margin: 10px 0;font-size: 16px;font-weight: bold;">1、接口返回码定义</p>
+    <table class="table" cellspacing="0" cellpadding="0" style="text-align: center;border-collapse:collapse; width:415.8pt; font-size: 14px">
+        <tr>
+            <th class="td-title">返回码(retCode)</th>
+            <th class="td-title">说明</th>
+        </tr>
+        <tr>
+            <td class="td-tbody" style="">1</td>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">操作失败</td>
+        </tr>
+        <tr>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">2</td>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">操作成功</td>
+        </tr>
+        <tr>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">3</td>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">登录错误</td>
+        </tr>
+        <tr>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">4</td>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">参数错误</td>
+        </tr>
+        <tr>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">5</td>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">未查询到符合条件的数据</td>
+        </tr>
+        <tr>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">6</td>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">接口未开启</td>
+        </tr>
+        <tr>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">7</td>
+            <td class="td-tbody" style="height: 30px;background: #004270; border:1px solid #125f95;">权限验证有误</td>
+        </tr>
+    </table>
+    <p style="font-size:10.5pt; line-height:108%; margin:0pt 0pt 8pt; orphans:0; text-align:justify; widows:0"><span
+            style="font-family:仿宋; font-size:10.5pt">&#xa0;</span></p>
+    <p style="margin: 10px 0;font-size: 16px;font-weight: bold;">2、地区编码字典定义</p>
+    <table class="table" cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt; width:415.8pt">
+        <tr>
+            <th>地区编码值</th>
+            <th>说明</th>
+        </tr>
+        <tr>
+            <td>320101</td>
+            <td>主城区</td>
+        </tr>
+        <tr>
+            <td>320111</td>
+            <td>浦口</td>
+        </tr>
+        <tr>
+            <td>320115</td>
+            <td>江宁</td>
+        </tr>
+        <tr>
+            <td>320116</td>
+            <td>六合</td>
+        </tr>
+        <tr>
+            <td>320117</td>
+            <td>溧水</td>
+        </tr>
+        <tr>
+            <td>320118</td>
+            <td>高淳</td>
+        </tr>
+    </table>
+    <p style="font-size:10.5pt; line-height:108%; margin:0pt 0pt 8pt; orphans:0; text-align:justify; widows:0"><span
+            style="font-family:仿宋; font-size:10.5pt">&#xa0;</span></p>
+    <p style="margin: 10px 0;font-size: 16px;font-weight: bold;">3、预报要素字典定义</p>
+    <table class="table" cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
+        <tr>
+            <th>要素编码</th>
+            <th>描述</th>
+        </tr>
+        <tr>
+            <td>WTYPE</td>
+            <td>天气现象</td>
+        </tr>
+        <tr>
+            <td>VIS</td>
+            <td>能见度</td>
+        </tr>
+        <tr>
+            <td>U10M</td>
+            <td>米经向风</td>
+        </tr>
+        <tr>
+            <td>V10M</td>
+            <td>10米纬向风</td>
+        </tr>
+        <tr>
+            <td>TCC</td>
+            <td>云量</td>
+        </tr>
+        <tr>
+            <td>T2M</td>
+            <td>2米气温</td>
+        </tr>
+        <tr>
+            <td>R2M</td>
+            <td>2米相对湿度</td>
+        </tr>
+        <tr>
+            <td>PTYPE</td>
+            <td>相态</td>
+        </tr>
+        <tr>
+            <td>PRE</td>
+            <td>降水</td>
+        </tr>
+    </table>
+    <p style="font-size:10.5pt; line-height:108%; margin:0pt 0pt 8pt; orphans:0; text-align:justify; widows:0"><span
+            style="font-family:仿宋; font-size:10.5pt">&#xa0;</span></p>
+    <p style="margin: 10px 0;font-size: 16px;font-weight: bold;"></p>4、天气现象字典定义</p>
+    <table class="table" cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt; width:397.65pt">
+        <tr>
+            <th>天气现象编码</th>
+            <th>说明</th>
+            <th>天气现象编码</th>
+            <th>说明</td>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>晴</td>
+            <td>15</td>
+            <td>中雪</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>多云</td>
+            <td>16</td>
+            <td>大雪</td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>阴</td>
+            <td>17</td>
+            <td>暴雪</td>
+        </tr>
+        <tr>
+            <td>03</td>
+            <td>阵雨</td>
+            <td>18</td>
+            <td>雾</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>雷阵雨</td>
+            <td>19</td>
+            <td>冻雨</td>
+        </tr>
+        <tr>
+            <td>05</td>
+            <td>雷阵雨并伴有冰雹</td>
+            <td>20</td>
+            <td>沙尘暴</td>
+        </tr>
+        <tr>
+            <td>06</td>
+            <td>雨夹雪</td>
+            <td>21</td>
+            <td>小到中雨</td>
+        </tr>
+        <tr>
+            <td>07</td>
+            <td>小雨</td>
+            <td>22</td>
+            <td>中到大雨</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>中雨</td>
+            <td>23</td>
+            <td>大到暴雨</td>
+        </tr>
+        <tr>
+            <td>09</td>
+            <td>中雨</td>
+            <td>24</td>
+            <td>暴雨到大暴雨</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>暴雨</td>
+            <td>25</td>
+            <td>大暴雨到特大暴雨</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>大暴雨</td>
+            <td>26</td>
+            <td>小到中雪</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>特大暴雨</td>
+            <td>27</td>
+            <td>中到大雪</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>阵雪</td>
+            <td>28</td>
+            <td>大到暴雪</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>小雪</td>
+            <td>53</td>
+            <td>霾</td>
+        </tr>
+    </table>
+    <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span
+            style="-aw-bookmark-end:_Hlk26521546"></span><span style="font-family:楷体; font-size:20pt">&#xa0;</span></p>
+</div>
+<div class="cnzz" style="display: none;">
+    <script src="https://s23.cnzz.com/z_stat.php?id=1277655852&web_id=1277655852" language="JavaScript"></script>
+</div>
+<div class="docpe" style="position: absolute;color: white;margin-left:-450;">
+    <a target="_blank" href="http://www.docpe.com">档铺网——在线文档免费处理</a>
+</div>
+</body>
+</html>
