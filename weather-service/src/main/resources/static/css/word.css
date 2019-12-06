@@ -45,6 +45,7 @@
 .word-content{
     height: 100%;
     margin-left: 250px;
+    overflow-y: auto;
 }
 
 .word-width{
