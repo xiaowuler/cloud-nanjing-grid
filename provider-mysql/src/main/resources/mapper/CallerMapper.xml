@@ -5,5 +5,8 @@
     <select id="findOneByUsernameAndPassword" resultType="com.pingchuan.domain.Caller">
         SELECT code, department, login_name loginName, login_password loginPassword, role, `enabled`, real_name realName FROM callers WHERE login_name = #{username} and login_password = #{password} and `enabled` = 1
     </select>
+    <select id="findOneByLoginName" resultType="com.pingchuan.domain.Caller">
+        SELECT code, department, login_name loginName, login_password loginPassword, role, `enabled`, real_name realName FROM callers WHERE login_name = #{loginName} and `enabled` = 1
+    </select>
 
 </mapper>

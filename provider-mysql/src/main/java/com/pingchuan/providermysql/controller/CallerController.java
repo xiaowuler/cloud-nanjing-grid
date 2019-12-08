@@ -5,6 +5,7 @@ import com.pingchuan.providermysql.service.CallerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("caller")
@@ -17,5 +18,10 @@ public class CallerController {
     @PostMapping("/findOneByUsernameAndPassword")
     public Caller findOneByUsernameAndPassword(String username, String password){
         return callerService.findOneByUsernameAndPassword(username, password);
+    }
+
+    @PostMapping("/findOneByLoginName")
+    public Caller findOneByLoginName(@RequestParam String loginName){
+        return callerService.findOneByLoginName(loginName);
     }
 }

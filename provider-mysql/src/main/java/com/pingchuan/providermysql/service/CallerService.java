@@ -4,4 +4,6 @@ import com.pingchuan.domain.Caller;
 
 public interface CallerService {
     Caller findOneByUsernameAndPassword(String username, String password);
+
+    Caller findOneByLoginName(String loginName);
 }

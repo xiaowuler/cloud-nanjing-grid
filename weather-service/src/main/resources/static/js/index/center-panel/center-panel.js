@@ -55,21 +55,19 @@ var CenterPanel = function () {
     }
 
     this.setUpdateTimes = function (data, i) {
-        var test = ['20191011', '20191012', '20191013', '20191011', '20191012', '20191013']
         var updateDateStr = "";
-        $(test).each(function(index, item){
-            //var moment = this.timeUtils.parseStr(item.updateTime, 'YYYY-MM-DD HH:mm:ss');
-            //var updateTime = moment.format('YYMMDDHH');
+        $(data).each(function(index, item){
+            var moment = this.timeUtils.parseStr(item.updateTime, 'YYYY-MM-DD HH:mm:ss');
+            var updateTime = moment.format('YYMMDDHH');
             if (index == i){
-                updateDateStr += '<li class="active"><span>'+ item +'</span></li>';
+                updateDateStr += '<li class="active"><span>'+ updateTime +'</span></li>';
             }else {
-                updateDateStr += '<li><span>'+ item +'</span></li>';
+                updateDateStr += '<li><span>'+ updateTime +'</span></li>';
             }
         }.bind(this));
         $('.update-time').html(updateDateStr);
 
-        //this.setStartTime(data[i].startTimes, data[i].startTimes.length - 1, i);
-        this.setStartTime(data[i].startTimes, data[i].startTimes.length - 1, 5);
+        this.setStartTime(data[i].startTimes, data[i].startTimes.length - 1, i);
     }
 
     this.setStartTime = function(startTimes, i, updateIndex){

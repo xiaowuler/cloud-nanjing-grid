@@ -18,7 +18,7 @@ var TimeLine = function(parent, line, text, id){
         this.Times.find('li').each(function (index, element) {
             $(element).attr('index', index);
         });
-        this.SetActiveMarker(this.Times.find('li').length - 1);
+        //this.SetActiveMarker(this.Times.find('li').length - 1);
     };
 
     this.bindClickEvent = function (startTimeIndex, updateTimeIndex, forecastTimeIndex) {
@@ -54,6 +54,21 @@ var TimeLine = function(parent, line, text, id){
         this.Times.attr("image-index", imageIndex);
     };
 
+    // this.MakeVisible = function (index) {
+    //     var imageOffset = this.Times.find('li').eq(index).offset();
+    //     imageOffset.right = imageOffset.left + this.ImageWidth;
+    //
+    //     var listOffset = this.Times.offset();
+    //     listOffset.right = listOffset.left + this.Times.width();
+    //
+    //     var left = parseInt(this.Times.find('ul').css("left").replace("px", ""));
+    //     if (imageOffset.left < listOffset.left)
+    //         this.Times.find('ul').stop().animate({'left': left + (listOffset.left - imageOffset.left)}, 600);
+    //
+    //     if (imageOffset.right > listOffset.right)
+    //         this.Times.find('ul').stop().animate({'left': left + (listOffset.right - imageOffset.right)}, 600);
+    // };
+
     this.MakeVisible = function (index) {
         var imageOffset = this.Times.find('li').eq(index).offset();
         imageOffset.right = imageOffset.left + this.ImageWidth;
@@ -62,11 +77,12 @@ var TimeLine = function(parent, line, text, id){
         listOffset.right = listOffset.left + this.Times.width();
 
         var left = parseInt(this.Times.find('ul').css("left").replace("px", ""));
-        if (imageOffset.left < listOffset.left)
-            this.Times.find('ul').stop().animate({'left': left + (listOffset.left - imageOffset.left)}, 600);
-
-        if (imageOffset.right > listOffset.right)
+        if (imageOffset.left < listOffset.left) {
+            this.Times.find('ul').stop().animate({'left': 0}, 600);
+        }
+        else if (imageOffset.right > listOffset.right) {
             this.Times.find('ul').stop().animate({'left': left + (listOffset.right - imageOffset.right)}, 600);
+        }
     };
 
     this.ActivePrevMarker = function () {
@@ -130,7 +146,7 @@ var TimeLine = function(parent, line, text, id){
         if (this.Line.attr('id') === 'forecast'){
             this.Timer = setInterval(function () {
                 this.ActiveNextMarker();
-            }.bind(this), 5000);
+            }.bind(this), 15000);
         }
     };
 

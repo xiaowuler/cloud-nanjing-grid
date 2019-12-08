@@ -18,4 +18,9 @@ public class CallerServiceImpl implements CallerService {
     public Caller findOneByUsernameAndPassword(String username, String password) {
         return callerMapper.findOneByUsernameAndPassword(username, password);
     }
+
+    @Override
+    public Caller findOneByLoginName(String loginName) {
+        return callerMapper.findOneByLoginName(loginName);
+    }
 }

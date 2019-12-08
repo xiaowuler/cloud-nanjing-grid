@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @EnableFeignClients
 @SpringBootApplication(exclude={
@@ -17,4 +19,8 @@ public class WeatherServiceApplication {
         SpringApplication.run(WeatherServiceApplication.class, args);
     }
 
+    @Bean
+    public BCryptPasswordEncoder encoding(){
+        return new BCryptPasswordEncoder();
+    }
 }
