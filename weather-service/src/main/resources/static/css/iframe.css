@@ -1,0 +1,30 @@
+.iframe-content{
+    padding: 10px;
+}
+
+.table{
+    text-align: center!important;
+    border-collapse: collapse!important;
+    width: 415.8pt!important;
+    font-size: 14px!important;
+}
+
+.table th{
+    height: 30px!important;
+    vertical-align: middle!important;
+    border:1px solid #125f95!important;
+    background: -webkit-linear-gradient(#004b7f, #004372)!important;
+    background: linear-gradient(#004b7f, #004372)!important;
+}
+
+.table td{
+    height: 30px!important;
+    padding: 5px!important;
+    text-align: center!important;
+    background: #004270!important;
+    border:1px solid #125f95!important;
+}
+
+.table p{
+    margin: 0!important;
+}

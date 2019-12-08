@@ -1,0 +1,2571 @@
+<html>
+
+<head>
+    <meta http-equiv=Content-Type content="text/html; charset=gb2312">
+    <meta name=Generator content="Microsoft Word 15 (filtered)">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/iframe.css">
+    <style>
+        <!--
+        /* Font Definitions */
+        @font-face
+        {font-family:宋体;
+            panose-1:2 1 6 0 3 1 1 1 1 1;}
+        @font-face
+        {font-family:"Cambria Math";
+            panose-1:2 4 5 3 5 4 6 3 2 4;}
+        @font-face
+        {font-family:Calibri;
+            panose-1:2 15 5 2 2 2 4 3 2 4;}
+        @font-face
+        {font-family:楷体;
+            panose-1:2 1 6 9 6 1 1 1 1 1;}
+        @font-face
+        {font-family:仿宋;
+            panose-1:2 1 6 9 6 1 1 1 1 1;}
+        @font-face
+        {font-family:"Microsoft YaHei UI";
+            panose-1:2 11 5 3 2 2 4 2 2 4;}
+        @font-face
+        {font-family:"\@仿宋";}
+        @font-face
+        {font-family:"\@楷体";}
+        @font-face
+        {font-family:"\@宋体";
+            panose-1:2 1 6 0 3 1 1 1 1 1;}
+        @font-face
+        {font-family:"\@Microsoft YaHei UI";}
+        /* Style Definitions */
+        p.MsoNormal, li.MsoNormal, div.MsoNormal
+        {margin:0cm;
+            margin-bottom:.0001pt;
+            text-align:justify;
+            text-justify:inter-ideograph;
+            font-size:20.0pt;
+            font-family:楷体;}
+        p.MsoHeader, li.MsoHeader, div.MsoHeader
+        {mso-style-link:"页眉 字符";
+            margin:0cm;
+            margin-bottom:.0001pt;
+            text-align:justify;
+            text-justify:inter-ideograph;
+            font-size:20.0pt;
+            font-family:楷体;}
+        p.MsoFooter, li.MsoFooter, div.MsoFooter
+        {mso-style-link:"页脚 字符";
+            margin:0cm;
+            margin-bottom:.0001pt;
+            text-align:justify;
+            text-justify:inter-ideograph;
+            font-size:20.0pt;
+            font-family:楷体;}
+        p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+        {mso-style-link:"批注框文本 字符";
+            margin:0cm;
+            margin-bottom:.0001pt;
+            text-align:justify;
+            text-justify:inter-ideograph;
+            font-size:9.0pt;
+            font-family:"Microsoft YaHei UI",sans-serif;}
+        span.a
+        {mso-style-name:"页眉 字符";
+            mso-style-link:页眉;}
+        span.a0
+        {mso-style-name:"页脚 字符";
+            mso-style-link:页脚;}
+        span.a1
+        {mso-style-name:"批注框文本 字符";
+            mso-style-link:批注框文本;
+            font-family:"Microsoft YaHei UI",sans-serif;}
+        .MsoChpDefault
+        {font-size:20.0pt;}
+        /* Page Definitions */
+        @page WordSection1
+        {size:595.3pt 841.9pt;
+            margin:72.0pt 90.0pt 72.0pt 90.0pt;
+            layout-grid:15.6pt;}
+        div.WordSection1
+        {page:WordSection1;}
+        -->
+
+        span,p,a{
+            font-family: "微软雅黑"!important;
+            color: #a2d9ff!important;
+        }
+    </style>
+
+</head>
+
+<body lang=EN-GB style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+    <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:0cm;line-height:107%;page-break-after:avoid'><b><span lang=EN-US
+                                                                  style='font-size:12.0pt;line-height:107%;font-family:仿宋'>1</span></b><b><span
+            lang=ZH-CN style='font-size:12.0pt;line-height:107%;font-family:仿宋'>、获取格点预报最新更新时间及起报时间</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>（</span></b><b><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+font-family:仿宋'>1</span></b><b><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>）接口调用请求说明</span></b></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=553
+           style='width:415.05pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=118 valign=top style='width:88.65pt;border:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋'>接口</span></b><b><span lang=EN-US style='font-size:10.5pt;
+  line-height:107%;font-family:仿宋;color:black'>ID</span></b></p>
+            </th>
+            <th width=435 colspan=4 valign=top style='width:326.4pt;border:solid black 1.0pt;
+  border-left:none;background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>http://ip:port/otherSearch/findNewestTime</span></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=118 valign=top style='width:88.65pt;border:solid black 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>参数代码</span></b></p>
+            </td>
+            <td width=88 valign=top style='width:65.65pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>中文名</span></b></p>
+            </td>
+            <td width=72 valign=top style='width:54.3pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:
+  #D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>参数类型</span></b></p>
+            </td>
+            <td width=198 valign=top style='width:148.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>赋值格式</span></b><b><span lang=EN-US
+                                                           style='font-size:10.5pt;line-height:107%;font-family:仿宋;color:black'>/</span></b><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>示例</span></b></p>
+            </td>
+            <td width=77 valign=top style='width:58.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>必选</span></b><b><span lang=EN-US
+                                                         style='font-size:10.5pt;line-height:107%;font-family:仿宋;color:black'>/</span></b><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>可选</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=118 valign=top style='width:88.65pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>token</span></p>
+            </td>
+            <td width=88 valign=top style='width:65.65pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>唯一凭证</span></p>
+            </td>
+            <td width=72 valign=top style='width:54.3pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字符串</span></p>
+            </td>
+            <td width=198 valign=top style='width:148.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>登录者访问本系统的接口服务的唯一凭证，由登录时候获得</span></p>
+            </td>
+            <td width=77 valign=top style='width:58.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>必选</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=118 valign=top style='width:88.65pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>forecastModel</span></p>
+            </td>
+            <td width=88 valign=top style='width:65.65pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>预报模式</span></p>
+            </td>
+            <td width=72 valign=top style='width:54.3pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字符串</span></p>
+            </td>
+            <td width=198 valign=top style='width:148.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>必须为大写字母，如</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:107%;font-family:仿宋'>NJGRID-STANDARD,NJGRID-REALTIME</span></p>
+            </td>
+            <td width=77 valign=top style='width:58.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>&nbsp;</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+107%'><b><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>（</span></b><b><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+font-family:仿宋'>2</span></b><b><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>）接口响应说明</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>返回值字段说明：</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=548
+           style='width:411.1pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=85 style='width:63.8pt;border:solid windowtext 1.0pt;background:
+  #BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字段名</span></b></p>
+            </th>
+            <th width=123 style='width:92.15pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </th>
+            <th width=340 colspan=2 style='width:9.0cm;border:solid windowtext 1.0pt;
+  border-left:none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=85 valign=top style='width:63.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>retCode</span></p>
+            </td>
+            <td width=123 valign=top style='width:92.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>Integer</span></p>
+            </td>
+            <td width=340 colspan=2 valign=top style='width:9.0cm;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>返回码。参见【</span><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:"Calibri",sans-serif'><a href="#_1、接口返回码定义"><span lang=ZH-CN
+                                                                style='font-family:仿宋;color:blue'>接口返回码定义</span></a></span><span lang=ZH-CN
+                                                                                                                                 style='font-size:10.5pt;line-height:107%;font-family:仿宋'>】</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=85 valign=top style='width:63.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>retMsg</span></p>
+            </td>
+            <td width=123 valign=top style='width:92.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=340 colspan=2 valign=top style='width:9.0cm;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>返回码描述：查询成功或查询失败原因</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=85 rowspan=3 valign=top style='width:63.8pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋;color:black'>data</span></p>
+            </td>
+            <td width=123 style='width:92.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=180 style='width:134.65pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=161 style='width:120.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=123 valign=top style='width:92.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+  margin-left:-1.05pt;text-indent:-1.15pt;line-height:107%'><span lang=EN-US
+                                                                  style='font-size:10.5pt;line-height:107%;font-family:仿宋'>forecastModel</span></p>
+            </td>
+            <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=161 valign=top style='width:120.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>预报模式</span><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>(1:NJGRID)</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=123 valign=top style='width:92.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>elementCodes</span></p>
+            </td>
+            <td width=180 valign=top style='width:134.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>List&lt;ElementCode&gt;</span></p>
+            </td>
+            <td width=161 valign=top style='width:120.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>预报模式信息集合</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=548
+           style='width:411.1pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=548 colspan=3 style='width:411.1pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>ElementCode</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=126 style='width:94.75pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=167 style='width:125.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=255 style='width:191.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>elementCode</span></p>
+            </td>
+            <td width=167 valign=top style='width:125.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=255 valign=top style='width:191.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>要素编码</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>updateTime</span></p>
+            </td>
+            <td width=167 valign=top style='width:125.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>List&lt;UpdateTime&gt;</span></p>
+            </td>
+            <td width=255 valign=top style='width:191.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>更新时间对象</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=548
+           style='width:411.1pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=548 colspan=3 style='width:411.1pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>UpdateTime</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=126 style='width:94.75pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=129 style='width:96.65pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=293 style='width:219.7pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>update</span></p>
+            </td>
+            <td width=129 valign=top style='width:96.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=293 valign=top style='width:219.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>更新时间：</span><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>yyyy-MM-dd HH:mm:ss</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>startTime</span></p>
+            </td>
+            <td width=129 valign=top style='width:96.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>StartTime</span></p>
+            </td>
+            <td width=293 valign=top style='width:219.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>起报时间对象</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=548
+           style='width:411.1pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=548 colspan=3 style='width:411.1pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>StartTime</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=126 style='width:94.75pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=157 style='width:117.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=265 style='width:7.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:#BFBFBF;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>start</span></p>
+            </td>
+            <td width=157 valign=top style='width:117.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>起报时间：</span><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>yyyy-MM-dd HH:mm:ss</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>forecast</span></p>
+            </td>
+            <td width=157 valign=top style='width:117.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>List&lt;Forecast&gt;</span></p>
+            </td>
+            <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>预报时间集合</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=548
+           style='width:411.1pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=548 colspan=3 style='width:411.1pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>Forecast</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=161 style='width:120.5pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=95 style='width:70.9pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:#BFBFBF;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=293 style='width:219.7pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=161 valign=top style='width:120.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>forecastTime</span></p>
+            </td>
+            <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=293 valign=top style='width:219.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>预报时间：</span><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>yyyy-MM-dd HH:mm:ss</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=161 valign=top style='width:120.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>timeEffect</span></p>
+            </td>
+            <td width=95 valign=top style='width:70.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>int</span></p>
+            </td>
+            <td width=293 valign=top style='width:219.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>时效</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:0cm;line-height:107%;page-break-after:avoid'><b><span lang=EN-US
+                                                                  style='font-size:12.0pt;line-height:107%;font-family:仿宋'>2</span></b><b><span
+            lang=ZH-CN style='font-size:12.0pt;line-height:107%;font-family:仿宋'>、获取格点预报指定日期的预报更新时间</span></b></p>
+
+    <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:21.0pt;line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>（</span></b><b><span lang=EN-US
+                                                      style='font-size:10.5pt;line-height:107%;font-family:仿宋'>1</span></b><b><span
+            lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>）接口调用请求说明</span></b></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=553
+           style='width:415.05pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=95 valign=top style='width:70.9pt;border:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋'>接口</span></b><b><span lang=EN-US style='font-size:10.5pt;
+  line-height:107%;font-family:仿宋;color:black'>ID</span></b></p>
+            </th>
+            <th width=459 colspan=4 valign=top style='width:344.15pt;border:solid black 1.0pt;
+  border-left:none;background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>http://ip:port/otherSearch/findNewestTimeByDate</span></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=95 valign=top style='width:70.9pt;border:solid black 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>参数代码</span></b></p>
+            </td>
+            <td width=111 valign=top style='width:83.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>中文名</span></b></p>
+            </td>
+            <td width=72 valign=top style='width:54.3pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:
+  #D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>参数类型</span></b></p>
+            </td>
+            <td width=198 valign=top style='width:148.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>赋值格式</span></b><b><span lang=EN-US
+                                                           style='font-size:10.5pt;line-height:107%;font-family:仿宋;color:black'>/</span></b><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>示例</span></b></p>
+            </td>
+            <td width=77 valign=top style='width:58.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>必选</span></b><b><span lang=EN-US
+                                                         style='font-size:10.5pt;line-height:107%;font-family:仿宋;color:black'>/</span></b><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>可选</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=95 valign=top style='width:70.9pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>token</span></p>
+            </td>
+            <td width=111 valign=top style='width:83.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>唯一凭证</span></p>
+            </td>
+            <td width=72 valign=top style='width:54.3pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字符串</span></p>
+            </td>
+            <td width=198 valign=top style='width:148.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>登录者访问本系统的接口服务的唯一凭证，由登录时候获得</span></p>
+            </td>
+            <td width=77 valign=top style='width:58.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>必选</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=95 valign=top style='width:70.9pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>forecastModel</span></p>
+            </td>
+            <td width=111 valign=top style='width:83.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>预报模式</span></p>
+            </td>
+            <td width=72 valign=top style='width:54.3pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字符串</span></p>
+            </td>
+            <td width=198 valign=top style='width:148.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>必须为大写字母，如</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:107%;font-family:仿宋'>NJGRID-STANDARD,NJGRID-REALTIME</span></p>
+            </td>
+            <td width=77 valign=top style='width:58.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>&nbsp;</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=95 valign=top style='width:70.9pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>date</span></p>
+            </td>
+            <td width=111 valign=top style='width:83.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>指定日期</span></p>
+            </td>
+            <td width=72 valign=top style='width:54.3pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字符串</span></p>
+            </td>
+            <td width=198 valign=top style='width:148.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>yyyy-MM-dd</span></p>
+            </td>
+            <td width=77 valign=top style='width:58.05pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>&nbsp;</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:21.0pt;line-height:107%'><b><span lang=EN-US style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>&nbsp;</span></b></p>
+
+    <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:21.0pt;line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>（</span></b><b><span lang=EN-US
+                                                      style='font-size:10.5pt;line-height:107%;font-family:仿宋'>2</span></b><b><span
+            lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>）接口响应说明</span></b></p>
+
+    <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:21.0pt;line-height:107%'><span lang=EN-US style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>&nbsp;</span><span lang=ZH-CN
+                                                    style='font-size:10.5pt;line-height:107%;font-family:仿宋'>返回值字段说明：</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=558
+           style='width:418.2pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=66 style='width:49.65pt;border:solid windowtext 1.0pt;background:
+  #BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字段名</span></p>
+            </th>
+            <th width=113 style='width:3.0cm;border:solid windowtext 1.0pt;border-left:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></p>
+            </th>
+            <th width=378 colspan=2 style='width:10.0cm;border:solid windowtext 1.0pt;
+  border-left:none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=66 valign=top style='width:49.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>retCode</span></p>
+            </td>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>Integer</span></p>
+            </td>
+            <td width=378 colspan=2 valign=top style='width:10.0cm;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>返回码。参见【</span><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:"Calibri",sans-serif'><a
+                        href="#_1、接口返回码定义"><span lang=ZH-CN style='font-family:仿宋;color:blue'>接口返回码定义</span></a></span><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>】</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=66 valign=top style='width:49.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>retMsg</span></p>
+            </td>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>String</span></p>
+            </td>
+            <td width=378 colspan=2 valign=top style='width:10.0cm;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>返回码描述：查询成功或查询失败原因</span></p>
+            </td>
+        </tr>
+        <tr style='height:6.3pt'>
+            <td width=66 rowspan=3 valign=top style='width:49.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:6.3pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>data</span></p>
+            </td>
+            <td width=113 style='width:3.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:6.3pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>字段名</span></b></p>
+            </td>
+            <td width=161 style='width:120.45pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.3pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>数据类型</span></b></p>
+            </td>
+            <td width=217 style='width:163.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.3pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr style='height:6.15pt'>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>forecastModel</span></p>
+            </td>
+            <td width=161 valign=top style='width:120.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>String</span></p>
+            </td>
+            <td width=217 valign=top style='width:163.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>预报模式</span><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>(1:NJGRID)</span></p>
+            </td>
+        </tr>
+        <tr style='height:6.15pt'>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>elementCodes</span></p>
+            </td>
+            <td width=161 valign=top style='width:120.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>List&lt;ElementCode&gt;</span></p>
+            </td>
+            <td width=217 valign=top style='width:163.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>预报模式信息集合</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=558
+           style='width:418.2pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=558 colspan=3 style='width:418.2pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>ElementCode</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=126 style='width:94.75pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=167 style='width:125.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=265 style='width:7.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:#BFBFBF;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>elementCode</span></p>
+            </td>
+            <td width=167 valign=top style='width:125.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>要素编码</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>updateTime</span></p>
+            </td>
+            <td width=167 valign=top style='width:125.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>List&lt;UpdateTime&gt;</span></p>
+            </td>
+            <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>更新时间对象</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=558
+           style='width:418.2pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=558 colspan=3 style='width:418.2pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>UpdateTime</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=126 style='width:94.75pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=167 style='width:125.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=265 style='width:7.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:#BFBFBF;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>update</span></p>
+            </td>
+            <td width=167 valign=top style='width:125.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>更新时间：</span><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>yyyy-MM-dd HH:mm:ss</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>startTime</span></p>
+            </td>
+            <td width=167 valign=top style='width:125.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>StartTime</span></p>
+            </td>
+            <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>起报时间对象</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=558
+           style='width:418.2pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=558 colspan=3 style='width:418.2pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>StartTime</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=126 style='width:94.75pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=167 style='width:125.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=265 style='width:7.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:#BFBFBF;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>start</span></p>
+            </td>
+            <td width=167 valign=top style='width:125.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>起报时间：</span><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>yyyy-MM-dd HH:mm:ss</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>forecast</span></p>
+            </td>
+            <td width=167 valign=top style='width:125.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>List&lt;Forecast&gt;</span></p>
+            </td>
+            <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>预报时间集合</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=558
+           style='width:418.2pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=558 colspan=3 style='width:418.2pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>Forecast</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=142 style='width:106.35pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=113 style='width:3.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:#BFBFBF;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=302 style='width:8.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:#BFBFBF;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=142 valign=top style='width:106.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>forecastTime</span></p>
+            </td>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=302 valign=top style='width:8.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>预报时间：</span><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>yyyy-MM-dd HH:mm:ss</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=142 valign=top style='width:106.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>timeEffect</span></p>
+            </td>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>int</span></p>
+            </td>
+            <td width=302 valign=top style='width:8.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>时效</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+    <p class=MsoNormal style='margin-top:6.0pt;page-break-after:avoid'><b><span
+            lang=EN-US style='font-size:12.0pt;font-family:仿宋'>3</span></b><b><span
+            lang=ZH-CN style='font-size:12.0pt;font-family:仿宋'>、检查格点预报指定的预报时间是否有预报数据</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>（</span></b><b><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+font-family:仿宋'>1</span></b><b><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>）接口调用请求说明</span></b></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=553
+           style='width:415.05pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=113 valign=top style='width:3.0cm;border:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋'>接口</span></b><b><span lang=EN-US style='font-size:10.5pt;
+  line-height:107%;font-family:仿宋;color:black'>ID</span></b></p>
+            </th>
+            <th width=440 colspan=4 valign=top style='width:330.0pt;border:solid black 1.0pt;
+  border-left:none;background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>http://ip:port/otherSearch/findNewestTimeByForecastTime</span></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=113 valign=top style='width:3.0cm;border:solid black 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>参数代码</span></b></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:
+  #D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>中文名</span></b></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:
+  #D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>参数类型</span></b></p>
+            </td>
+            <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>赋值格式</span></b><b><span lang=EN-US
+                                                           style='font-size:10.5pt;line-height:107%;font-family:仿宋;color:black'>/</span></b><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>示例</span></b></p>
+            </td>
+            <td width=60 valign=top style='width:45.15pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>必选</span></b><b><span lang=EN-US
+                                                         style='font-size:10.5pt;line-height:107%;font-family:仿宋;color:black'>/</span></b><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>可选</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=113 valign=top style='width:3.0cm;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>token</span></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>唯一凭证</span></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字符串</span></p>
+            </td>
+            <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>登录者访问本系统的接口服务的唯一凭证，由登录时候获得</span></p>
+            </td>
+            <td width=60 valign=top style='width:45.15pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>必选</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=113 valign=top style='width:3.0cm;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>forecastTime</span></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>预报时间</span></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字符串</span></p>
+            </td>
+            <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>时间格式为</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:107%;font-family:仿宋'>yyyyMMddHHmmss</span><span lang=ZH-CN
+                                                              style='font-size:10.5pt;line-height:107%;font-family:仿宋'>，如</span><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>20150816090703</span></p>
+            </td>
+            <td width=60 valign=top style='width:45.15pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>必选</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=113 valign=top style='width:3.0cm;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>forecastModel</span></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>预报模式</span></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字符串</span></p>
+            </td>
+            <td width=210 valign=top style='width:157.25pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>必须为大写字母，如</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:107%;font-family:仿宋'>NJGRID-STANDARD,NJGRID-REALTIME</span></p>
+            </td>
+            <td width=60 valign=top style='width:45.15pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>&nbsp;</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><b><span
+            lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>&nbsp;</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>（</span></b><b><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+font-family:仿宋'>2</span></b><b><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>）接口响应说明</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>返回值字段说明：</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=548
+           style='width:411.1pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=66 style='width:49.65pt;border:solid windowtext 1.0pt;background:
+  #BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字段名</span></p>
+            </th>
+            <th width=123 style='width:92.1pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></p>
+            </th>
+            <th width=359 colspan=2 style='width:269.35pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=66 valign=top style='width:49.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>retCode</span></p>
+            </td>
+            <td width=123 valign=top style='width:92.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>Integer</span></p>
+            </td>
+            <td width=359 colspan=2 valign=top style='width:269.35pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>返回码。参见【</span><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:"Calibri",sans-serif'><a
+                        href="#_1、接口返回码定义"><span lang=ZH-CN style='font-family:仿宋;color:blue'>接口返回码定义</span></a></span><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>】</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=66 valign=top style='width:49.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>retMsg</span></p>
+            </td>
+            <td width=123 valign=top style='width:92.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>String</span></p>
+            </td>
+            <td width=359 colspan=2 valign=top style='width:269.35pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>返回码描述：查询成功或查询失败原因</span></p>
+            </td>
+        </tr>
+        <tr style='height:6.3pt'>
+            <td width=66 rowspan=4 valign=top style='width:49.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:6.3pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>data</span></p>
+            </td>
+            <td width=123 style='width:92.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.3pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>字段名</span></b></p>
+            </td>
+            <td width=142 style='width:106.35pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.3pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>数据类型</span></b></p>
+            </td>
+            <td width=217 style='width:163.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.3pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr style='height:6.15pt'>
+            <td width=123 valign=top style='width:92.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>forecastTime</span></p>
+            </td>
+            <td width=142 valign=top style='width:106.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>String</span></p>
+            </td>
+            <td width=217 valign=top style='width:163.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>预报时间。</span><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>yyyy-MM-dd
+  HH:mm:ss</span><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>格式。</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:107%;font-family:仿宋'>retCode=1</span><span lang=ZH-CN
+                                                         style='font-size:10.5pt;line-height:107%;font-family:仿宋'>时才有该属性值</span></p>
+            </td>
+        </tr>
+        <tr style='height:6.15pt'>
+            <td width=123 valign=top style='width:92.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>forecastModel</span></p>
+            </td>
+            <td width=142 valign=top style='width:106.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>String</span></p>
+            </td>
+            <td width=217 valign=top style='width:163.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>预报模式</span></p>
+            </td>
+        </tr>
+        <tr style='height:6.15pt'>
+            <td width=123 valign=top style='width:92.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>elementCodes</span></p>
+            </td>
+            <td width=142 valign=top style='width:106.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>List&lt;ElementCode&gt;</span></p>
+            </td>
+            <td width=217 valign=top style='width:163.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.15pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>预报模式集合</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=548
+           style='width:411.1pt;margin-left:-.25pt;border-collapse:collapse;border:none;
+ width:411.1pt !msorm;border-collapse:collapse !msorm;border:none !msorm'>
+        <tr>
+            <th width=548 colspan=3 style='width:411.1pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt;border:solid windowtext 1.0pt !msorm;
+  padding:0cm 5.4pt 0cm 5.4pt !msorm'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>ElementCode</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=126 style='width:94.75pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=157 style='width:117.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=265 style='width:7.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:#BFBFBF;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>elementCode</span></p>
+            </td>
+            <td width=157 valign=top style='width:117.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>要素编码</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>updateTimes</span></p>
+            </td>
+            <td width=157 valign=top style='width:117.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>List&lt;updateTime&gt;</span></p>
+            </td>
+            <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>更新时间对象</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=548
+           style='width:411.1pt;margin-left:-.25pt;border-collapse:collapse;border:none;
+ width:411.1pt !msorm;border-collapse:collapse !msorm;border:none !msorm'>
+        <tr>
+            <th width=548 colspan=3 style='width:411.1pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt;border:solid windowtext 1.0pt !msorm;
+  padding:0cm 5.4pt 0cm 5.4pt !msorm'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>UpdateTime</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=126 style='width:94.75pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=129 style='width:96.65pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=293 style='width:219.7pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>update</span></p>
+            </td>
+            <td width=129 valign=top style='width:96.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=293 valign=top style='width:219.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>更新时间：</span><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>yyyy-MM-dd HH:mm:ss</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>startTime</span></p>
+            </td>
+            <td width=129 valign=top style='width:96.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>StartTime</span></p>
+            </td>
+            <td width=293 valign=top style='width:219.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>起报时间对象</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=548
+           style='width:411.1pt;margin-left:-.25pt;border-collapse:collapse;border:none;
+ width:411.1pt !msorm;border-collapse:collapse !msorm;border:none !msorm'>
+        <tr>
+            <th width=548 colspan=3 style='width:411.1pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt;border:solid windowtext 1.0pt !msorm;
+  padding:0cm 5.4pt 0cm 5.4pt !msorm'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>StartTime</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=126 style='width:94.75pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=110 style='width:82.45pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=312 style='width:233.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>start</span></p>
+            </td>
+            <td width=110 valign=top style='width:82.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=312 valign=top style='width:233.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>起报时间：</span><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>yyyy-MM-dd HH:mm:ss</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=126 valign=top style='width:94.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>forecast</span></p>
+            </td>
+            <td width=110 valign=top style='width:82.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>List&lt;Forecast&gt;</span></p>
+            </td>
+            <td width=312 valign=top style='width:233.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>预报时间集合</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=548
+           style='width:411.1pt;margin-left:-.25pt;border-collapse:collapse;border:none;
+ width:411.1pt !msorm;border-collapse:collapse !msorm;border:none !msorm'>
+        <tr>
+            <th width=548 colspan=3 style='width:411.1pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt;border:solid windowtext 1.0pt !msorm;
+  padding:0cm 5.4pt 0cm 5.4pt !msorm'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  text-indent:10.55pt;line-height:107%'><b><span lang=EN-US style='font-size:
+  10.5pt;line-height:107%;font-family:仿宋'>Forecast</span></b></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=142 style='width:106.35pt;border:solid windowtext 1.0pt;border-top:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></b></p>
+            </td>
+            <td width=113 style='width:3.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:#BFBFBF;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></b></p>
+            </td>
+            <td width=293 style='width:219.7pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+  107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=142 valign=top style='width:106.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>forecastTime</span></p>
+            </td>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>String</span></p>
+            </td>
+            <td width=293 valign=top style='width:219.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>预报时间：</span><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>yyyy-MM-dd HH:mm:ss</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=142 valign=top style='width:106.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>timeEffect</span></p>
+            </td>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>int</span></p>
+            </td>
+            <td width=293 valign=top style='width:219.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+  107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+  仿宋'>时效</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-top:13.0pt;margin-right:0cm;margin-bottom:
+13.0pt;margin-left:0cm;line-height:173%;page-break-after:avoid'><b><span
+            lang=EN-US style='font-size:16.0pt;line-height:173%;font-family:仿宋'>4 </span></b><b><span
+            lang=ZH-CN style='font-size:16.0pt;line-height:173%;font-family:仿宋'>查询所有格点信息</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>（</span></b><b><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+font-family:仿宋'>1</span></b><b><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>）接口调用请求说明</span></b></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=553
+           style='width:415.05pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=141 valign=top style='width:105.85pt;border:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋'>接口</span></b><b><span lang=EN-US style='font-size:10.5pt;
+  line-height:107%;font-family:仿宋;color:black'>ID</span></b></p>
+            </th>
+            <th width=412 colspan=4 valign=top style='width:309.2pt;border:solid black 1.0pt;
+  border-left:none;background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>http://ip:port/otherSearch/findAllTrapezoid</span></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=141 valign=top style='width:105.85pt;border:solid black 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>参数代码</span></b></p>
+            </td>
+            <td width=94 valign=top style='width:70.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>中文名</span></b></p>
+            </td>
+            <td width=74 valign=top style='width:55.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>参数类型</span></b></p>
+            </td>
+            <td width=165 valign=top style='width:123.9pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>赋值格式</span></b><b><span lang=EN-US
+                                                           style='font-size:10.5pt;line-height:107%;font-family:仿宋;color:black'>/</span></b><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>示例</span></b></p>
+            </td>
+            <td width=79 valign=top style='width:59.6pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:
+  #D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>必选</span></b><b><span lang=EN-US
+                                                         style='font-size:10.5pt;line-height:107%;font-family:仿宋;color:black'>/</span></b><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>可选</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=141 valign=top style='width:105.85pt;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>token</span></p>
+            </td>
+            <td width=94 valign=top style='width:70.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>唯一凭证</span></p>
+            </td>
+            <td width=74 valign=top style='width:55.35pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字符串</span></p>
+            </td>
+            <td width=165 valign=top style='width:123.9pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>登录者访问本系统的接口服务的唯一凭证，由登录时候获得</span></p>
+            </td>
+            <td width=79 valign=top style='width:59.6pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>必选</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+107%'><b><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>（</span></b><b><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+font-family:仿宋'>2</span></b><b><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>）接口响应说明</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>返回值字段说明：</span></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=548
+           style='width:411.1pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=76 style='width:2.0cm;border:solid windowtext 1.0pt;background:
+  #BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字段名</span></p>
+            </th>
+            <th width=113 style='width:3.0cm;border:solid windowtext 1.0pt;border-left:
+  none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></p>
+            </th>
+            <th width=359 colspan=2 style='width:269.35pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BFBFBF;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=76 valign=top style='width:2.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>retCode</span></p>
+            </td>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>Integer</span></p>
+            </td>
+            <td width=359 colspan=2 valign=top style='width:269.35pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>返回码。参见【</span><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:"Calibri",sans-serif'><a
+                        href="file:///F:/研发科2019工作/智能网格客观订正技术/weatherForecast_service_interface_help_v2.0(1).doc#_1、接口返回码定义"><span
+                        lang=ZH-CN style='font-family:仿宋;color:blue'>接口返回码定义</span></a></span><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>】</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=76 valign=top style='width:2.0cm;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>retMsg</span></p>
+            </td>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>String</span></p>
+            </td>
+            <td width=359 colspan=2 valign=top style='width:269.35pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>返回码描述：查询成功或查询失败原因</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=76 rowspan=6 valign=top style='width:2.0cm;border:solid windowtext 1.0pt;
+  border-top:none;background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>data</span></p>
+            </td>
+            <td width=473 colspan=3 valign=top style='width:354.4pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>站点信息列表</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=113 style='width:3.0cm;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:#D9D9D9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>字段名</span></p>
+            </td>
+            <td width=85 style='width:63.8pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:#D9D9D9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>数据类型</span></p>
+            </td>
+            <td width=274 style='width:205.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>取值说明</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>gridCode</span></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>String</span></p>
+            </td>
+            <td width=274 valign=top style='width:205.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>格点编码</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>areaCode</span></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>String</span></p>
+            </td>
+            <td width=274 valign=top style='width:205.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>格点所属行政区编码</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>areaName</span></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>String</span></p>
+            </td>
+            <td width=274 valign=top style='width:205.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>站点所在区县名</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=113 valign=top style='width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>loc</span></p>
+            </td>
+            <td width=85 valign=top style='width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>Double[]</span></p>
+            </td>
+            <td width=274 valign=top style='width:205.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal style='margin-bottom:8.0pt;line-height:107%'><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>集合索引</span><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>0</span><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>为经度，</span><span
+                        lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:仿宋'>1</span><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>为纬度</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;&nbsp;&nbsp; </span></p>
+
+    <p class=MsoNormal style='margin-top:13.0pt;margin-right:0cm;margin-bottom:
+13.0pt;margin-left:0cm;line-height:173%;page-break-after:avoid'><b><span
+            lang=EN-US style='font-size:16.0pt;line-height:173%;font-family:仿宋'>5 </span></b><b><span
+            lang=ZH-CN style='font-size:16.0pt;line-height:173%;font-family:仿宋'>查询指定区域的格点信息</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;&nbsp;&nbsp;&nbsp; <b>1</b></span><b><span lang=ZH-CN
+                                                     style='font-size:10.5pt;line-height:107%;font-family:仿宋'>）接口调用请求说明</span></b></p>
+
+    <table class="table" border=1 cellspacing=0 cellpadding=0 width=553
+           style='width:415.05pt;margin-left:-.25pt;border-collapse:collapse;border:none'>
+        <tr>
+            <th width=113 valign=top style='width:3.0cm;border:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋'>接口</span></b><b><span lang=EN-US style='font-size:10.5pt;
+  line-height:107%;font-family:仿宋;color:black'>ID</span></b></p>
+            </th>
+            <th width=440 colspan=4 valign=top style='width:330.0pt;border:solid black 1.0pt;
+  border-left:none;background:white;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋;color:black'>http://ip:port/otherSearch/findAllTrapezoidByAreaCode</span></p>
+            </th>
+        </tr>
+        <tr>
+            <td width=113 valign=top style='width:3.0cm;border:solid black 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>参数代码</span></b></p>
+            </td>
+            <td width=121 valign=top style='width:91.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>中文名</span></b></p>
+            </td>
+            <td width=74 valign=top style='width:55.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>参数类型</span></b></p>
+            </td>
+            <td width=165 valign=top style='width:123.65pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  background:#D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>赋值格式</span></b><b><span lang=EN-US
+                                                           style='font-size:10.5pt;line-height:107%;font-family:仿宋;color:black'>/</span></b><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>示例</span></b></p>
+            </td>
+            <td width=79 valign=top style='width:59.6pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:
+  #D9D9D9;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:
+  107%;font-family:仿宋;color:black'>必选</span></b><b><span lang=EN-US
+                                                         style='font-size:10.5pt;line-height:107%;font-family:仿宋;color:black'>/</span></b><b><span
+                        lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋;
+  color:black'>可选</span></b></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=113 valign=top style='width:3.0cm;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>areaCode</span></p>
+            </td>
+            <td width=121 valign=top style='width:91.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>所属区域行政区</span></p>
+            </td>
+            <td width=74 valign=top style='width:55.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字符串</span></p>
+            </td>
+            <td width=165 valign=top style='width:123.65pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>格点所属行政区编码</span></p>
+            </td>
+            <td width=79 valign=top style='width:59.6pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>必选</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width=113 valign=top style='width:3.0cm;border:solid black 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>token</span></p>
+            </td>
+            <td width=121 valign=top style='width:91.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>唯一凭证</span></p>
+            </td>
+            <td width=74 valign=top style='width:55.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>字符串</span></p>
+            </td>
+            <td width=165 valign=top style='width:123.65pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>登录者访问本系统的接口服务的唯一凭证，由登录时候获得</span></p>
+            </td>
+            <td width=79 valign=top style='width:59.6pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+                <p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
+  line-height:107%'><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;
+  font-family:仿宋'>必选</span></p>
+            </td>
+        </tr>
+    </table>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+107%'><b><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.55pt;line-height:
+107%'><b><span lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>（</span></b><b><span lang=EN-US style='font-size:10.5pt;line-height:107%;
+font-family:仿宋'>2</span></b><b><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>）接口响应说明</span></b></p>
+
+    <p class=MsoNormal style='margin-bottom:8.0pt;text-indent:10.5pt;line-height:
+107%'><span lang=EN-US style='font-size:10.5pt;line-height:107%;font-family:
+仿宋'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=ZH-CN style='font-size:10.5pt;
+line-height:107%;font-family:仿宋'>参见“</span><span lang=EN-US style='font-size:
+10.5pt;line-height:107%;font-family:"Calibri",sans-serif'><a href="#_1_查询所有格点信息"><span
+            lang=ZH-CN style='font-family:仿宋;color:blue'>查询所有格点信息</span></a></span><span
+            lang=ZH-CN style='font-size:10.5pt;line-height:107%;font-family:仿宋'>”节的接口响应说明</span></p>
+
+    <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

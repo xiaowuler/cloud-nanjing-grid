@@ -45,11 +45,10 @@
 .word-content{
     height: 100%;
     margin-left: 250px;
-    overflow-y: auto;
+    border: 1px solid #125f95;
 }
 
 .word-width{
-    padding: 10px;
     overflow-y: auto;
 }
 
@@ -97,4 +96,9 @@
 
 .return-code h3{
     margin: 10px 0;
+}
+
+.iframe{
+    width: 100%;
+    height: 100%;
 }
