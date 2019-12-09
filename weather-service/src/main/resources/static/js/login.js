@@ -5,18 +5,62 @@ var App = function () {
     this.Startup = function () {
         $('.login-title li').on('click', this.OnUserRoleTab.bind(this));
         $(".login-tab .login-block").eq(0).show();
+
         this.getSecurityError();
-        $('#admin-login').on('click', this.OnAdminLogin.bind(this));
+
+        $('#admin-login').on('click', this.checkAdminParameter.bind(this));
         $('#user-submit').on('click', this.OnSubmitClick.bind(this));
     };
 
     this.OnSubmitClick = function () {
-        $('#real-submit').trigger("click");
+        var errorMsg = '';
+        if ($('#username').val() === ''){
+            $('#username').css('borderColor','#ff0000');
+            errorMsg += '用户名不能为空 ';
+        } else {
+            $('#username').css('borderColor','#125f95');
+        }
+        if ($('#password').val() === ''){
+            $('#password').css('borderColor','#ff0000');
+            errorMsg += '密码不能为空 ';
+        } else {
+            $('#password').css('borderColor','#125f95');
+        }
+
+        if (errorMsg === ''){
+            $('#real-submit').trigger("click");
+            $('#error-message').hide();
+        }else {
+            $('#error-message').text(errorMsg);
+            $('#error-message').show();
+        }
+    };
+
+    this.checkAdminParameter = function () {
+        var errorMsg = '';
+        if ($('#admin-username').val() === ''){
+            $('#admin-username').css('borderColor','#ff0000');
+            errorMsg += '用户名不能为空 ';
+        } else {
+            $('#admin-username').css('borderColor','#125f95');
+        }
+        if ($('#admin-password').val() === ''){
+            $('#admin-password').css('borderColor','#ff0000');
+            errorMsg += '密码不能为空';
+        } else {
+            $('#admin-password').css('borderColor','#125f95');
+        }
+
+        if (errorMsg === ''){
+            this.OnAdminLogin();
+            $('#error-message').hide();
+        }else {
+            $('#error-message').text(errorMsg);
+            $('#error-message').show();
+        }
     }
 
     this.OnAdminLogin = function () {
-
-
         $.ajax({
             type: "POST",
             dataType: 'json',
