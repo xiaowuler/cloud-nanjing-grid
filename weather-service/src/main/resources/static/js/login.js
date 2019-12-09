@@ -10,6 +10,8 @@ var App = function () {
     };
 
     this.OnAdminLogin = function () {
+
+
         $.ajax({
             type: "POST",
             dataType: 'json',
@@ -28,13 +30,15 @@ var App = function () {
                 if (data.responseText != null && data.responseText != undefined && data.responseText != ''){
                     if (data.responseText === 'login success'){
                         window.location.href= this.manageUrl;
+                        $("#error-message").hide();
                     }else {
+                        $("#error-message").show();
                         $("#error-message").html('<div>' + data.responseText + '</div>');
                     }
                 }
             }.bind(this)
         });
-    }
+    };
 
     this.getSecurityError = function () {
         $.ajax({
@@ -43,17 +47,22 @@ var App = function () {
             async: false,
             url: 'user/getError',
             success: function (data) {
+                console.log(data);
                 if (data.responseText != null && data.responseText != undefined && data.responseText != ''){
                     $("#error-message").html('<div>' + data.responseText + '</div>');
                 }
             }.bind(this),
             error: function (data) {
+                console.log(data);
                 if (data.responseText != null && data.responseText != undefined && data.responseText != ''){
+                    $("#error-message").show();
                     $("#error-message").html('<div>' + data.responseText + '</div>');
+                }else {
+                    $("#error-message").hide();
                 }
             }.bind(this)
         });
-    }
+    };
 
     this.OnUserRoleTab = function (event) {
         $('.login-title li').removeClass("active");
