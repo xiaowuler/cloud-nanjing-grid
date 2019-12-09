@@ -146,7 +146,7 @@ var TimeLine = function(parent, line, text, id){
         if (this.Line.attr('id') === 'forecast'){
             this.Timer = setInterval(function () {
                 this.ActiveNextMarker();
-            }.bind(this), 15000);
+            }.bind(this), 10000);
         }
     };
 

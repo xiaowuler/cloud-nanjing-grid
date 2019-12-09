@@ -26,7 +26,7 @@ var InitAside = function (){
                     $('#login').show();
                     $('#logout').hide();
                 }else {
-                    welcomeStr = '欢迎{0}登陆！'.format(data);
+                    welcomeStr = '欢迎{0}登录！'.format(data);
                     $('#login').hide();
                     $('#logout').show();
                 }

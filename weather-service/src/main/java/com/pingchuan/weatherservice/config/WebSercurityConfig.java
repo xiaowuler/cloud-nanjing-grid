@@ -46,6 +46,11 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                                         response.setContentType("application/json;charset=utf-8");
                                         RequestCache cache = new HttpSessionRequestCache();
                                         SavedRequest savedRequest = cache.getRequest(request, response);
+                                        if (savedRequest == null){
+                                            response.sendRedirect("http://10.124.102.43:8005");
+                                            return;
+                                        }
+
                                         String url = savedRequest.getRedirectUrl();
                                         response.sendRedirect(url);
                                     }
