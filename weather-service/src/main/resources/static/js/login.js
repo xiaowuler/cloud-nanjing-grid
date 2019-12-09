@@ -7,7 +7,12 @@ var App = function () {
         $(".login-tab .login-block").eq(0).show();
         this.getSecurityError();
         $('#admin-login').on('click', this.OnAdminLogin.bind(this));
+        $('#user-submit').on('click', this.OnSubmitClick.bind(this));
     };
+
+    this.OnSubmitClick = function () {
+        $('#real-submit').trigger("click");
+    }
 
     this.OnAdminLogin = function () {
 

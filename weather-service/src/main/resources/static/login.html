@@ -21,7 +21,7 @@
                         </ul>
                         <div class="login-tab">
                             <div class="login-block">
-                                <form name="f" action="/login" method="post">
+                                <form name="f" action="/login" method="post" id="user-form">
                                     <div class="input-block">
                                         <label><img src="images/user.png"></label>
                                         <input type="text" name="username" id="username" placeholder="请输入用户名">
@@ -30,7 +30,8 @@
                                         <label><img src="images/password.png"></label>
                                         <input type="password" name="password" id="password" placeholder="请输入密码">
                                     </div>
-                                    <input class="login-btn" name="submit" type="submit" value="提交">
+                                    <input class="login-btn" id="user-submit" value="提交">
+                                    <input class="login-btn" name="submit" type="submit" value="提交" id="real-submit" hidden>
                                 </form>
 
                             </div>
