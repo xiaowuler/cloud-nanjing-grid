@@ -30,8 +30,8 @@ var App = function () {
         $(event.target).addClass("active");
 
         $(event.target).text();
-        /*var index = $(event.target).index();
-        $(".login-tab .login-block").eq(index).css("display", "block").siblings().css("display", "none");*/
+        var index = $(event.target).index();
+        $(".login-tab .login-block").eq(index).css("display", "block").siblings().css("display", "none");
     };
 };
 

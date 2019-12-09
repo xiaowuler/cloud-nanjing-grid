@@ -11,7 +11,7 @@
     <div class="box">
         <div class="login clearfix">
             <img src="images/login-logo.png" class="login-logo">
-            <form name="f" action="/login" method="post">
+
                 <div class="login-container">
                     <h2>登录</h2>
                     <div class="login-type">
@@ -21,20 +21,21 @@
                         </ul>
                         <div class="login-tab">
                             <div class="login-block">
-                                <div class="input-block">
-                                    <label><img src="images/user.png"></label>
-                                    <input type="text" name="username" id="username" placeholder="请输入用户名">
-                                </div>
-                                <div class="input-block">
-                                    <label><img src="images/password.png"></label>
-                                    <input type="password" name="password" id="password" placeholder="请输入密码">
-                                </div>
-                                <input class="login-btn" name="submit" type="submit" value="提交">
-                            </div>
-                            <p style="color: red" id="error-message">
+                                <form name="f" action="/login" method="post">
+                                    <div class="input-block">
+                                        <label><img src="images/user.png"></label>
+                                        <input type="text" name="username" id="username" placeholder="请输入用户名">
+                                    </div>
+                                    <div class="input-block">
+                                        <label><img src="images/password.png"></label>
+                                        <input type="password" name="password" id="password" placeholder="请输入密码">
+                                    </div>
+                                    <input class="login-btn" name="submit" type="submit" value="提交">
+                                </form>
 
-                            </p>
-                            <!--<div class="login-block">
+                            </div>
+                            <p style="color: red" id="error-message"></p>
+                            <div class="login-block">
                                 <div class="input-block">
                                     <label><img src="images/user.png"></label>
                                     <input type="text" id="admin-username" placeholder="请输入用户名">
@@ -44,11 +45,10 @@
                                     <input type="password" id="admin-password" placeholder="请输入密码">
                                 </div>
                                 <button class="login-btn">登录</button>
-                            </div>-->
+                            </div>
                         </div>
                     </div>
                 </div>
-            </form>
             <span class="copyright">南京气象局   ©2019</span>
         </div>
     </div>

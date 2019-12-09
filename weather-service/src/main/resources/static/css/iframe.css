@@ -28,3 +28,13 @@
 .table p{
     margin: 0!important;
 }
+
+.first-title{
+    font-size: 16px!important;
+    font-weight: bold;
+}
+
+.second-title{
+    margin: 10px 0!important;
+    font-size: 14px!important;
+}
