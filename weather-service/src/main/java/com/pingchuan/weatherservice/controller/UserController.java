@@ -1,5 +1,8 @@
 package com.pingchuan.weatherservice.controller;
 
+import com.pingchuan.domain.Caller;
+import com.pingchuan.weatherservice.service.CallerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,6 +16,9 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("user")
 public class UserController {
+
+    @Autowired
+    private CallerService callerService;
 
     @RequestMapping("/getCurrentLoginName")
     public String getCurrentLoginName(){
@@ -33,6 +39,20 @@ public class UserController {
         }
 
         return "用户名或密码错误！";
+    }
+
+    @RequestMapping("/login")
+    public String login(String username, String password){
+        Caller caller = callerService.findOneByUsernameAndPassword(username, password);
+        if (caller == null){
+            return "用户名或密码错误！";
+        }
+
+        if ("管理员".equals(caller.getRole())){
+            return "login success";
+        }
+
+        return "权限不足";
     }
 
 }

@@ -11,4 +11,7 @@ public interface CallerService {
 
     @RequestMapping(value = "caller/findOneByLoginName", method = RequestMethod.POST)
     Caller findOneByLoginName(@RequestParam String loginName);
+
+    @RequestMapping(value = "caller/findOneByUsernameAndPassword", method = RequestMethod.POST)
+    Caller findOneByUsernameAndPassword(@RequestParam("username") String username, @RequestParam("password") String password);
 }
