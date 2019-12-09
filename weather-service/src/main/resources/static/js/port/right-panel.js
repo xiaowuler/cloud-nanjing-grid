@@ -28,25 +28,41 @@ var RightPanel = function () {
     };
 
     this.GetParameter = function () {
+
+        var flag = true;
+
         var obj = {};
+        var block = $('.param-block');
         this.data.forEach(function (item, index) {
             var cName = null;
 
-            if ($('.param-block').eq(index).find('input').val() === '')
-                cName = item.chineseName;
-            else
-                cName = $('.param-block').eq(index).find('input').val();
+            if (block.eq(index).find('#is-required').text() === '是') {
+                if(block.eq(index).find('input').val() === ''){
+                    flag = false;
+                    block.eq(index).find('input').css('borderColor','#ff0000');
+                } else {
+                    cName = block.eq(index).find('input').val();
+                    block.eq(index).find('input').css('borderColor','#125f95')
+                }
+            } else {
+                cName = null;
+            }
 
             var key = item.name;
             var value = cName;
             obj[key] = value;
         }.bind(this));
 
-        return obj;
+        if (flag == true)
+            return obj;
+        else
+            return null;
     };
 
     this.ReloadInterfaceUrl = function () {
         var parameters = this.GetParameter();
+        if (parameters === null)
+            return;
         $.ajax({
             type: "POST",
             async: true,
@@ -69,7 +85,7 @@ var RightPanel = function () {
             var type = item.type;
             var describe = item.description;
             var isRequired = item.isRequired === '1' ? '是' : '否';
-            var label = '<div class="param-block port-input clearfix"><label>{0}</label><input type="text" class="param-input" placeholder="{1}"><span class="param-type">参数类型：{2}</span><span class="param-describe">是否必填：{3}</span><span class="param-required">描述：{4}</span></div></div></div>';
+            var label = '<div class="param-block port-input clearfix"><label>{0}</label><input type="text" class="param-input" placeholder="{1}"><span class="param-type">参数类型：{2}</span><span class="param-describe">是否必填：<i id="is-required">{3}</i></span><span class="param-required">描述：{4}</span></div></div></div>';
 
             list.append(label.format(name, password, type, isRequired, describe));
 

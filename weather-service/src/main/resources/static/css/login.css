@@ -90,6 +90,7 @@ body{
     width: 100%;
     margin-top: 30px;
     line-height: 34px;
+    cursor: pointer;
     background: -webkit-linear-gradient(#0072c0, #005088);
     background: -o-linear-gradient(#0072c0, #005088);
     background: -moz-linear-gradient(#0072c0, #005088);
