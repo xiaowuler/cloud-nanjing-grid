@@ -61,7 +61,6 @@ var InitAside = function (){
 
     this.CreateMenu = function () {
         var value = this.GetMenuValue();
-        console.log(value);
         var firstText = value[0];
         var secondText = value[1];
         for (var i = 0; i < firstText.length; i++) {
