@@ -6,12 +6,35 @@ var InitAside = function (){
 
     this.Startup = function(){
         this.Reload();
+        this.getCurrentLoginName();
 
         $('.first-menu h1').on('click', this.ShowSecondMenu.bind(this));
         $('.second-content li').on('click', this.OnSecondMenuClick.bind(this));
         $('.second-content li').eq(0).trigger('click');
         $('.first-menu').eq(0).find('ul').slideDown();
     };
+
+    this.getCurrentLoginName = function () {
+        $.ajax({
+            type: 'POST',
+            async: false,
+            url: 'user/getCurrentLoginName',
+            success: function (data) {
+                var welcomeStr = '';
+                if (data == null || data == undefined || data == ''){
+                    welcomeStr = '你好，游客！';
+                    $('#login').show();
+                    $('#logout').hide();
+                }else {
+                    welcomeStr = '欢迎{0}登陆！'.format(data);
+                    $('#login').hide();
+                    $('#logout').show();
+                }
+
+                $('.user').html(welcomeStr);
+            }.bind(this)
+        })
+    }
 
     this.Reload = function () {
         $.ajax({

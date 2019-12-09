@@ -3,11 +3,34 @@ var App = function () {
 
     this.Startup = function () {
         this.ReLayout();
+        this.getCurrentLoginName();
         this.CurrentTime.InitTime();
         $('.word-aside ul li').on('click', this.OnAsideSelect.bind(this));
 
         window.onresize = this.ReLayout.bind(this);
     };
+
+    this.getCurrentLoginName = function () {
+        $.ajax({
+            type: 'POST',
+            async: false,
+            url: 'user/getCurrentLoginName',
+            success: function (data) {
+                var welcomeStr = '';
+                if (data == null || data == undefined || data == ''){
+                    welcomeStr = '你好，游客！';
+                    $('#login').show();
+                    $('#logout').hide();
+                }else {
+                    welcomeStr = '欢迎{0}登陆！'.format(data);
+                    $('#login').hide();
+                    $('#logout').show();
+                }
+
+                $('.user').html(welcomeStr);
+            }.bind(this)
+        })
+    }
 
     this.ReLayout = function () {
         var width = $(window).width();

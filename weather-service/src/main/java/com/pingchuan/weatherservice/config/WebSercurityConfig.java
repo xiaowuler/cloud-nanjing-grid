@@ -49,11 +49,16 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                                     }
                                 })
                 .and()
+                .logout().logoutSuccessUrl("/index.html")
+                .and()
                 .authorizeRequests()
                 .antMatchers("/login.html", "/index.html", "/").permitAll()
-                .antMatchers("/baseSearch/**", "/other/**", "/stat/**", "/interface/findAll").permitAll()
+                .antMatchers("/baseSearch/**", "/other/**", "/stat/**", "/user/**", "/interface/findAll").permitAll()
                 .anyRequest()
                 .authenticated()
+                .and()
+                .headers()
+                .frameOptions().disable()
                 .and()
                 .csrf().disable();
     }

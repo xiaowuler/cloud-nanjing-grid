@@ -9,6 +9,7 @@ var CenterPanel = function () {
     this.ForecastTimeLine = new TimeLine(this, $('#forecast'), 'forecast', '#forecast');
 
     this.Startup = function(){
+        this.getCurrentLoginName();
         this.UpdateTimeLine.Startup();
         this.NewspaperTimeLine.Startup();
         this.ForecastTimeLine.Startup();
@@ -19,6 +20,28 @@ var CenterPanel = function () {
         this.ResetComboBox();
         this.loadTimes();
     };
+
+    this.getCurrentLoginName = function () {
+        $.ajax({
+            type: 'POST',
+            async: false,
+            url: 'user/getCurrentLoginName',
+            success: function (data) {
+                var welcomeStr = '';
+                if (data == null || data == undefined || data == ''){
+                    welcomeStr = '你好，游客！';
+                    $('#login').show();
+                    $('#logout').hide();
+                }else {
+                    welcomeStr = '欢迎{0}登陆！'.format(data);
+                    $('#login').hide();
+                    $('#logout').show();
+                }
+
+                $('.user').html(welcomeStr);
+            }.bind(this)
+        })
+    }
 
     this.setForecastModelChange = function () {
         $("#element").combobox({
