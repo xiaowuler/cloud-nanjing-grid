@@ -37,6 +37,8 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin()
                 .loginPage("/login.html")
                 .loginProcessingUrl("/login")
+                //.failureUrl("/login.html?error")
+                .failureUrl("/login.html")
                 .successHandler(new AuthenticationSuccessHandler() {
                                     @Override
                                     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,

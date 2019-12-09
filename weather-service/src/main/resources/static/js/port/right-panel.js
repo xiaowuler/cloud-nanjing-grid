@@ -1,5 +1,5 @@
 var RightPanel = function () {
-    this.baseUrl = 'http://localhost:8003/';
+    this.baseUrl = 'http://10.124.102.43:8003/';
     this.data = null;
     this.interfaceName = null;
 

@@ -71,28 +71,28 @@ var Map = function(){
     this.getWindDirectionImageUrl = function (windDirection) {
         switch (windDirection) {
             case '东北风':
-                return 'images/wind-direction/northeaster.png';
-                break;
-            case '东风':
-                return 'images/wind-direction/east.png';
-                break;
-            case '东南风':
-                return 'images/wind-direction/southeaster.png';
-                break;
-            case '南风':
-                return 'images/wind-direction/south.png';
-                break;
-            case '西南风':
                 return 'images/wind-direction/southwester.png';
                 break;
-            case '西风':
+            case '东风':
                 return 'images/wind-direction/west.png';
                 break;
-            case '西北风':
+            case '东南风':
                 return 'images/wind-direction/northwest.png';
                 break;
-            default:
+            case '南风':
                 return 'images/wind-direction/north.png';
+                break;
+            case '西南风':
+                return 'images/wind-direction/northeaster.png';
+                break;
+            case '西风':
+                return 'images/wind-direction/east.png';
+                break;
+            case '西北风':
+                return 'images/wind-direction/southeaster.png';
+                break;
+            default:
+                return 'images/wind-direction/south.png';
         }
     }
 

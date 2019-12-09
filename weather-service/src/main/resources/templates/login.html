@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
@@ -31,8 +32,7 @@
                                 </div>
                                 <input class="login-btn" name="submit" type="submit" value="提交">
                             </div>
-                            <p style="color: red" id="error-message">
-
+                            <p style="color: red"  th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}">
                             </p>
                             <!--<div class="login-block">
                                 <div class="input-block">

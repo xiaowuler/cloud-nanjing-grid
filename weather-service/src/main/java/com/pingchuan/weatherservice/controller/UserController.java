@@ -5,6 +5,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("user")
@@ -18,6 +22,17 @@ public class UserController {
             return currentUserName;
         }
         return null;
+    }
+
+    @RequestMapping("/getError")
+    public String getError(){
+        ServletRequestAttributes sra = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        Object exception = sra.getRequest().getSession().getAttribute("SPRING_SECURITY_LAST_EXCEPTION");
+        if (exception == null){
+            return null;
+        }
+
+        return "用户名或密码错误！";
     }
 
 }
