@@ -112,8 +112,21 @@
 }
 
 .admin .quit-button:hover{
-    color: #28edff;
     background: url("../images/quit-hover.png") no-repeat left;
+}
+
+.admin .login-button{
+    padding-left: 23px;
+    background: url("../images/no-login.png") no-repeat left;
+}
+
+.admin .login-button:hover{
+    background: url("../images/no-login-hover.png") no-repeat left;
+}
+
+.admin .quit-button:hover a,
+.admin .login-button:hover a{
+    color: #28edff;
 }
 
 .total{
