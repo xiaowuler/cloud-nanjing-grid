@@ -11,6 +11,8 @@ public class InterfaceType {
 
     private String name;
 
+    private int sequence;
+
     private List<Interface> interfaces;
 
 }

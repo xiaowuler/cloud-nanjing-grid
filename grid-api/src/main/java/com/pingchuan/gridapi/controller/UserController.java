@@ -40,7 +40,7 @@ public class UserController {
         return new ApiResponse(ResultCode.SUCCESS, "登录成功", new UserDTO(caller.getLoginName(), caller.getRealName(), getToken(caller)));
     }
 
-    @RequestMapping("/loginOut")
+    @RequestMapping("/logout")
     public ApiResponse loginOut(UserParameter user){
         String error = user.checkLoginOutCode();
         if (!StringUtils.isEmpty(error)) {

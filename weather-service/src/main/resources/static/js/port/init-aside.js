@@ -1,7 +1,5 @@
 var InitAside = function (){
     this.menuValue = null;
-
-
     this.RightPanel = new RightPanel(this);
 
     this.Startup = function(){

@@ -18,7 +18,6 @@ var TimeLine = function(parent, line, text, id){
         this.Times.find('li').each(function (index, element) {
             $(element).attr('index', index);
         });
-        //this.SetActiveMarker(this.Times.find('li').length - 1);
     };
 
     this.bindClickEvent = function (startTimeIndex, updateTimeIndex, forecastTimeIndex) {
@@ -28,7 +27,6 @@ var TimeLine = function(parent, line, text, id){
             $(element).attr('index', index);
         });
 
-        this.Play();
         this.PrevButton.off('click').on('click', this.ActivePrevMarker.bind(this));
         this.NextButton.off('click').on('click', this.ActiveNextMarker.bind(this));
         this.FirstButton.off('click').on('click', this.ActiveFirstMarker.bind(this));
@@ -37,7 +35,6 @@ var TimeLine = function(parent, line, text, id){
         this.PauseButton.off('click').on('click', this.OnPauseButtonClick.bind(this));
         this.Times.find('li span').off('click').on('click', this.OnThumbMarkerClick.bind(this));
 
-        //this.SetActiveMarker(0);
         if ((startTimeIndex != null || startTimeIndex != undefined) && this.Line.attr('id') === 'start')
             this.SetActiveMarker(startTimeIndex);
         else if ((updateTimeIndex != null || updateTimeIndex != undefined) && this.Line.attr('id') === 'update')
@@ -53,21 +50,6 @@ var TimeLine = function(parent, line, text, id){
         this.MakeVisible(imageIndex);
         this.Times.attr("image-index", imageIndex);
     };
-
-    // this.MakeVisible = function (index) {
-    //     var imageOffset = this.Times.find('li').eq(index).offset();
-    //     imageOffset.right = imageOffset.left + this.ImageWidth;
-    //
-    //     var listOffset = this.Times.offset();
-    //     listOffset.right = listOffset.left + this.Times.width();
-    //
-    //     var left = parseInt(this.Times.find('ul').css("left").replace("px", ""));
-    //     if (imageOffset.left < listOffset.left)
-    //         this.Times.find('ul').stop().animate({'left': left + (listOffset.left - imageOffset.left)}, 600);
-    //
-    //     if (imageOffset.right > listOffset.right)
-    //         this.Times.find('ul').stop().animate({'left': left + (listOffset.right - imageOffset.right)}, 600);
-    // };
 
     this.MakeVisible = function (index) {
         var imageOffset = this.Times.find('li').eq(index).offset();
@@ -132,11 +114,6 @@ var TimeLine = function(parent, line, text, id){
         $(e.target).addClass('play-disable');
         $(e.target).next().removeClass('pause-disable');
         this.Play();
-        // if (this.Line.attr('id') === 'forecast'){
-        //     this.Timer = setInterval(function () {
-        //         this.ActiveNextMarker();
-        //     }.bind(this), 2000);
-        // }
     };
 
     this.Play = function () {
@@ -146,7 +123,7 @@ var TimeLine = function(parent, line, text, id){
         if (this.Line.attr('id') === 'forecast'){
             this.Timer = setInterval(function () {
                 this.ActiveNextMarker();
-            }.bind(this), 10000);
+            }.bind(this), 5000);
         }
     };
 

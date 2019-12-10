@@ -10,5 +10,5 @@ public interface ElementInfoDao {
 
     List<AggregationOperation> findByForecastModel(String forecastModel, String elementCode);
 
-    List<AggregationOperation> findByForecastModelAndDate(String forecastModel, Date startTime, Date endTime);
+    List<AggregationOperation> findByForecastModelAndDate(String forecastModel, Date startTime, Date endTime, String elementCode);
 }

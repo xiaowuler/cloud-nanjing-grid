@@ -47,7 +47,7 @@ public class OtherSearchServiceImpl implements OtherSearchSerive {
     @Override
     public List<Element> findUpdateAndStartByDate(NewestParameter newestParameter) {
         List<AggregationOperation> aggregationOperations = new ArrayList<>();
-        List<AggregationOperation> elementInfos = elementInfoDao.findByForecastModelAndDate(newestParameter.getForecastModel(), newestParameter.getStartTime(), newestParameter.getEndTime());
+        List<AggregationOperation> elementInfos = elementInfoDao.findByForecastModelAndDate(newestParameter.getForecastModel(), newestParameter.getStartTime(), newestParameter.getEndTime(), newestParameter.getElementCode());
         aggregationOperations.addAll(elementInfos);
         List<AggregationOperation> forecastInfos = forecastInfoDao.findAllByNewest();
         aggregationOperations.addAll(forecastInfos);
