@@ -216,8 +216,14 @@
 
 .port-param{
     height: 56px;
+    overflow-y: auto;
     padding: 0 10px;
     line-height: 25px;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 }
 
 .port-result{
