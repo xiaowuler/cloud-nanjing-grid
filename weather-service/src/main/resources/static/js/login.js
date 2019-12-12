@@ -29,7 +29,6 @@ var App = function () {
 
         if (errorMsg === ''){
             $('#real-submit').trigger("click");
-            $('#error-message').hide();
         }else {
             $('#error-message').text(errorMsg);
             $('#error-message').show();
@@ -53,7 +52,6 @@ var App = function () {
 
         if (errorMsg === ''){
             this.OnAdminLogin();
-            $('#error-message').hide();
         }else {
             $('#error-message').text(errorMsg);
             $('#error-message').show();

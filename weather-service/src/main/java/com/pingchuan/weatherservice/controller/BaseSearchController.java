@@ -35,6 +35,7 @@ public class BaseSearchController {
 
     @RequestMapping("/findNJGridsByNonArea")
     public DrawResult findNJGridsByNonArea(Date updateDate, Date startDate, Date forecastDate, String elementCode, String forecastModel){
+        forecastModel = "NJGRID-REALTIME";
         List<Box> boxes = new ArrayList<>();
         if ("Wind".equals(elementCode)){
             List<AreaElement> uAreaElements = baseSearchService.findNJGridsByNonArea(createAreaParameter(updateDate, startDate, forecastDate, "U10M", forecastModel));

@@ -38,6 +38,8 @@ public class OtherController {
     @RequestMapping("/findNewestTimeByModeCode")
     public List<UpdateTime> findNewestTimeByModeCode(String modeCode, String elementCode){
 
+        modeCode = "NJGRID-REALTIME";
+
         if ("Wind".equals(elementCode)) {
             elementCode = "U10M";
         }

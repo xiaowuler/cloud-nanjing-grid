@@ -97,6 +97,7 @@ public class OtherAop {
                 return apiResponse;
             }
             if (apiResponse.getRetCode() == ResultCode.SUCCESS) {
+                interfaceLog.setState((byte) 1);
                 setInterfaceLog(apiResponse.getRetMsg(), ResultCode.SUCCESS);
             } else {
                 setInterfaceLog(apiResponse.getRetMsg(), ResultCode.EXCEPTION);
