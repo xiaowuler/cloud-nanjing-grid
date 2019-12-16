@@ -163,6 +163,7 @@
                 <button class="play" id="play">播放</button>
                 <button class="pause pause-disable" id="pause" >暂停</button>
             </div>
+            <button class="test-btn border">click</button>
         </div>
         <div class="right-panel fl">
             <div class="product-number border clearfix">
@@ -186,6 +187,21 @@
             </div>
         </div>
     </div>
+    <div class="dialog border">
+        <div class="dialog-title clearfix">
+            <span class="toolbar-title fl">时间范围</span>
+            <div class="reset-calendar fl">
+                <input class="easyui-datebox" id="start-date" data-options="editable:false" value=" ">
+            </div>
+            <span class="date-txt">至</span>
+            <div class="reset-calendar fl">
+                <input class="easyui-datebox" id="end-date" data-options="editable:false" value=" ">
+            </div>
+            <button class="btn query-btn border fl" id="slider-query">查询</button>
+            <button class="btn close-btn fr"></button>
+        </div>
+        <div class="dialog-chart" id="dialog-chart"></div>
+    </div>
 </div>
 </body>
 <script type="text/javascript" src="3rds/jquery-3.2.1.min.js"></script>
@@ -207,6 +223,7 @@
 <script type="text/javascript" src="js/index/right-panel/latest-table.js"></script>
 <script type="text/javascript" src="js/index/right-panel/right-panel.js"></script>
 <script type="text/javascript" src="js/index/index.js"></script>
+<script type="text/javascript" src="js/index/dialog.js"></script>
 <script type="text/javascript" src="js/util/current-time.js"></script>
 <script type="text/javascript" src="js/util/time-util.js"></script>
 </html>

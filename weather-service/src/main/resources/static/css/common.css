@@ -321,6 +321,42 @@
     font-family: "微软雅黑";
 }
 
+.reset-calendar .textbox,
+.reset-calendar .textbox .textbox-text{
+    background: #004270;
+}
+
+.reset-calendar .textbox {
+    width: 120px!important;
+    height: 28px;
+    border: 1px solid #125f95;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.reset-calendar .textbox .textbox-text {
+    width: 100px!important;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: #a2d9ff;
+}
+
+.reset-calendar .combo-arrow {
+    width: 14px !important;
+    height: 14px !important;
+    margin: 6px 10px 0 0;
+    background: url("../images/calendar.png") no-repeat;
+}
+
+.reset-calendar .textbox-label {
+    width: 35px;
+    padding: 0;
+    color: #a2d9ff;
+}
+
 .panel-body{
     border: 1px solid #125f95;
     border-top: 0;

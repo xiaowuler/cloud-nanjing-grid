@@ -2048,7 +2048,8 @@
 }
 .calendar table td,
 .calendar table th {
-  font-size: 14px;
+  font-size: 12px;
+  vertical-align: middle;
 }
 .calendar-noborder {
   border: 0;
