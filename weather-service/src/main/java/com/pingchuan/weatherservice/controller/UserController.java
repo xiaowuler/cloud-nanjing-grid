@@ -49,7 +49,7 @@ public class UserController {
         }
 
         if ("管理员".equals(caller.getRole())){
-            return "login success";
+            return "login success" + username;
         }
 
         return "权限不足";

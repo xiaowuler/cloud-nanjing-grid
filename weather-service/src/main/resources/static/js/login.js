@@ -1,6 +1,6 @@
 var App = function () {
 
-    this.manageUrl = "http://10.124.102.42:8090/";
+    this.manageUrl = "http://10.124.102.42:8090/Call/RememberUser";
 
     this.Startup = function () {
         $('.login-title li').on('click', this.OnUserRoleTab.bind(this));
@@ -75,8 +75,8 @@ var App = function () {
             }.bind(this),
             error: function (data) {
                 if (data.responseText != null && data.responseText != undefined && data.responseText != ''){
-                    if (data.responseText === 'login success'){
-                        window.location.href= this.manageUrl;
+                    if (data.responseText.startsWith('login success')){
+                        window.location.href= "{0}?username={1}".format(this.manageUrl, data.responseText.replace('login success', ''));
                         $("#error-message").hide();
                     }else {
                         $("#error-message").show();

@@ -22,6 +22,7 @@ public class ElementCode {
 
     @Field("start_time")
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
     private Date startTime;
 
     @Field("start_times")
