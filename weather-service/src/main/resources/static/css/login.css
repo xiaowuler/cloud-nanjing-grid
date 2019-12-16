@@ -29,7 +29,7 @@ body{
 
 .login-container{
     width: 100%;
-    height: 320px;
+    height: 335px;
     padding: 0 30px;
     margin: 17px 0;
     border: 1px solid #125f95;
@@ -132,4 +132,9 @@ body{
 
 input[type=checkbox] {
     visibility: hidden;
+}
+
+.return-index{
+    line-height: 40px;
+    text-align: right;
 }
