@@ -319,15 +319,22 @@
 .dialog .close-btn{
     width: 20px;
     height: 20px;
+    position: absolute;
+    top:5px;
+    right: 5px;
     background: url("../images/close.png") no-repeat center/cover;
 }
 
 .dialog-title{
+    position: relative;
+}
+
+.dialog-toolbar{
     padding: 10px;
     border-bottom: 1px solid #125f95;
 }
 
-.dialog-title span.date-txt {
+.dialog-toolbar span.date-txt {
     line-height: 28px;
     margin: 0 10px;
     float: left;
