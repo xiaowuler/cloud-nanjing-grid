@@ -2,7 +2,7 @@ var Dialog = function () {
     this.Startup = function(){
         this.InitDate();
         this.ShowChart();
-        $('.test-btn').on('click', this.OpenDialog.bind(this));
+        //$('.test-btn').on('click', this.OpenDialog.bind(this));
         $('.close-btn').on('click', this.CloseDialog.bind(this));
     };
 

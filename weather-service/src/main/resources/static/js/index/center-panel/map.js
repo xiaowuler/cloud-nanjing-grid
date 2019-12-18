@@ -4,6 +4,8 @@ var Map = function(){
     this.polygons = [];
     this.images = [];
     this.feature = null;
+    this.sites = null;
+    this.dialog = new Dialog();
 
     this.Startup = function(){
         this.createEasyMap();
@@ -36,11 +38,12 @@ var Map = function(){
     };
 
     this.draw = function (data, elementCode) {
-        if (elementCode === "Wind"){
-            this.drawWind(data);
-        }else {
-            this.drawPolygon(data)
-        }
+        // if (elementCode === "Wind"){
+        //     this.drawWind(data);
+        // }else {
+        //     this.drawPolygon(data)
+        // }
+        this.drawSixSite();
     };
 
     this.drawWind = function (data) {
@@ -67,6 +70,29 @@ var Map = function(){
         }.bind(this));
         this.map.addLayer(this.feature);
     };
+
+    this.drawSixSite = function () {
+        this.sites = new L.FeatureGroup();
+        $.getJSON("json/site.json", function (data){
+            $(data).each(function (index, item) {
+                this.sites.addLayer(L.circle(item.Loc,
+                    {
+                        radius: 500,
+                        color: '#B71D18',
+                        fillColor: '#000000',
+                        fillOpacity: 1,
+                        className: '{0}({1})'.format(item.Name, item.StationCode)
+                    }));
+            }.bind(this));
+            this.map.addLayer(this.sites);
+            this.sites.off('click').on('click', this.clickSite.bind(this));
+        }.bind(this))
+    }
+
+    this.clickSite = function (e) {
+        this.dialog.OpenDialog();
+    }
+
 
     this.getWindDirectionImageUrl = function (windDirection) {
         switch (windDirection) {
