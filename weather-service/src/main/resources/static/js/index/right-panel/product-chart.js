@@ -97,8 +97,15 @@ var ProductChart = function () {
             },
             url: 'stat/findTypeCallByTimeRange',
             success: function (data) {
-                this.saveData(flag, data);
-                this.ReloadChartData(data);
+                if (data == null || data.length == 0){
+                    $.getJSON("json/product.json", function (value) {
+                        this.saveData(flag, value);
+                        this.ReloadChartData(value);
+                    }.bind(this));
+                }else {
+                    this.saveData(flag, data);
+                    this.ReloadChartData(data);
+                }
             }.bind(this)
         })
     };
@@ -114,7 +121,6 @@ var ProductChart = function () {
     }
 
     this.ReloadChartData = function (result) {
-        var elementSeries = {};
         var value = this.GetElementValues(result);
         var series = this.GetElementSeries(value);
         elementSeries = series;

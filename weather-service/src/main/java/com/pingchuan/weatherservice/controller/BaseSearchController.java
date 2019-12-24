@@ -8,19 +8,21 @@ import com.pingchuan.dto.base.Forecast;
 import com.pingchuan.dto.base.Location;
 import com.pingchuan.dto.web.Box;
 import com.pingchuan.dto.web.DrawResult;
+import com.pingchuan.dto.web.SiteCenterValue;
+import com.pingchuan.dto.web.SiteValue;
 import com.pingchuan.parameter.base.AreaParameter;
+import com.pingchuan.parameter.base.TimeRangeParameter;
 import com.pingchuan.weatherservice.service.BaseSearchService;
 import com.pingchuan.weatherservice.service.LegendLevelService;
 import com.pingchun.utils.CalcUtil;
+import com.pingchun.utils.TimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.DoubleSummaryStatistics;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
@@ -53,6 +55,157 @@ public class BaseSearchController {
         drawResult.setBox(boxes);
         drawResult.setLegendLevels(legendLevels);
         return drawResult;
+    }
+
+    @RequestMapping("/findNJGridsByForecastTimeRangeAllElement")
+    public SiteValue findNJGridsByForecastTimeRangeAllElement(Date updateDate, Date startDate, Date startForecastDate, Date endForecastDate, String elementCode, String forecastModel, double lat, double lng){
+        TimeRangeParameter timeRangeParameter = new TimeRangeParameter();
+        timeRangeParameter.setEndForecastDate(endForecastDate);
+        timeRangeParameter.setStartForecastDate(startForecastDate);
+        List<double[]> locations = new ArrayList<>();
+        locations.add(new double[] {lng, lat});
+        timeRangeParameter.setLocations(locations);
+        timeRangeParameter.setForecastModel(forecastModel);
+        timeRangeParameter.setStartDate(startDate);
+        timeRangeParameter.setUpdateDate(updateDate);
+
+        if ("Wind".equals(elementCode)){
+            timeRangeParameter.setElementCode("U10M");
+            List<AreaElement> us = baseSearchService.findNJGridsByForecastTimeRange(timeRangeParameter);
+            timeRangeParameter.setElementCode("V10M");
+            List<AreaElement> vs = baseSearchService.findNJGridsByForecastTimeRange(timeRangeParameter);
+            return getSiteChatValueByWind(us, vs, elementCode);
+        }else {
+            timeRangeParameter.setElementCode(elementCode);
+            List<AreaElement> areaElements = baseSearchService.findNJGridsByForecastTimeRange(timeRangeParameter);
+            return getSiteChatValue(areaElements, elementCode);
+        }
+    }
+
+    private List<SiteCenterValue> getSiteCenterValue(List<AreaElement> areaElements){
+        List<SiteCenterValue> siteCenterValues = new ArrayList<>();
+
+        if (areaElements.size() == 0){
+            return null;
+        }
+        AreaElement areaElement = areaElements.get(0);
+        if (areaElement.getElementCodes().size() == 0){
+            return null;
+        }
+
+        ElementCode element = areaElement.getElementCodes().get(0);
+        if (element.getForecasts().size() == 0){
+            return null;
+        }
+        List<Forecast> forecasts = element.getForecasts();
+        forecasts.sort(Comparator.comparing(Forecast::getForecastTime));
+
+        forecasts.forEach(f -> siteCenterValues.add(new SiteCenterValue(keepOne(f.getLocations().get(0).getValue()), f.getForecastTime())));
+        return  siteCenterValues;
+    }
+
+    private SiteValue getSiteChatValueByWind(List<AreaElement> us, List<AreaElement> vs, String elementCode){
+        SiteValue siteValue = getSiteBaseInfo(elementCode);
+
+        List<SiteCenterValue> uSites = getSiteCenterValue(us);
+        if (StringUtils.isEmpty(uSites)){
+            return null;
+        }
+
+        List<SiteCenterValue> vSites = getSiteCenterValue(vs);
+        if (StringUtils.isEmpty(vSites)){
+            return null;
+        }
+
+        List<Double> windSpeeds = new ArrayList<>();
+        List<String> windDirections = new ArrayList<>();
+        List<String> times = new ArrayList<>();
+
+        for(SiteCenterValue siteCenterValue : uSites){
+            List<SiteCenterValue> vSite = vSites.stream().filter(v -> v.getForecastTime().compareTo(siteCenterValue.getForecastTime()) == 0).collect(Collectors.toList());
+            if (vSite.size() == 0){
+                continue;
+            }
+
+            times.add(TimeUtil.CovertDateToString("yyMMddHH", siteCenterValue.getForecastTime()));
+            windSpeeds.add(keepOne(CalcUtil.windSpeed(siteCenterValue.getValue(), vSite.get(0).getValue())));
+            windDirections.add(CalcUtil.getWindDirectionStr(CalcUtil.windDirection(siteCenterValue.getValue(), vSite.get(0).getValue())));
+        }
+        siteValue.setTimes(times);
+        siteValue.setValues(windSpeeds);
+        siteValue.setWindDirection(windDirections);
+        return siteValue;
+    }
+
+    private SiteValue getSiteChatValue(List<AreaElement> areaElements, String elementCode){
+        SiteValue siteValue = getSiteBaseInfo(elementCode);
+
+        List<SiteCenterValue> siteCenterValues = getSiteCenterValue(areaElements);
+        List<String> forecastDates = siteCenterValues.stream().map(f -> TimeUtil.CovertDateToString("yyMMddHH", f.getForecastTime())).collect(Collectors.toList());
+        List<Double> values = siteCenterValues.stream().map(f -> keepOne(f.getValue())).collect(Collectors.toList());
+        if ("WTYPE".equals(elementCode)){
+            siteValue.setFlags(values.stream().map(v -> getWeatherPhenomena(v.intValue())).collect(Collectors.toList()));
+        }else if("PTYPE".equals(elementCode)) {
+            siteValue.setFlags(values.stream().map(v -> getPhaseState(v.intValue())).collect(Collectors.toList()));
+        }
+
+        siteValue.setTimes(forecastDates);
+        siteValue.setValues(values);
+        return siteValue;
+    }
+
+    private double keepOne(double value){
+        return new BigDecimal(value).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
+    }
+
+    private SiteValue getSiteBaseInfo(String elementCode){
+        SiteValue siteValue = new SiteValue();
+        switch (elementCode){
+            case "PRE":
+                siteValue.setUnit("mm");
+                siteValue.setName("降水");
+                siteValue.setType("column");
+                break;
+            case "VIS":
+                siteValue.setUnit("km");
+                siteValue.setName("能见度");
+                siteValue.setType("spline");
+                break;
+            case "Wind":
+                siteValue.setUnit("m/s");
+                siteValue.setName("10米风速");
+                siteValue.setType("spline");
+                break;
+            case "R2M":
+                siteValue.setUnit("%");
+                siteValue.setName("2米相对湿度:");
+                siteValue.setType("spline");
+                break;
+            case "PTYPE":
+                siteValue.setUnit("");
+                siteValue.setName("相态");
+                siteValue.setType("spline");
+                break;
+            case "TCC":
+                siteValue.setUnit("%");
+                siteValue.setName("云量");
+                siteValue.setType("spline");
+                break;
+            case "WTYPE":
+                siteValue.setUnit("");
+                siteValue.setName("天气现象");
+                siteValue.setType("spline");
+                break;
+            case "T2M":
+                siteValue.setUnit("℃");
+                siteValue.setName("2米气温");
+                siteValue.setType("spline");
+                break;
+            default:
+                siteValue.setUnit("");
+        }
+
+        return siteValue;
     }
 
     private List<Box> calcWind(List<Location> us, List<Location> vs){

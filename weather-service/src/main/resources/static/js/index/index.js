@@ -3,7 +3,7 @@ var App = function () {
     this.LeftPanel = new LeftPanel(this);
     this.CenterPanel = new CenterPanel(this);
     this.RightPanel = new RightPanel(this);
-    this.DialogChart = new Dialog(this);
+    //this.DialogChart = new Dialog(this);
 
     this.Startup = function () {
         this.ReLayout();
@@ -11,7 +11,6 @@ var App = function () {
         this.LeftPanel.Startup();
         this.CenterPanel.Startup();
         this.RightPanel.Startup();
-        this.DialogChart.Startup();
 
         window.onresize = this.ReSize.bind(this);
     };

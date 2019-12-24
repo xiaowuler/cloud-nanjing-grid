@@ -327,7 +327,7 @@
 }
 
 .reset-calendar .textbox {
-    width: 120px!important;
+    width: 165px!important;
     height: 28px;
     border: 1px solid #125f95;
     -webkit-border-radius: 3px;
@@ -336,7 +336,7 @@
 }
 
 .reset-calendar .textbox .textbox-text {
-    width: 100px!important;
+    width: 150px!important;
     height: 28px;
     line-height: 28px;
     padding: 0 10px;
@@ -355,6 +355,28 @@
     width: 35px;
     padding: 0;
     color: #a2d9ff;
+}
+
+.spinner-arrow-up,
+.spinner-arrow-down{
+    position: relative;
+}
+
+.spinner-arrow-up:before,
+.spinner-arrow-down:before{
+    content: '∧';
+    width: 14px;
+    height: 6px;
+    display: block;
+    position: absolute;
+    top:0;
+    left: 4px;
+    font-size: 14px;
+    color: #4d4d4d;
+}
+
+.spinner-arrow-down:before{
+    content: '∨';
 }
 
 .panel-body{

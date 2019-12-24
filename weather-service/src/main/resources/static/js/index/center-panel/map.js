@@ -4,8 +4,10 @@ var Map = function(){
     this.polygons = [];
     this.images = [];
     this.feature = null;
+    this.weathers = null;
     this.sites = null;
-    this.dialog = new Dialog();
+    this.dialog = new Dialog(this);
+    this.timeUtil = new TimeUtil();
 
     this.Startup = function(){
         this.createEasyMap();
@@ -35,14 +37,24 @@ var Map = function(){
         if (this.feature != null){
             this.map.removeLayer(this.feature);
         }
+
+        if (this.weathers != null){
+            this.map.removeLayer(this.weathers);
+        }
+
+        if (this.sites != null){
+            this.map.removeLayer(this.sites);
+        }
     };
 
     this.draw = function (data, elementCode) {
-        // if (elementCode === "Wind"){
-        //     this.drawWind(data);
-        // }else {
-        //     this.drawPolygon(data)
-        // }
+        if (elementCode === "Wind"){
+            this.drawWind(data);
+        }else if(elementCode === "WTYPE" || elementCode === 'PTYPE'){
+            this.drawWeather(data);
+        }else {
+            this.drawPolygon(data)
+        }
         this.drawSixSite();
     };
 
@@ -71,13 +83,32 @@ var Map = function(){
         this.map.addLayer(this.feature);
     };
 
+    this.drawWeather = function (data) {
+        this.weathers = new L.FeatureGroup();
+        $(data.box).each(function (index, item) {
+            var imageInfo = this.calcCenterPoint(item.startLat, item.endLat, item.startLon, item.endLon);
+
+            this.weathers.addLayer(L.marker(imageInfo.center, {
+                icon: L.icon({
+                    iconUrl: this.getWeatherImageUrl(item.flag),
+                    iconSize: [16, 16],
+                    iconAnchor:[8, 20]
+
+                }),
+                title: item.flag
+            }));
+
+        }.bind(this));
+        this.map.addLayer(this.weathers);
+    };
+
     this.drawSixSite = function () {
         this.sites = new L.FeatureGroup();
         $.getJSON("json/site.json", function (data){
             $(data).each(function (index, item) {
                 this.sites.addLayer(L.circle(item.Loc,
                     {
-                        radius: 500,
+                        radius: 1000,
                         color: '#B71D18',
                         fillColor: '#000000',
                         fillOpacity: 1,
@@ -90,9 +121,85 @@ var Map = function(){
     }
 
     this.clickSite = function (e) {
-        this.dialog.OpenDialog();
-    }
+        var startTime = this.timeUtil.parseStr($('.start-time li.active').text(), "YYMMDDHH").toDate();
+        this.dialog.initial(moment($('.update-time li.active span').text(), 'YYMMDDHH').toDate(), startTime, $('#model').combobox('getValue'), $('#element').combobox('getValue'), e.latlng);
 
+        startTime = moment(startTime).add(1, 'hours').toDate();
+        var endTime = moment(startTime).add(1, 'days').toDate();
+        this.dialog.InitDate(startTime, endTime);
+        this.dialog.OpenDialog(e.layer.options.className);
+    };
+
+    this.getWeatherImageUrl = function (value) {
+        if (value == "晴"){
+            return "images/weather/1晴天.png";
+        }else if (value == "多云"){
+            return "images/weather/2多云.png";
+        }else if (value == "阴"){
+            return "images/weather/3阴天.png";
+        }else if (value == "阵雨"){
+            return "images/weather/4阵雨.png";
+        }else if (value == "雷阵雨"){
+            return "images/weather/5雷阵雨.png";
+        }else if (value == "雷阵雨并伴有冰雹"){
+            return "images/weather/6雷阵雨-并伴有冰雹.png";
+        }else if (value == "雨夹雪"){
+            return "images/weather/7雨夹雪.png";
+        }else if (value == "小雨"){
+            return "images/weather/8小雨.png";
+        }else if (value == "中雨"){
+            return "images/weather/9中雨.png";
+        }else if (value == "大雨"){
+            return "images/weather/10大雨.png";
+        }else if (value == "暴雨"){
+            return "images/weather/11暴雨.png";
+        }else if (value == "大暴雨"){
+            return "images/weather/12大暴雨.png";
+        }else if (value == "特大暴雨"){
+            return "images/weather/13特大暴雨.png";
+        }else if (value == "阵雪"){
+            return "images/weather/14阵雪.png";
+        }else if (value == "小雪"){
+            return "images/weather/15小雪.png";
+        }else if (value == "中雪"){
+            return "images/weather/16中雪.png";
+        }else if (value == "大雪"){
+            return "images/weather/17大雪.png";
+        }else if (value == "暴雪"){
+            return "images/weather/18暴雪.png";
+        }else if (value == "雾"){
+            return "images/weather/19雾.png";
+        }else if (value == "冻雨"){
+            return "images/weather/20冻雨.png";
+        }else if (value == "沙尘暴"){
+            return "images/weather/21沙尘暴.png";
+        }else if (value == "小到中雨"){
+            return "images/weather/22小到中雨.png";
+        }else if (value == "中到大雨"){
+            return "images/weather/23中到大雨.png";
+        }else if (value == "大到暴雨"){
+            return "images/weather/24大到暴雨.png";
+        }else if (value == "暴雨到大暴雨"){
+            return "images/weather/25暴雨到大暴雨.png";
+        }else if (value == "大暴雨到特大暴雨"){
+            return "images/weather/26大暴雨到特大暴雨.png";
+        }else if (value == "小到中雪"){
+            return "images/weather/27小到中雪.png";
+        }else if (value == "中到大雪"){
+            return "images/weather/28中到大雪.png";
+        }else if (value == "大到暴雪"){
+            return "images/weather/29大到暴雪.png";
+        }else if (value == "霾"){
+            return "images/weather/30霾.png";
+        }else if (value == '雨'){
+            return "images/weather/4阵雨.png";
+        }else if (value == '雪'){
+            return "images/weather/14阵雪.png";
+        }else if (value == '雨夹雪'){
+            return "images/weather/20冻雨.png";
+        }
+        return "";
+    }
 
     this.getWindDirectionImageUrl = function (windDirection) {
         switch (windDirection) {
@@ -120,7 +227,7 @@ var Map = function(){
             default:
                 return 'images/wind-direction/south.png';
         }
-    }
+    };
 
     this.calcCenterPoint = function (startLat, endLat, startLon, endLon) {
         var lonHalf = (endLon - startLon) / 2;

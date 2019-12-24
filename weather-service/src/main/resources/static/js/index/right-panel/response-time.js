@@ -16,7 +16,13 @@ var ResponseTime = function (){
             },
             url: 'stat/findTypeCallByTimeRange',
             success: function (data) {
-                this.ReloadChartData(data);
+                if (data == null || data.length == 0){
+                    $.getJSON("json/product.json", function (value) {
+                        this.ReloadChartData(value);
+                    }.bind(this));
+                }else {
+                    this.ReloadChartData(data);
+                }
             }.bind(this)
         })
     };
@@ -43,7 +49,7 @@ var ResponseTime = function (){
         var count = [];
         result.forEach(function (item) {
             names.push(item.name);
-            count.push(item.count);
+            count.push(item.totalTime);
         }.bind(this));
 
         return {
