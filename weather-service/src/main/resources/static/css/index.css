@@ -272,9 +272,10 @@
 
 .box-label {
     color: #222222;
-    width: 80px !important;
-    margin-left: -40px !important;
+    width: 36px !important;
+    margin-left: -18px !important;
     text-align: center;
+    text-shadow: 0 0 6px #fff;
 }
 
 .wind-box-label{
@@ -358,4 +359,18 @@
 
 .dialog .highcharts-data-label span{
     top: 95px!important;
+}
+
+.base-station-point {
+    border-radius: 6px;
+    background-color: #eee;
+    border: solid 2px #555;
+}
+
+.image img{
+    margin-top: -15px;
+}
+
+.leaflet-marker-icon.leaflet-interactive{
+    z-index: 1000!important;
 }

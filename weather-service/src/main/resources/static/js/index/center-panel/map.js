@@ -70,17 +70,22 @@ var Map = function(){
             }));
 
             this.feature.addLayer(L.marker(imageInfo.center, {
-                icon: L.icon({
+                /*icon: L.icon({
                     iconUrl: this.getWindDirectionImageUrl(item.windDirection),
                     iconSize: [16, 16],
                     iconAnchor:[8, 20]
 
+                }),*/
+                icon: L.divIcon({
+                    // language=HTML
+                    className: 'image',
+                    html: '<img src="{0}" style="width: 16px; height: 16px">'.format(this.getWindDirectionImageUrl(item.windDirection))
                 }),
                 title: item.windDirection
             }));
 
         }.bind(this));
-        this.map.addLayer(this.feature);
+        this.map.addLayer(this.feature.bringToFront());
     };
 
     this.drawWeather = function (data) {
@@ -89,11 +94,10 @@ var Map = function(){
             var imageInfo = this.calcCenterPoint(item.startLat, item.endLat, item.startLon, item.endLon);
 
             this.weathers.addLayer(L.marker(imageInfo.center, {
-                icon: L.icon({
-                    iconUrl: this.getWeatherImageUrl(item.flag),
-                    iconSize: [16, 16],
-                    iconAnchor:[8, 20]
-
+                icon: L.divIcon({
+                    // language=HTML
+                    className: 'image',
+                    html: '<img src="{0}" style="width: 16px; height: 16px">'.format(this.getWeatherImageUrl(item.flag))
                 }),
                 title: item.flag
             }));
@@ -106,17 +110,11 @@ var Map = function(){
         this.sites = new L.FeatureGroup();
         $.getJSON("json/site.json", function (data){
             $(data).each(function (index, item) {
-                this.sites.addLayer(L.circle(item.Loc,
-                    {
-                        radius: 1000,
-                        color: '#B71D18',
-                        fillColor: '#000000',
-                        fillOpacity: 1,
-                        className: '{0}({1})'.format(item.Name, item.StationCode)
-                    }));
+                var icon = L.divIcon({className: 'base-station-point'});
+                var circleMarker = L.marker(item.Loc, {icon: icon, tag: '{0}({1})'.format(item.Name, item.StationCode)}).off('click').on('click', this.clickSite.bind(this));
+                this.sites.addLayer(circleMarker);
             }.bind(this));
             this.map.addLayer(this.sites);
-            this.sites.off('click').on('click', this.clickSite.bind(this));
         }.bind(this))
     }
 
@@ -127,7 +125,7 @@ var Map = function(){
         startTime = moment(startTime).add(1, 'hours').toDate();
         var endTime = moment(startTime).add(1, 'days').toDate();
         this.dialog.InitDate(startTime, endTime);
-        this.dialog.OpenDialog(e.layer.options.className);
+        this.dialog.OpenDialog(e.target.options.tag);
     };
 
     this.getWeatherImageUrl = function (value) {

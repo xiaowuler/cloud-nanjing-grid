@@ -50,7 +50,7 @@ public class BaseSearchController {
             boxes = getBox(locations, elementCode);
         }
 
-        List<LegendLevel> legendLevels = legendLevelService.findAllByType(getTypeByForecastModel(forecastModel));
+        List<LegendLevel> legendLevels = legendLevelService.findAllByType(getTypeByForecastModel(elementCode));
         DrawResult drawResult = new DrawResult();
         drawResult.setBox(boxes);
         drawResult.setLegendLevels(legendLevels);
@@ -178,7 +178,7 @@ public class BaseSearchController {
                 break;
             case "R2M":
                 siteValue.setUnit("%");
-                siteValue.setName("2米相对湿度:");
+                siteValue.setName("2米相对湿度");
                 siteValue.setType("spline");
                 break;
             case "PTYPE":
@@ -238,23 +238,23 @@ public class BaseSearchController {
 
     private String getTypeByForecastModel(String forecastModel){
         if ("WTYPE".equals(forecastModel)){
-            return "rainfalls";
+            return "rainfall";
         }else if ("VIS".equals(forecastModel)){
-            return "rainfalls";
+            return "vis";
         }else if ("V10M".equals(forecastModel)){
-            return "temperatures";
+            return "tmp";
         }else if ("U10M".equals(forecastModel)){
-            return "temperatures";
+            return "tmp";
         }else if ("TCC".equals(forecastModel)){
-            return "pressures";
+            return "cloud";
         }else if ("T2M".equals(forecastModel)){
-            return "rainfalls";
+            return "tmp";
         }else if ("R2M".equals(forecastModel)){
-            return "rainfalls";
+            return "humidity";
         }else if ("PTYPE".equals(forecastModel)){
-            return "rainfalls";
+            return "rainfall";
         }else{
-            return "rainfalls";
+            return "rainfall";
         }
     }
 

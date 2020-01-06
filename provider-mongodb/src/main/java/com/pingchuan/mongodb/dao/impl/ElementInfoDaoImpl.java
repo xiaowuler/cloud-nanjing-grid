@@ -2,6 +2,7 @@ package com.pingchuan.mongodb.dao.impl;
 
 import com.pingchuan.mongodb.dao.ElementInfoDao;
 import com.pingchuan.mongodb.field.ElementField;
+import com.pingchun.utils.TimeUtil;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -45,7 +46,7 @@ public class ElementInfoDaoImpl implements ElementInfoDao {
 
         aggregationOperations.add(Aggregation.lookup("element_infos", "_id", "element_code", "element_info"));
         aggregationOperations.add(Aggregation.unwind("element_info"));
-        aggregationOperations.add(Aggregation.match(Criteria.where("element_info.forecast_model").is(forecastModel)));
+        aggregationOperations.add(Aggregation.match(Criteria.where("element_info.forecast_model").is(forecastModel).and("element_info.update_time").gte(TimeUtil.addDay(new Date(), -3))));
         aggregationOperations.add(Aggregation.project(ElementField.elementInfoFields).and("element_info._id").as("element_info_id").andExclude("_id"));
         if (!StringUtils.isEmpty(elementCode)){
             aggregationOperations.add(Aggregation.match(Criteria.where("element_code").is(elementCode)));

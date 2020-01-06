@@ -28,11 +28,10 @@ var ResponseTime = function (){
     };
 
     this.ReloadChartData = function (result) {
-        var elementSeries = {};
         var xMarks = this.GetXMarks(result);
         var value = this.GetElementValues(result);
         var series = this.GetElementSeries(value);
-        elementSeries = series;
+        var elementSeries = series;
         this.ShowResponseChart(xMarks, elementSeries);
     };
 
@@ -49,7 +48,7 @@ var ResponseTime = function (){
         var count = [];
         result.forEach(function (item) {
             names.push(item.name);
-            count.push(item.totalTime);
+            count.push(item.totalTime / item.count);
         }.bind(this));
 
         return {
@@ -114,7 +113,7 @@ var ResponseTime = function (){
                 enabled: false
             },
             tooltip: {
-                pointFormat: '时间: <b>{point.y}</b>'
+                pointFormat: '时间: <b>{point.y: .2f}</b>'
             },
             plotOptions: {
                 column: {

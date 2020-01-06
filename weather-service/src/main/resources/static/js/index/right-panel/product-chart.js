@@ -152,14 +152,23 @@ var ProductChart = function () {
         return values;
     };
 
+    this.getTotal = function (series) {
+        var total = 0;
+        $(series).each(function (index, item) {
+            total += item.y;
+        }.bind(this));
+        return total;
+    }
+
     this.ShowProductChart = function (series){
+        var total = this.getTotal(series);
         var chart = Highcharts.chart('product-chart', {
             chart: {
                 backgroundColor: null
             },
             title: {
                 floating:true,
-                text: '<span style="font-size: 24px;color: #28edff;">{0}<br><span style="font-size: 16px;color: #a2d9ff">总量</span></span>'.format(series[0].y),
+                text: '<span style="font-size: 24px;color: #28edff;">{0}<br><span style="font-size: 16px;color: #a2d9ff">总量</span></span>'.format(total),
                 //useHTML: true,
                 style: {
                     color: '#00e7ff',
@@ -172,7 +181,7 @@ var ProductChart = function () {
             },
             colors: ['#5338f4','#ffc844', '#148ce2', '#ea4379', '#08bcd2', '#3cf9ff'],
             tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}</b>'
+                pointFormat: '<b>{point.percentage:.1f}%</b>'
             },
             legend: {
                 layout: 'horizontal',
@@ -211,6 +220,11 @@ var ProductChart = function () {
                             mouseOver: function(e) {
                                 chart.setTitle({
                                     text: '<span style="font-size: 30px;color: #28edff;">' + e.target.y + '</span>' + '<br>'+ '<span style="font-size: 16px;color: #a2d9ff">' + '总量' + '</span>'
+                                });
+                            },
+                            mouseOut: function (e) {
+                                chart.setTitle({
+                                    text: '<span style="font-size: 30px;color: #28edff;">' + total + '</span>' + '<br>'+ '<span style="font-size: 16px;color: #a2d9ff">' + '总量' + '</span>'
                                 });
                             }
                         }
